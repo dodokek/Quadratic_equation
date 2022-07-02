@@ -5,7 +5,7 @@
 #include <Windows.h>
 
 namespace QuadraticEquasion
-{
+{          
     double compute_diskr(double data_arr[]);
 
     void print_answer(double diskr, double ans_array[]);
@@ -52,16 +52,16 @@ bool get_data(double data_arr[], int option)
 
         while (not_exit)
         {
-            printf("Введите коэфиценты уравнения вида ax^2 + bx + c = 0\n");
+            printf("Р’РІРµРґРёС‚Рµ РєРѕСЌС„РёС†РµРЅС‚С‹ СѓСЂР°РІРЅРµРЅРёСЏ РІРёРґР° ax^2 + bx + c = 0\n");
 
             int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
-            if (Debug){ $sy; printf("line %d: %lg %lg %lg - Коэфиценты\n",
+            if (Debug){ $sy; printf("line %d: %lg %lg %lg - РљРѕСЌС„РёС†РµРЅС‚С‹\n",
                                     __LINE__, data_arr[0], data_arr[1], data_arr[2]); }
 
             data_is_ok = check_scanf_amount(scanf_amount);
 
-            if (Debug){ $sy; printf("line %d: %d - Значение scanf\n", __LINE__, scanf_amount);}
+            if (Debug){ $sy; printf("line %d: %d - Р—РЅР°С‡РµРЅРёРµ scanf\n", __LINE__, scanf_amount);}
 
             if (Debug){ $sy; printf("line %d: %d - data_is_ok\n", __LINE__, data_is_ok);}
 
@@ -70,7 +70,7 @@ bool get_data(double data_arr[], int option)
             if (!data_is_ok)
             {
                 if(!not_exit){
-                    printf("Введенные данные некоректны \n");
+                    printf("Р’РІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ РЅРµРєРѕСЂРµРєС‚РЅС‹ \n");
                     clear_buffer();
                     continue;
                 }
@@ -82,7 +82,7 @@ bool get_data(double data_arr[], int option)
             data_is_ok = QuadraticEquasion::handle_exception(data_arr);
             if(data_is_ok)
             {
-                printf("Спасибо за ввод значений %lg %lg %lg \n",
+                printf("РЎРїР°СЃРёР±Рѕ Р·Р° РІРІРѕРґ Р·РЅР°С‡РµРЅРёР№ %lg %lg %lg \n",
                         data_arr[0], data_arr[1], data_arr[2]);
                 return true;
             }
@@ -98,7 +98,7 @@ bool get_data(double data_arr[], int option)
     }
     else
     {
-        printf("Пока что программа не поддерживает другие операции :( ");
+        printf("РџРѕРєР° С‡С‚Рѕ РїСЂРѕРіСЂР°РјРјР° РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РґСЂСѓРіРёРµ РѕРїРµСЂР°С†РёРё :( ");
     }
     return false;
 }
@@ -130,7 +130,7 @@ double QuadraticEquasion::compute_diskr(double data_arr[])
 
     double diskr = sqrt(diskr_pow_2);
 
-    if (Debug) { $sy; printf("line %d: %lg - Дикриминант\n", __LINE__, diskr); }
+    if (Debug) { $sy; printf("line %d: %lg - Р”РёРєСЂРёРјРёРЅР°РЅС‚\n", __LINE__, diskr); }
 
     return diskr;
 }
@@ -143,8 +143,8 @@ double QuadraticEquasion::calculate_answer(double ans_array[], double data_arr[]
 
     ans_array[1] = (-data_arr[1] - diskr) / (2*data_arr[0]);
 
-    if (Debug) { $sy; printf("line %d: %lg - Первый ответ\n", __LINE__, ans_array[0]); }
-    if (Debug) { $sy; printf("line %d: %lg - Второй ответ\n", __LINE__, ans_array[1]); }
+    if (Debug) { $sy; printf("line %d: %lg - РџРµСЂРІС‹Р№ РѕС‚РІРµС‚\n", __LINE__, ans_array[0]); }
+    if (Debug) { $sy; printf("line %d: %lg - Р’С‚РѕСЂРѕР№ РѕС‚РІРµС‚\n", __LINE__, ans_array[1]); }
 
     return 0;
 }
@@ -174,21 +174,21 @@ void QuadraticEquasion::print_answer(double diskr, double ans_array[])
 {
     int answers_amount = QuadraticEquasion::amount_of_answers(diskr);
 
-    printf("Уравнение имеет кол-во решений равное: %d \n", answers_amount);
+    printf("РЈСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ РєРѕР»-РІРѕ СЂРµС€РµРЅРёР№ СЂР°РІРЅРѕРµ: %d \n", answers_amount);
 
     if (answers_amount == 0)
     {
-        printf("%s", "Решений нет.\n");
+        printf("%s", "Р РµС€РµРЅРёР№ РЅРµС‚.\n");
     }
 
     else if (answers_amount == 1)
     {
-        printf("Кратный корень %lg \n", ans_array[0]);
+        printf("РљСЂР°С‚РЅС‹Р№ РєРѕСЂРµРЅСЊ %lg \n", ans_array[0]);
     }
 
     else
     {
-        printf("Корень %lg, Корень %lg \n", ans_array[0], ans_array[1]);
+        printf("РљРѕСЂРµРЅСЊ %lg, РљРѕСЂРµРЅСЊ %lg \n", ans_array[0], ans_array[1]);
     }
 }
 
@@ -197,7 +197,7 @@ bool QuadraticEquasion::handle_exception(double data_arr[])
 {
     if (is_zero(data_arr[0]) && is_zero(data_arr[0]) && is_zero(data_arr[0]))
     {
-        printf("Бесконечное количество решений");
+        printf("Р‘РµСЃРєРѕРЅРµС‡РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµС€РµРЅРёР№");
         return false;
     }
     return true;
