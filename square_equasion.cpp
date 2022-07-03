@@ -2,7 +2,15 @@
 #include <txlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <Windows.h>
+
+
+enum NUM_OF_ROOTS
+{
+    NO_ROOTS = 0,
+    ONE_ROOT,
+    TWO_ROOTS,
+    INF_ROOTS
+};
 
 namespace QuadraticEquasion
 {
@@ -12,26 +20,26 @@ namespace QuadraticEquasion
 
     int amount_of_answers(double diskr);
 
-    double calculate_answer(double ans_array[], double data_arr[], double diskr);
-
-    bool handle_exception(double data_arr[]);
+    int calculate_roots_return_amount(double ans_array[], double data_arr[], double diskr);
 
     void solve_quadratic_equasion(double data_arr[]);
 }
 
 
-void UnitTest_quadratic_equasion();
+void UnitTestQuadraticEquasion(double test_data[], double answers[]);
+void UnitTest();
 
+void UnitTestQuadraticEquasion(double test_data[], int num_of_test);
 
-bool get_data(double data_arr[], int option);
+bool is_equal(double num_1, double num_2);
+
+bool get_input(double data_arr[], int option);
 
 bool is_zero(double number);
 
 void fill_array_with_NAN(double arr[], int length);
 
 bool check_scanf_amount(int amount);
-
-bool is_NAN(double number);
 
 void clear_buffer();
 
@@ -45,16 +53,20 @@ const double Accuracy = 0.000001;
 
 const int Solve_sqr_opt = 1;
 
-const int amount_of_tries = 10;
+const double reserved_num = 12345.6;
+
+const int MAX_DATA_SIZE = 100;
+
+const int INF = 100000000;
 //---------
 
 
-bool get_data(double data_arr[], int option)
+bool get_input(double data_arr[], int option)
 {
     if (option == Solve_sqr_opt)
     {
-        bool is_correct_data = false;
-        bool not_exit = 1;
+        bool is_input_correct = false;
+        bool not_exit         = true;
 
         printf("Введите q для выхода\n");
 
@@ -64,51 +76,43 @@ bool get_data(double data_arr[], int option)
 
             int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
-            if (Debug){ $sy; printf("line %d: %lg %lg %lg - Коэфиценты\n",
-                                    __LINE__, data_arr[0], data_arr[1], data_arr[2]); }
+            is_input_correct = check_scanf_amount(scanf_amount);
 
-            is_correct_data = check_scanf_amount(scanf_amount);
+            // One if
 
-            if (Debug){ $sy; printf("line %d: %d - Значение scanf\n", __LINE__, scanf_amount);}
+            if (Debug)
+            {
+                $sy; printf("line %d: %lg %lg %lg - Коэфиценты\n",
+                                    __LINE__, data_arr[0], data_arr[1], data_arr[2]);
 
-            if (Debug){ $sy; printf("line %d: %d - is_correct_data\n", __LINE__, is_correct_data);}
+                printf("line %d: %d - Значение scanf\n",
+                                    __LINE__, scanf_amount);
+
+                printf("line %d: %d - is_input_correct\n",
+                                    __LINE__, is_input_correct);
+            }
 
             not_exit = check_on_exit();
 
-            if (!is_correct_data)
+            if (!is_input_correct && not_exit)
             {
-                if(not_exit){
-                    printf("Введенные данные некоректны \n");
-                    clear_buffer();
-                    continue;
-                }
+                printf("Введенные данные некоректны \n");
+
+                clear_buffer();
+
+                continue;
             }
+
             break;
         }
 
-        if (is_correct_data)
-        {
-            is_correct_data = QuadraticEquasion::handle_exception(data_arr);
-            if(is_correct_data)
-            {
-                printf("Спасибо за ввод значений %lg %lg %lg \n",
-                        data_arr[0], data_arr[1], data_arr[2]);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
     }
+
     else
     {
         printf("Пока что программа не поддерживает другие операции :( ");
     }
+
     return false;
 }
 
@@ -121,34 +125,13 @@ void clear_buffer()
 
 bool check_on_exit()
 {
-    if (getchar() == 'q')
-    {
-        return false;
-    }
-    return true;
+    return (getchar() == 'q') ? false : true;
 }
 
 
 bool is_zero(double number)
 {
-    if (abs(number) < Accuracy)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-
-bool is_NAN(double number)
-{
-    if (number != number)
-    {
-        return true;
-    }
-    return false;
+    return (fabs(number) < Accuracy) ? true : false;
 }
 
 
@@ -161,64 +144,52 @@ void fill_array_with_NAN(double arr[], int length)
 }
 
 
-bool check_scanf_amount(int amount)
+bool check_scanf_amount(int num_of_args)
 {
-    if (amount == 3)
-    {
-        return true;
-    }
-    return false;
+    return (num_of_args == 3) ? true : false;
 }
 
 
-double QuadraticEquasion::compute_diskr(double data_arr[])
+bool is_equal(double num_1, double num_2)
 {
-    double diskr_pow_2 = (data_arr[1] * data_arr[1]) - (4 * data_arr[0] * data_arr[2]);
-
-    if (diskr_pow_2 < 0)
-    {
-        return -1;
-    }
-
-    double diskr = sqrt(diskr_pow_2);
-
-    if (Debug) { $sy; printf("line %d: %lg - Дикриминант\n", __LINE__, diskr); }
-
-    return diskr;
+    return ( fabs(num_1 - num_2) < Accuracy ) ? true : false;
 }
 
+// merge calculate_answer +
 
-double QuadraticEquasion::calculate_answer(double ans_array[], double data_arr[], double diskr)
+
+int QuadraticEquasion::calculate_roots_return_amount(double ans_array[], double data_arr[], double diskr)
 {
+    double koef_a = data_arr[0];
+    double koef_b = data_arr[1];
+    double koef_c = data_arr[2];
 
-    ans_array[0] = (-data_arr[1] + diskr) / (2*data_arr[0]);
+    double x1_indx = 0;
+    double x2_indx = 1;
 
-    ans_array[1] = (-data_arr[1] - diskr) / (2*data_arr[0]);
-
-    if (Debug) { $sy; printf("line %d: %lg - Первый ответ\n", __LINE__, ans_array[0]); }
-    if (Debug) { $sy; printf("line %d: %lg - Второй ответ\n", __LINE__, ans_array[1]); }
-
-    return 0;
-}
-
-
-int QuadraticEquasion::amount_of_answers(double diskr)
-{
-    if (Debug) { $sy;printf("line %d: %lg \n", __LINE__, diskr); }
-
-    if (diskr < 0)
+    if (is_zero(is_zero(koef_a) && !is_zero(koef_b) && !is_zero(koef_c))
     {
-        return 0;
-    }
-    if (is_zero(diskr))
-    {
+        ans_array[x1_indx] = -koef_c / koef_b;
         return 1;
     }
+
+    else if (is_zero(koef_a) && is_zero(koef_b) && is_zero(koef_c))
+    {
+        return INF;
+    }
+
     else
     {
+        double diskr = (koef_b * koef_b) - (4 * koef_a * koef_c);
+
+        ans_array[x1_ind] = ( -koef_b + sqrt(diskr) / (2 * koef_a);
+
+        ans_array[x2_ind] = ( -koef_b - sqrt(diskr) / (2 * koef_a);
+
         return 2;
     }
 
+    return 0;
 }
 
 
@@ -245,13 +216,15 @@ void QuadraticEquasion::print_answer(double diskr, double ans_array[])
 }
 
 
+// check_special_cases
 bool QuadraticEquasion::handle_exception(double data_arr[])
 {
-    if (is_zero(data_arr[0]) && is_zero(data_arr[0]) && is_zero(data_arr[0]))
+    if (is_zero(data_arr[0]) && is_zero(data_arr[1]) && is_zero(data_arr[2]))
     {
         printf("Бесконечное количество решений");
         return false;
     }
+
     return true;
 }
 
@@ -259,19 +232,77 @@ bool QuadraticEquasion::handle_exception(double data_arr[])
 void QuadraticEquasion::solve_quadratic_equasion(double data_array[])
 {
     double diskr = 0;    //diskriminant
-    double ans_array[2] = {}; //answers
+    double ans_array[2] = {reserved_num, reserved_num}; //answers
 
     diskr = QuadraticEquasion::compute_diskr(data_array);
 
+    // diskr_flag
+    // return root_count
     QuadraticEquasion::calculate_answer(ans_array, data_array, diskr);
 
+    // pass root_count
     QuadraticEquasion::print_answer(diskr, ans_array);
 }
 
 
-void UnitTest_quadratic_equasion()
+// One style
+
+// 5 1 -> 1 5
+
+// test_answers
+// square_eq_coff test_data[], square_eq_root answers[], int num_of_test
+
+
+void UnitTestQuadraticEquasion(double test_data[],
+                               int    num_of_test)
 {
-    //----
+    int a_indx  = 0;
+    int b_indx  = 1;
+    int c_indx  = 2;
+
+    int x1_indx = 3;
+    int x2_indx = 4;
+
+    double diskr        = 0;
+    double ans_array[2] = { reserved_num, reserved_num };
+
+
+    diskr = QuadraticEquasion::compute_diskr(test_data);
+
+    QuadraticEquasion::calculate_answer(ans_array, test_data, diskr);
+
+    if (   is_equal(test_data[x1_indx], ans_array[0])
+        && is_equal(test_data[x2_indx], ans_array[1]))
+    {
+        $sg; printf("Unit test %d passed\n", num_of_test + 1);
+    }
+    else
+    {
+        $sr; printf("Unit test not passed, with data %lg %lg %lg,"
+                    "excepted %lg %lg, received %lg %lg\n",
+                    test_data[a_indx ], test_data[b_indx ], test_data[c_indx],
+                    test_data[x1_indx], test_data[x2_indx],
+                    ans_array[a_indx ], ans_array[c_indx ]);
+    }
+
+}
+
+
+void UnitTest()
+{
+    //                         a  b  c  x1   x2
+    double test_data[][5] = { {1, 2, 1, -1,  -1 },
+                              {2, 5, 1, -12, -15}
+                              };
+
+
+    int tests_amount = sizeof(test_data) / sizeof(test_data[0]);
+
+    for(int i = 0; i < tests_amount; i++)
+    {
+        UnitTestQuadraticEquasion(test_data[i], i);
+    }
+
 }
 
 
@@ -279,14 +310,14 @@ int main()
 {
     if (Debug)
     {
-        UnitTest_quadratic_equasion();
+        UnitTest();
     }
 
-    double data_array[100] = {};
+    double data_array[MAX_DATA_SIZE] = {};
 
-    fill_array_with_NAN(data_array, 100);
+    fill_array_with_NAN(data_array, MAX_DATA_SIZE);
 
-    bool data_is_correct = get_data(data_array, Solve_sqr_opt);
+    bool data_is_correct = get_input(data_array, Solve_sqr_opt);
 
     if (data_is_correct)
     {
