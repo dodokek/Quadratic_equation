@@ -20,11 +20,11 @@ bool get_input(double data_arr[], int option)
         bool is_input_correct = false;
         bool not_exit         = true;
 
-        printf("Ââåäèòå q äëÿ âûõîäà\n");
+        printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ q Ð´Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð°\n");
 
         while (not_exit)
         {
-            printf("Ââåäèòå êîýôèöåíòû óðàâíåíèÿ âèäà ax^2 + bx + c = 0\n");
+            printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾ÑÑ„Ð¸Ñ†ÐµÐ½Ñ‚Ñ‹ ÑƒÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ Ð²Ð¸Ð´Ð° ax^2 + bx + c = 0\n");
 
             int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
@@ -33,10 +33,10 @@ bool get_input(double data_arr[], int option)
             if (Debug)
             {
                 $sy;
-                printf("line %d: %lg %lg %lg - Êîýôèöåíòû\n",
+                printf("line %d: %lg %lg %lg - ÐšÐ¾ÑÑ„Ð¸Ñ†ÐµÐ½Ñ‚Ñ‹\n",
                                     __LINE__, data_arr[0], data_arr[1], data_arr[2]);
 
-                printf("line %d: %d - Çíà÷åíèå scanf\n",
+                printf("line %d: %d - Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ scanf\n",
                                     __LINE__, scanf_amount);
 
                 printf("line %d: %d - is_input_correct\n",
@@ -47,7 +47,7 @@ bool get_input(double data_arr[], int option)
 
             if (!is_input_correct && not_exit)
             {
-                printf("Ââåäåííûå äàííûå íåêîðåêòíû \n");
+                printf("Ð’Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð½ÐµÐºÐ¾Ñ€ÐµÐºÑ‚Ð½Ñ‹ \n");
 
                 clear_buffer();
 
@@ -66,7 +66,7 @@ bool get_input(double data_arr[], int option)
 
     else
     {
-        printf("Ïîêà ÷òî ïðîãðàììà íå ïîääåðæèâàåò äðóãèå îïåðàöèè :( ");
+        printf("ÐŸÐ¾ÐºÐ° Ñ‡Ñ‚Ð¾ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð½Ðµ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ Ð´Ñ€ÑƒÐ³Ð¸Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ :( ");
         return false;
     }
 
@@ -184,28 +184,28 @@ int quadratic_equation::calculate_roots_return_amount(double roots_array[], doub
 
 void quadratic_equation::print_answer(int roots_amount, double roots_array[])
 {
-    printf("Óðàâíåíèå èìååò êîë-âî ðåøåíèé ðàâíîå: %d \n", roots_amount);
+    printf("Ð£Ñ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐµÑ‚ ÐºÐ¾Ð»-Ð²Ð¾ Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹ Ñ€Ð°Ð²Ð½Ð¾Ðµ: %d \n", roots_amount);
 
     assert(roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
 
     if (roots_amount == NO_ROOTS)
     {
-        printf("Ðåøåíèé íåò.\n");
+        printf("Ð ÐµÑˆÐµÐ½Ð¸Ð¹ Ð½ÐµÑ‚.\n");
     }
 
     else if (roots_amount == ONE_ROOT)
     {
-        printf("Êðàòíûé êîðåíü %lg \n", roots_array[0]);
+        printf("ÐšÑ€Ð°Ñ‚Ð½Ñ‹Ð¹ ÐºÐ¾Ñ€ÐµÐ½ÑŒ %lg \n", roots_array[0]);
     }
 
     else if (roots_amount == INF)
     {
-        printf("Áåñêîíå÷íîå êîëè÷åñòâî ðåøåíèé");
+        printf("Ð‘ÐµÑÐºÐ¾Ð½ÐµÑ‡Ð½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹");
     }
 
     else
     {
-        printf("Êîðåíü %lg, Êîðåíü %lg \n", roots_array[0], roots_array[1]);
+        printf("ÐšÐ¾Ñ€ÐµÐ½ÑŒ %lg, ÐšÐ¾Ñ€ÐµÐ½ÑŒ %lg \n", roots_array[0], roots_array[1]);
     }
 }
 
@@ -330,7 +330,7 @@ void start_unit_test()
 
 void print_help()
 {
-    printf("Âîçìîæíî âàì ïîíàäîáèëàñü ïîääåðæêà... Ìû â âàñ âåðèì!\n");
+    printf("Ð’Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð²Ð°Ð¼ Ð¿Ð¾Ð½Ð°Ð´Ð¾Ð±Ð¸Ð»Ð°ÑÑŒ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ°... ÐœÑ‹ Ð² Ð²Ð°Ñ Ð²ÐµÑ€Ð¸Ð¼!\n");
 
     char help_src[] = "chrome C:\\Users\\User\\Desktop\\Lessons\\Square_equasion\\html\\index.html";
 
@@ -359,7 +359,7 @@ void process_arguments(int                    argc,      const char* argv[],
 
     if (count_processed_options != argc - 1)
     {
-        printf("Íåêîòîðûå àðãóìåíòû ââåäåíû íåêîððåêòíî.\n");
+        printf("ÐÐµÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ Ð²Ð²ÐµÐ´ÐµÐ½Ñ‹ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾.\n");
     }
 }
 
