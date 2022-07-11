@@ -1,4 +1,4 @@
-# Quadratic_equasion
+# Quadratic_equation
 This project solves quadratic equation. .exe file supports console arguments <br>
 /h, -h, --help - Stands for getting some help by redirecting you to documentation<br>
 /t, -t, --test - Stands for running Unit tests which you can modify in specified file.
