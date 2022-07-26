@@ -3,7 +3,8 @@ enum NUM_OF_ROOTS
 {
     NO_ROOTS = 0,
     ONE_ROOT,
-    TWO_ROOTS
+    TWO_ROOTS,
+    INFINITE_ROOTS,
 };
 
 /// Структура для хранения значений аргументов командной строки
@@ -40,7 +41,7 @@ namespace quadratic_equation
 
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 
-void start_unit_test();void start_unit_test();
+void start_unit_test();
 
 /// \brief Функция, отвечающая за отдельный тест
 /// \param test_data[] Массив хранит в себе тестовые данные(коэфиценты и ответы)
@@ -97,13 +98,13 @@ bool check_on_exit();
 void process_arguments(int                    argc,      const char* argv[],
                       const struct OptionDef  Options[], int         options_range);
 
-/// \brief Вывод сообщения с помощью.
+/// \brief Вывод сообщения с помощью. Переход на документацию
 
 void print_help();
 
 
 //Constants
-const int Debug = true;
+const int Debug = false;
 
 const double Accuracy = 0.000001;
 

@@ -2,6 +2,7 @@
 //! @file square_equation.cpp
 //{---------------------------
 
+//йрн ме чгюер юяяепр, рнр еярэ аюцх мю деяепр
 
 #include <txlib.h>
 #include <stdio.h>
@@ -84,12 +85,12 @@ int solve_linear_equation_return_amount(double roots_array[], double koef_a, dou
 
     if (is_zero(koef_a) && is_zero(koef_b))
     {
-        return INF;
+        return INFINITE_ROOTS;
     }
 
     else if (!is_zero(koef_a) && is_zero(koef_b))
     {
-        return INF;
+        return INFINITE_ROOTS;
     }
 
     else if (is_zero(koef_a) && !is_zero(koef_b))
@@ -189,25 +190,24 @@ void quadratic_equation::print_answer(int roots_amount, double roots_array[])
 
     assert(roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
 
-    if (roots_amount == NO_ROOTS)
+    switch (roots_amount)
     {
-        printf("No solutions.\n");
+        case NO_ROOTS:
+            printf("No solutions.\n");
+            break;
+
+        case ONE_ROOT:
+            printf("One root %lg \n", roots_array[0]);
+            break;
+
+        case INFINITE_ROOTS:
+            printf("Infinite amount of solutions");
+            break;
+
+        default:
+            printf("Root %lg, Root %lg \n", roots_array[0], roots_array[1]);
     }
 
-    else if (roots_amount == ONE_ROOT)
-    {
-        printf("One root %lg \n", roots_array[0]);
-    }
-
-    else if (roots_amount == INF)
-    {
-        printf("Infinite amount of solutions");
-    }
-
-    else
-    {
-        printf("Root %lg, Root %lg \n", roots_array[0], roots_array[1]);
-    }
 }
 
 
