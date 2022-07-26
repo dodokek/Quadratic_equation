@@ -67,7 +67,7 @@ bool get_input(double data_arr[], int option)
 
     else
     {
-        printf("So far programm does not support any other operations :( ");
+        printf("So far program does not support any other operations :( ");
         return false;
     }
 
@@ -223,8 +223,7 @@ void quadratic_equation::solve_quadratic_equation(double data_array[])
 }
 
 
-void unit_test_quadratic_equation(double test_data[],
-                                  int    num_of_test)
+void unit_test_quadratic_equation(double test_data[], int    num_of_test)
 {
     assert(test_data != NULL && num_of_test > 0);
 
@@ -367,7 +366,7 @@ void process_arguments(int                    argc,      const char* argv[],
 
 int main (int argc, const char* argv[])
 {
-    assert(argc != 0 && arv != NULL);
+    assert(argc != 0 && argv != NULL);
 
     process_arguments(argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 

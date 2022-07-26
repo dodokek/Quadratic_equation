@@ -1,3 +1,9 @@
 #Excluding chunky files
 html*
 latex*
+
+#excluding trash
+*.log
+*.exe
+*.save
+
