@@ -1,6 +1,6 @@
 #Excluding chunky files
-html*
-latex*
+.html
+.latex
 
 #excluding trash
 *.log
