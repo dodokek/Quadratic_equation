@@ -6,14 +6,13 @@ enum NUM_OF_ROOTS
     TWO_ROOTS
 };
 
-
+/// Структура для хранения значений аргументов командной строки
 struct OptionDef
 {
     const char* option_name;
 
     void (*func)();
 };
-
 
 /// \brief Кластер функций для решений квадратного уравнения
 namespace quadratic_equation

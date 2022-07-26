@@ -15,16 +15,17 @@
 bool get_input(double data_arr[], int option)
 {
     assert(option == 1 && data_arr != NULL);
+
     if (option == SolveSqrOpt)
     {
         bool is_input_correct = false;
         bool not_exit         = true;
 
-        printf("Введите q для выхода\n");
+        printf("Enter q to exit\n");
 
         while (not_exit)
         {
-            printf("Введите коэфиценты уравнения вида ax^2 + bx + c = 0\n");
+            printf("Enter coefficients for equation similar to ax^2 + bx + c = 0\n");
 
             int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
@@ -33,10 +34,10 @@ bool get_input(double data_arr[], int option)
             if (Debug)
             {
                 $sy;
-                printf("line %d: %lg %lg %lg - Коэфиценты\n",
+                printf("line %d: %lg %lg %lg - coefficient\n",
                                     __LINE__, data_arr[0], data_arr[1], data_arr[2]);
 
-                printf("line %d: %d - Значение scanf\n",
+                printf("line %d: %d - Value of scanf\n",
                                     __LINE__, scanf_amount);
 
                 printf("line %d: %d - is_input_correct\n",
@@ -47,7 +48,7 @@ bool get_input(double data_arr[], int option)
 
             if (!is_input_correct && not_exit)
             {
-                printf("Введенные данные некоректны \n");
+                printf("Incorrect data \n");
 
                 clear_buffer();
 
@@ -58,15 +59,15 @@ bool get_input(double data_arr[], int option)
 
             break;
         }
+
         if (Debug) printf("Line - %d, data_arr0 = %lg, INF = %lg\n", __LINE__, data_arr[0], INF);
-        assert(data_arr[0] < INF && data_arr[1] < INF && data_arr[2] < INF);
 
         return true;
     }
 
     else
     {
-        printf("Пока что программа не поддерживает другие операции :( ");
+        printf("So far programm does not support any other operations :( ");
         return false;
     }
 
@@ -184,28 +185,28 @@ int quadratic_equation::calculate_roots_return_amount(double roots_array[], doub
 
 void quadratic_equation::print_answer(int roots_amount, double roots_array[])
 {
-    printf("Уравнение имеет кол-во решений равное: %d \n", roots_amount);
+    printf("Equation has solutions in quantity: %d \n", roots_amount);
 
     assert(roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
 
     if (roots_amount == NO_ROOTS)
     {
-        printf("Решений нет.\n");
+        printf("No solutions.\n");
     }
 
     else if (roots_amount == ONE_ROOT)
     {
-        printf("Кратный корень %lg \n", roots_array[0]);
+        printf("One root %lg \n", roots_array[0]);
     }
 
     else if (roots_amount == INF)
     {
-        printf("Бесконечное количество решений");
+        printf("Infinite amount of solutions");
     }
 
     else
     {
-        printf("Корень %lg, Корень %lg \n", roots_array[0], roots_array[1]);
+        printf("Root %lg, Root %lg \n", roots_array[0], roots_array[1]);
     }
 }
 
@@ -330,7 +331,7 @@ void start_unit_test()
 
 void print_help()
 {
-    printf("Возможно вам понадобилась поддержка... Мы в вас верим!\n");
+    printf("Guess you need some help, try to find an answer in our documentation!\n");
 
     char help_src[] = "chrome C:\\Users\\User\\Desktop\\Lessons\\Square_equasion\\html\\index.html";
 
@@ -359,14 +360,14 @@ void process_arguments(int                    argc,      const char* argv[],
 
     if (count_processed_options != argc - 1)
     {
-        printf("Некоторые аргументы введены некорректно.\n");
+        printf("Some arguments are incorrect.\n");
     }
 }
 
 
 int main (int argc, const char* argv[])
 {
-    assert(argc != 0);
+    assert(argc != 0 && arv != NULL);
 
     process_arguments(argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 
