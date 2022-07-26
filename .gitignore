@@ -1,1 +1,3 @@
-
+#Excluding chunky files
+html*
+latex*
