@@ -10,6 +10,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
+
 #include "square_equation.h"
 
 
@@ -71,8 +72,6 @@ bool get_input(double data_arr[], int option)
         printf("So far program does not support any other operations :( ");
         return false;
     }
-
-
 }
 
 
@@ -102,6 +101,7 @@ int solve_linear_equation_return_amount(double roots_array[], double koef_a, dou
 
     return ONE_ROOT;
 }
+
 
 void clear_buffer()
 {
@@ -180,7 +180,6 @@ int quadratic_equation::calculate_roots_return_amount(double roots_array[], doub
     }
 
     return NO_ROOTS;
-
 }
 
 
@@ -259,8 +258,8 @@ void unit_test_quadratic_equation(double test_data[], int    num_of_test)
                     test_data[x1_indx],  test_data[x2_indx],
                     roots_array[a_indx], roots_array[c_indx]);
     }
-    txSleep(500);
 
+    txSleep(500);
 }
 
 
@@ -281,6 +280,7 @@ FILE* get_tests_file()
     {
         return fopen(default_file_name, "r");
     }
+
     else
     {
         return fopen(file_name, "r");
@@ -332,7 +332,7 @@ void print_help()
 {
     printf("Guess you need some help, try to find an answer in our documentation!\n");
 
-    char help_src[] = "chrome C:\\Users\\User\\Desktop\\Lessons\\Square_equasion\\html\\index.html";
+    char help_src[] = "html\\index.html";
 
     system(help_src);
 }

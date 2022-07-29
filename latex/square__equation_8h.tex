@@ -1,0 +1,227 @@
+\hypertarget{square__equation_8h}{}\doxysection{square\+\_\+equation.\+h File Reference}
+\label{square__equation_8h}\index{square\_equation.h@{square\_equation.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_option_def}{Option\+Def}}
+\begin{DoxyCompactList}\small\item\em Структура для хранения значений аргументов командной строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacequadratic__equation}{quadratic\+\_\+equation}}
+\begin{DoxyCompactList}\small\item\em Кластер функций для решений квадратного уравнения \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{square__equation_8h_adba75749ca0149ec7deff430f61efc85}\label{square__equation_8h_adba75749ca0149ec7deff430f61efc85}} 
+enum \mbox{\hyperlink{square__equation_8h_adba75749ca0149ec7deff430f61efc85}{NUM\+\_\+\+OF\+\_\+\+ROOTS}} \{ {\bfseries NO\+\_\+\+ROOTS} = 0
+, {\bfseries ONE\+\_\+\+ROOT}
+, {\bfseries TWO\+\_\+\+ROOTS}
+, {\bfseries INFINITE\+\_\+\+ROOTS}
+ \}
+\begin{DoxyCompactList}\small\item\em Нумерация количества корей уравнения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacequadratic__equation_a6121bf8dfaa1e214bf5f50eb359ea62b}{quadratic\+\_\+equation\+::print\+\_\+answer}} (int roots\+\_\+amount, double roots\+\_\+array\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция отвечает за вывод ответа, количество корней \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacequadratic__equation_adb18d3669a0d89690857b197c1287cbc}{quadratic\+\_\+equation\+::calculate\+\_\+roots\+\_\+return\+\_\+amount}} (double roots\+\_\+array\mbox{[}$\,$\mbox{]}, double data\+\_\+arr\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция подсчета количества корней и их значения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacequadratic__equation_aa7c8110bf6a074928f892ce19377e25f}{quadratic\+\_\+equation\+::solve\+\_\+quadratic\+\_\+equation}} (double data\+\_\+arr\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Главная функция для решения квадратного уравнения \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_a2622cec9cef6f3847bee38a19c42a91c}\label{square__equation_8h_a2622cec9cef6f3847bee38a19c42a91c}} 
+void {\bfseries start\+\_\+unit\+\_\+test} ()
+\begin{DoxyCompactList}\small\item\em Функция отвечает за вызов Unit тестов квадратного уравнения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{square__equation_8h_a6bf19942d0397c4cfafb75992a1e2118}{unit\+\_\+test\+\_\+quadratic\+\_\+equation}} (double test\+\_\+data\mbox{[}$\,$\mbox{]}, int num\+\_\+of\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Функция, отвечающая за отдельный тест \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{square__equation_8h_a1ff881d4bfda1ce9fb199e139ce7ac1f}{solve\+\_\+linear\+\_\+equation\+\_\+return\+\_\+amount}} (double roots\+\_\+array\mbox{[}$\,$\mbox{]}, double koef\+\_\+a, double koef\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Решение линейного уравнения \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}{is\+\_\+equal}} (double num\+\_\+1, double num\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Проверка равнества двух чисел типа double. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}{get\+\_\+input}} (double data\+\_\+arr\mbox{[}$\,$\mbox{]}, int option)
+\begin{DoxyCompactList}\small\item\em Функция для считывания вводимых данных \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}{is\+\_\+zero}} (double number)
+\begin{DoxyCompactList}\small\item\em Проверка равнества нулю числа типа double. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_aa6094b72269ae47c94cf00e0148199cb}\label{square__equation_8h_aa6094b72269ae47c94cf00e0148199cb}} 
+void {\bfseries fill\+\_\+array\+\_\+with\+\_\+\+NAN} (double arr\mbox{[}$\,$\mbox{]}, int length)
+\begin{DoxyCompactList}\small\item\em Заполнение конкретного массива данными NAN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Вспомогательная функция для очищения буфера ввода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_a526b916de3e67b181a214c96ac307762}\label{square__equation_8h_a526b916de3e67b181a214c96ac307762}} 
+bool {\bfseries check\+\_\+on\+\_\+exit} ()
+\begin{DoxyCompactList}\small\item\em Проверка введенной \char`\"{}q\char`\"{} Для выхода из меню ввода. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{square__equation_8h_a52d54451a39a06d41fe2d716610ea0b5}{process\+\_\+arguments}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, const struct \mbox{\hyperlink{struct_option_def}{Option\+Def}} Options\mbox{[}$\,$\mbox{]}, int options\+\_\+range)
+\begin{DoxyCompactList}\small\item\em Функция обработки аргументов командной строки \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}\label{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}} 
+void {\bfseries print\+\_\+help} ()
+\begin{DoxyCompactList}\small\item\em Вывод сообщения с помощью. Переход на документацию \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{square__equation_8h_a1de51921bec411ed37ade8922d2e1bb2}\label{square__equation_8h_a1de51921bec411ed37ade8922d2e1bb2}} 
+const int {\bfseries Debug} = false
+\item 
+\mbox{\Hypertarget{square__equation_8h_a4576483e774150d83a8d995eee8e2591}\label{square__equation_8h_a4576483e774150d83a8d995eee8e2591}} 
+const double {\bfseries Accuracy} = 0.\+000001
+\item 
+\mbox{\Hypertarget{square__equation_8h_aa6c6d12d6fced92e36caa31e36190d22}\label{square__equation_8h_aa6c6d12d6fced92e36caa31e36190d22}} 
+const int {\bfseries Solve\+Sqr\+Opt} = 1
+\item 
+\mbox{\Hypertarget{square__equation_8h_ab6e0fd90500df1f944577a0564bdaf87}\label{square__equation_8h_ab6e0fd90500df1f944577a0564bdaf87}} 
+const double {\bfseries POISON\+\_\+\+NUM} = 12345.\+6
+\item 
+\mbox{\Hypertarget{square__equation_8h_a475d0f21ac32307321ea32165b85423c}\label{square__equation_8h_a475d0f21ac32307321ea32165b85423c}} 
+const int {\bfseries MAX\+\_\+\+DATA\+\_\+\+SIZE} = 100
+\item 
+\mbox{\Hypertarget{square__equation_8h_ad72118df722eee79f65c9f9ef077e909}\label{square__equation_8h_ad72118df722eee79f65c9f9ef077e909}} 
+const double {\bfseries INF} = 1000000000
+\item 
+const \mbox{\hyperlink{struct_option_def}{Option\+Def}} \mbox{\hyperlink{square__equation_8h_a03c14c1566824c4e6903d39915d9e01d}{Options}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{square__equation_8h_a0ca67d5e1c144b476ef14666c2cfa468}\label{square__equation_8h_a0ca67d5e1c144b476ef14666c2cfa468}} 
+const char {\bfseries default\+\_\+file\+\_\+name} \mbox{[}$\,$\mbox{]} = \char`\"{}tests.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}\label{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}} 
+\index{square\_equation.h@{square\_equation.h}!clear\_buffer@{clear\_buffer}}
+\index{clear\_buffer@{clear\_buffer}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{clear\_buffer()}{clear\_buffer()}}
+{\footnotesize\ttfamily void clear\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Вспомогательная функция для очищения буфера ввода. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & -\/ количество элементов, начиная с 0-\/го для заполнения. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}\label{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}} 
+\index{square\_equation.h@{square\_equation.h}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily bool get\+\_\+input (\begin{DoxyParamCaption}\item[{double}]{data\+\_\+arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{option }\end{DoxyParamCaption})}
+
+
+
+Функция для считывания вводимых данных 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+arr} & -\/ Заполняемый массив данных ввода \\
+\hline
+{\em option} & -\/ Переменная для выбора типа операции. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}\label{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}} 
+\index{square\_equation.h@{square\_equation.h}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily bool is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{num\+\_\+1,  }\item[{double}]{num\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Проверка равнества двух чисел типа double. 
+
+\begin{DoxyNote}{Note}
+Числа сравниваются с точностью до глобальной константы Accuracy 
+\end{DoxyNote}
+\mbox{\Hypertarget{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}\label{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}} 
+\index{square\_equation.h@{square\_equation.h}!is\_zero@{is\_zero}}
+\index{is\_zero@{is\_zero}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{is\_zero()}{is\_zero()}}
+{\footnotesize\ttfamily bool is\+\_\+zero (\begin{DoxyParamCaption}\item[{double}]{number }\end{DoxyParamCaption})}
+
+
+
+Проверка равнества нулю числа типа double. 
+
+\begin{DoxyNote}{Note}
+Число сравнивается с нулем с точностью до глобальной константы Accuracy. 
+\end{DoxyNote}
+\mbox{\Hypertarget{square__equation_8h_a52d54451a39a06d41fe2d716610ea0b5}\label{square__equation_8h_a52d54451a39a06d41fe2d716610ea0b5}} 
+\index{square\_equation.h@{square\_equation.h}!process\_arguments@{process\_arguments}}
+\index{process\_arguments@{process\_arguments}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{process\_arguments()}{process\_arguments()}}
+{\footnotesize\ttfamily void process\+\_\+arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const struct \mbox{\hyperlink{struct_option_def}{Option\+Def}}}]{Options\mbox{[}$\,$\mbox{]},  }\item[{int}]{options\+\_\+range }\end{DoxyParamCaption})}
+
+
+
+Функция обработки аргументов командной строки 
+
+\begin{DoxyItemize}
+\item argc -\/ Количество аргументов командной строки при запуске .exe файла \item argv -\/ Массив значений аргументов \item options -\/ Массив структур с названием аргумента и соответствующей ему функцией \item options\+\_\+range -\/ Размер массива аргументов \begin{DoxyNote}{Note}
+Происходит сравнение всех введенных аргументов со всеми заранее известными. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Функция не может определять какой именно аргумент введен неверно. 
+\end{DoxyWarning}
+\end{DoxyItemize}
+\mbox{\Hypertarget{square__equation_8h_a1ff881d4bfda1ce9fb199e139ce7ac1f}\label{square__equation_8h_a1ff881d4bfda1ce9fb199e139ce7ac1f}} 
+\index{square\_equation.h@{square\_equation.h}!solve\_linear\_equation\_return\_amount@{solve\_linear\_equation\_return\_amount}}
+\index{solve\_linear\_equation\_return\_amount@{solve\_linear\_equation\_return\_amount}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{solve\_linear\_equation\_return\_amount()}{solve\_linear\_equation\_return\_amount()}}
+{\footnotesize\ttfamily int solve\+\_\+linear\+\_\+equation\+\_\+return\+\_\+amount (\begin{DoxyParamCaption}\item[{double}]{roots\+\_\+array\mbox{[}$\,$\mbox{]},  }\item[{double}]{koef\+\_\+a,  }\item[{double}]{koef\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+Решение линейного уравнения 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roots\+\_\+array} & Заполняемый список корней уравнения \\
+\hline
+{\em koef\+\_\+a,koef\+\_\+b} & -\/ Коэфиценты линейного уравнения вида ax + b = 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Может быть бесконечное количество решений 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Количество корней 
+\end{DoxyReturn}
+\mbox{\Hypertarget{square__equation_8h_a6bf19942d0397c4cfafb75992a1e2118}\label{square__equation_8h_a6bf19942d0397c4cfafb75992a1e2118}} 
+\index{square\_equation.h@{square\_equation.h}!unit\_test\_quadratic\_equation@{unit\_test\_quadratic\_equation}}
+\index{unit\_test\_quadratic\_equation@{unit\_test\_quadratic\_equation}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{unit\_test\_quadratic\_equation()}{unit\_test\_quadratic\_equation()}}
+{\footnotesize\ttfamily void unit\+\_\+test\+\_\+quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{test\+\_\+data\mbox{[}$\,$\mbox{]},  }\item[{int}]{num\+\_\+of\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Функция, отвечающая за отдельный тест 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+data\mbox{[}$\,$\mbox{]}} & Массив хранит в себе тестовые данные(коэфиценты и ответы) \\
+\hline
+{\em num\+\_\+of\+\_\+test} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Можно впасть в тильт от написания тестов 
+\end{DoxyWarning}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{square__equation_8h_a03c14c1566824c4e6903d39915d9e01d}\label{square__equation_8h_a03c14c1566824c4e6903d39915d9e01d}} 
+\index{square\_equation.h@{square\_equation.h}!Options@{Options}}
+\index{Options@{Options}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Options}{Options}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_option_def}{Option\+Def}} Options\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}-\/-\/test"{}}, \mbox{\hyperlink{square__equation_8h_a2622cec9cef6f3847bee38a19c42a91c}{start\_unit\_test}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}-\/t"{}},     \mbox{\hyperlink{square__equation_8h_a2622cec9cef6f3847bee38a19c42a91c}{start\_unit\_test}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}/t"{}},     \mbox{\hyperlink{square__equation_8h_a2622cec9cef6f3847bee38a19c42a91c}{start\_unit\_test}}\},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}-\/-\/help"{}}, \mbox{\hyperlink{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}{print\_help}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}-\/h"{}},     \mbox{\hyperlink{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}{print\_help}}\},}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}/h"{}},     \mbox{\hyperlink{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}{print\_help}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
