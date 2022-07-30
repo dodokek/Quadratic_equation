@@ -2,7 +2,6 @@
 //! @file unit_tests.h
 //{---------------------------
 
-
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 
 void start_unit_test();
@@ -16,22 +15,15 @@ void unit_test_quadratic_equation (double test_data[], int num_of_test);
 
 FILE* get_tests_file();
 
-
-//Constants
-
-const char default_file_name[] = "tests.txt";
-
-//Constants
-
-
 void start_unit_test()
 {
+    Debug = true;
+
     FILE *tests_file = get_tests_file();
 
     if (tests_file == NULL)
     {
-        printf ("Failed to open the file zhopa.txt\n");
-        getchar();
+        printf ("Failed to open the file %s\n", default_file_name);
 
         return;
     }
@@ -99,31 +91,29 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
                      roots_array[a_indx], roots_array[c_indx]);
     }
 
-    txSleep (500);
+    txSleep (100);
 }
 
 
 FILE* get_tests_file()
 {
 
-    char file_name[] = {};
+    char file_name[]  = {};
 
-    char is_default[] = "def";
-
-    printf ("Enter file name. Enter def to keep tests.txt\n");
-
-    scanf ("%s", file_name);
-
-    assert (file_name[0] != '\0');
-
-    if (strcmp (file_name, is_default) == 0)
+    if (strcmp (default_file_name, "keyboard_input") == 0)
     {
-        return fopen (default_file_name, "r");
+        printf ("Enter file name.\n");
+
+        scanf  ("%s", file_name);
+
+        assert (file_name[0] != '\0');
+
+        return fopen (file_name, "r");
     }
 
     else
     {
-        return fopen (file_name, "r");
+        return fopen (default_file_name, "r");
     }
 
     printf ("File name %s\n", file_name);

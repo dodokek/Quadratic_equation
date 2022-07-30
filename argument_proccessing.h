@@ -3,6 +3,24 @@
 //{---------------------------
 
 
+/// —труктура дл€ хранени€ значений аргументов командной строки
+struct OptionDef
+{
+    const char* option_name;
+
+    void (*func)();
+};
+
+
+//Global
+
+bool Debug = false;
+
+char default_file_name[] = "tests.txt";
+
+//Global
+
+
 /// \brief   ‘ункци€ обработки аргументов командной строки
 /// \arg     argc -  оличество аргументов командной строки при запуске .exe файла
 /// \arg     argv - ћассив значений аргументов
@@ -13,14 +31,6 @@
 
 void process_arguments (int                    argc,      const char* argv[],
                        const struct OptionDef  Options[], int         options_range);
-
-/// —труктура дл€ хранени€ значений аргументов командной строки
-struct OptionDef
-{
-    const char* option_name;
-
-    void (*func)();
-};
 
 
 void print_help()
@@ -46,14 +56,22 @@ void process_arguments (int                    argc,      const char* argv[],
         {
             if (strcmp(argv[i], Options[j].option_name) == 0)
             {
-                Options[j].func();
+                if ((argv[i][1] == 't' || argv[i][2] == 't') && argc != i + 1)
+                {
+                    strcpy (default_file_name, argv[i+1]);
+
+                    if (argv[i+1][0] == '-' && argv[i+1][1] == '\0') default_file_name[0] = '\0';
+                }
+
+                Options[j].func (argc, argv, i);
+
                 count_processed_options++;
             }
         }
     }
 
-    if (count_processed_options != argc - 1)
-    {
-        printf ("Some arguments are incorrect.\n");
-    }
+    //if (count_processed_options != argc - 1)
+    //{
+    //    printf ("Some arguments are incorrect.\n");
+    //}
 }

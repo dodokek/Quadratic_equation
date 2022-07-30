@@ -13,8 +13,8 @@
 #include <assert.h>
 
 #include "square_equation.h"
-#include "unit_tests.h"
 #include "argument_proccessing.h"
+#include "unit_tests.h"
 #include "input.h"
 
 //-----------------------------------------------------------------------------
@@ -42,15 +42,18 @@ int main (int argc, const char* argv[])
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 
-    double data_array[MAX_DATA_SIZE] = {};
-
-    fill_array (data_array, MAX_DATA_SIZE, NAN);
-
-    bool data_is_correct = get_input (data_array, SolveSqrOpt);
-
-    if (data_is_correct)
+    if (!Debug)
     {
-        quadratic_equation::solve_quadratic_equation (data_array);
+        double data_array[MAX_DATA_SIZE] = {};
+
+        fill_array (data_array, MAX_DATA_SIZE, NAN);
+
+        bool data_is_correct = get_input (data_array, SolveSqrOpt);
+
+        if (data_is_correct)
+        {
+            quadratic_equation::solve_quadratic_equation (data_array);
+        }
     }
 }
 
@@ -126,14 +129,17 @@ int solve_linear_equation (double roots_array[], double koef_a, double koef_b, d
         {
             return NO_ROOTS;
         }
+
         else if (is_zero (koef_b) && is_zero (koef_c))
         {
             return INFINITE_ROOTS;
         }
+
         else if (!is_zero (koef_b) && is_zero (koef_c))
         {
             return INFINITE_ROOTS;
         }
+
         else
         {
             roots_array[x1_indx] = -koef_c / koef_b;

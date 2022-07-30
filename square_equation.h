@@ -78,8 +78,6 @@ void print_help();
 
 //Constants
 
-const int Debug = false;
-
 const double Accuracy = 0.000001;
 
 const int SolveSqrOpt = 1;
