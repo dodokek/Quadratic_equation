@@ -6,19 +6,19 @@
 /// —труктура дл€ хранени€ значений аргументов командной строки
 struct OptionDef
 {
-    const char* option_name;
+    const char* name;
 
-    void (*func)();
+    int (*func)(int argc, const char* argv[], int argc_pos);
 };
 
 
-//Global
+//Global/Constants
 
 bool Debug = false;
 
-char default_file_name[] = "tests.txt";
+const char default_file_name[] = "tests.txt";
 
-//Global
+//Global/Constants
 
 
 /// \brief   ‘ункци€ обработки аргументов командной строки
@@ -32,14 +32,19 @@ char default_file_name[] = "tests.txt";
 void process_arguments (int                    argc,      const char* argv[],
                        const struct OptionDef  Options[], int         options_range);
 
+int print_help(int argc, const char* argv[], int pos);
 
-void print_help()
+//-----------------------------------------------------------------------------
+
+int print_help(int argc, const char* argv[], int pos)
 {
     printf ("Guess you need some help, try to find an answer in our documentation!\n");
 
     char help_src[] = "html\\index.html";
 
     system (help_src);
+
+    return 0;
 }
 
 
@@ -50,22 +55,15 @@ void process_arguments (int                    argc,      const char* argv[],
 
     int count_processed_options = 0;
 
-    for (int i = 0; i < argc; i++)
+    for (int argc_pos = 0; argc_pos < argc; argc_pos++)
     {
-        for(int j = 0; j < options_range; j++)
+        for(int i = 0; i < options_range; i++)
         {
-            if (strcmp(argv[i], Options[j].option_name) == 0)
+            if (strcmp(argv[argc_pos], Options[i].name) == 0)
             {
-                if ((argv[i][1] == 't' || argv[i][2] == 't') && argc != i + 1)
-                {
-                    strcpy (default_file_name, argv[i+1]);
+                int skip_argv = Options[i].func(argc, argv, argc_pos);
 
-                    if (argv[i+1][0] == '-' && argv[i+1][1] == '\0') default_file_name[0] = '\0';
-                }
-
-                Options[j].func (argc, argv, i);
-
-                count_processed_options++;
+                argc_pos += skip_argv;
             }
         }
     }

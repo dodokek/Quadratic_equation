@@ -4,7 +4,7 @@
 
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 
-void start_unit_test();
+int start_unit_test (int argc, const char* argv[], int pos);
 
 /// \brief Функция, отвечающая за отдельный тест
 /// \param test_data[] Массив хранит в себе тестовые данные(коэфиценты и ответы)
@@ -13,24 +13,52 @@ void start_unit_test();
 
 void unit_test_quadratic_equation (double test_data[], int num_of_test);
 
-FILE* get_tests_file();
+FILE* get_tests_file(char file_name[]);
 
-void start_unit_test()
+int start_unit_test (int argc, const char* argv[], int pos)
 {
     Debug = true;
+    int tests_amount = INF;
+    char file_name[] = "";
+    int argument_indx = 0;
 
-    FILE *tests_file = get_tests_file();
+    for (int argc_pos = pos + 1; argc_pos < argc; argc_pos++, argument_indx++)
+    {
+        if (argv[argc_pos][0] != '-')
+        {
+            switch (argument_indx)
+            {
+                case 0:
+                    strcpy (file_name, argv[argc_pos]);
+                    break;
+
+                case 1:
+                    tests_amount = atoi(argv[argc_pos]);
+                    break;
+
+                default:
+                    printf("Too much additional arguments\n");
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
+
+    FILE *tests_file = get_tests_file(file_name);
 
     if (tests_file == NULL)
     {
         printf ("Failed to open the file %s\n", default_file_name);
 
-        return;
+        return argument_indx;
     }
 
     int num_of_test = 1;
 
-    while (true)
+    while (num_of_test <= tests_amount)
     {
         int check_EOF = 1;
         double test_data[5] = {};
@@ -51,6 +79,8 @@ void start_unit_test()
     }
 
     fclose (tests_file);
+
+    return argument_indx;
 }
 
 
@@ -95,12 +125,11 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 }
 
 
-FILE* get_tests_file()
+FILE* get_tests_file(char file_name[])
 {
 
-    char file_name[]  = {};
 
-    if (strcmp (default_file_name, "keyboard_input") == 0)
+    if (file_name == '\0')
     {
         printf ("Enter file name.\n");
 
@@ -108,13 +137,17 @@ FILE* get_tests_file()
 
         assert (file_name[0] != '\0');
 
+        printf ("File name %s\n", file_name);
+
         return fopen (file_name, "r");
     }
 
     else
     {
+        printf ("File name %s\n", file_name);
+
         return fopen (default_file_name, "r");
     }
 
-    printf ("File name %s\n", file_name);
+
 }
