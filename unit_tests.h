@@ -17,6 +17,7 @@ FILE* get_tests_file(char file_name[]);
 
 int start_unit_test (int argc, const char* argv[], int pos)
 {
+    __TRACK__
     Debug = true;
     int tests_amount = INF;
     char file_name[] = "";
@@ -86,6 +87,7 @@ int start_unit_test (int argc, const char* argv[], int pos)
 
 void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 {
+    __TRACK__
     assert (test_data != NULL && num_of_test > 0);
 
     int a_indx = 0;
@@ -128,8 +130,8 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 FILE* get_tests_file(char file_name[])
 {
 
-
-    if (file_name != '\0')
+    __TRACK__
+    if (file_name[0] != '\0')
     {
         printf ("File name %s\n", file_name);
 
