@@ -229,9 +229,9 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
     {
         double diskr_sqrt = sqrt (diskr);
 
-        roots_array[x1_indx] = ( -koef_b + diskr_sqrt) / (2 * koef_a);
+        roots_array[x1_indx] = ( -koef_b + diskr_sqrt ) / (2 * koef_a);
 
-        roots_array[x2_indx] = ( -koef_b - diskr_sqrt) / (2 * koef_a);
+        roots_array[x2_indx] = ( -koef_b - diskr_sqrt ) / (2 * koef_a);
 
         return TWO_ROOTS;
     }
