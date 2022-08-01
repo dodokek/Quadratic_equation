@@ -1,0 +1,24 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+	quotePath = false
+	pager = cat
+	editor = far.exe -e
+	autoCrLf = false
+	safeCrLf = true
+	eol = crlf
+[user]
+	name = User
+	email = User@IT-7PD
+[diff]
+	guiTool = kdiff3
+[filter "win-1251"]
+	clean = iconv -f cp1251 -t utf-8
+	smudge = iconv -f utf-8  -t cp1251
+	required = false
+[gui]
+	encoding = utf-8
