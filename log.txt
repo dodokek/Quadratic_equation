@@ -1,15 +1,99 @@
 Started logging...
-X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
-X:\square_equation.cpp:214>>> x1: 0, x2: 1
+|X:\log.h:050 f1
+| X:\log.h:050 f2
+|  X:\log.h:050 f1
+|  X:\log.h:060 f1
+| X:\log.h:060 f2
+|X:\log.h:060 f1
+X:\square_equation.cpp:104>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:240>>> x1: 0, x2: 1
 Finishing logging... Goodluck in debugging :)
 
 Started logging...
-X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
-X:\square_equation.cpp:214>>> x1: 0, x2: 1
+|>>>X:\log.h:050 f1
+|    >>>X:\log.h:050 f2
+|        >>>X:\log.h:050 f1
+|        >>>X:\log.h:060 f1
+|    >>>X:\log.h:060 f2
+|>>>X:\log.h:060 f1
+X:\square_equation.cpp:104>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:240>>> x1: 0, x2: 1
 Finishing logging... Goodluck in debugging :)
 
 Started logging...
-X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
-X:\square_equation.cpp:214>>> x1: 0, x2: 1
+|X:\log.h:050 f1
+|    X:\log.h:050 f2
+|        X:\log.h:050 f1
+|        X:\log.h:060 f1
+|    X:\log.h:060 f2
+|X:\log.h:060 f1
+X:\square_equation.cpp:104>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:240>>> x1: 0, x2: 1
+Finishing logging... Goodluck in debugging :)
+
+Started logging...
+|    X:\log.h:052 fill_array
+|    X:\log.h:062 fill_array
+|    X:\log.h:052 get_input
+X:\square_equation.cpp:080>>> printf ("Enter q to exit\n")
+|    X:\log.h:062 get_input
+|    X:\log.h:052 solve_quadratic_equation
+|        X:\log.h:052 calculate_roots
+X:\square_equation.cpp:221>>> x1: 0, x2: 1
+|            X:\log.h:052 is_zero
+|            X:\log.h:062 is_zero
+|            X:\log.h:052 is_zero
+|            X:\log.h:062 is_zero
+|            X:\log.h:052 is_zero
+|            X:\log.h:062 is_zero
+|        X:\log.h:062 calculate_roots
+|        X:\log.h:052 print_answer
+|        X:\log.h:062 print_answer
+|    X:\log.h:062 solve_quadratic_equation
+|X:\log.h:062 main
+Finishing logging... Goodluck in debugging :)
+
+Started logging...
+|    X:\log.h:054 fill_array
+|    X:\log.h:064 fill_array
+|    X:\log.h:054 get_input
+        X:\square_equation.cpp:080>>> printf ("Enter q to exit\n")
+|    X:\log.h:064 get_input
+|    X:\log.h:054 solve_quadratic_equation
+|        X:\log.h:054 calculate_roots
+            X:\square_equation.cpp:221>>> x1: 0, x2: 1
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|        X:\log.h:064 calculate_roots
+|        X:\log.h:054 print_answer
+|        X:\log.h:064 print_answer
+|    X:\log.h:064 solve_quadratic_equation
+|X:\log.h:064 main
+Finishing logging... Goodluck in debugging :)
+
+Started logging...
+|    X:\log.h:054 fill_array
+|    X:\log.h:064 fill_array
+|    X:\log.h:054 get_input
+        X:\square_equation.cpp:080>>> printf ("Enter q to exit\n")
+|    X:\log.h:064 get_input
+|    X:\log.h:054 solve_quadratic_equation
+|        X:\log.h:054 calculate_roots
+            X:\square_equation.cpp:221>>> x1: 0, x2: 1
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|            X:\log.h:054 is_zero
+|            X:\log.h:064 is_zero
+|        X:\log.h:064 calculate_roots
+|        X:\log.h:054 print_answer
+|        X:\log.h:064 print_answer
+|    X:\log.h:064 solve_quadratic_equation
+|X:\log.h:064 main
 Finishing logging... Goodluck in debugging :)
 

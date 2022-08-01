@@ -42,12 +42,13 @@ const OptionDef Options[] =
 
 // Command line arguments
 
-
 int main (int argc, const char* argv[])
 {
     assert (argc != 0 && argv != NULL);
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+
+    __TRACK__
 
     if (Debug)
     {
@@ -69,6 +70,7 @@ int main (int argc, const char* argv[])
 
 bool get_input (double data_arr[], int option)
 {
+    __TRACK__
     assert (option == 1 && data_arr != NULL);
 
     if (option == SolveSqrOpt)
@@ -126,6 +128,7 @@ bool get_input (double data_arr[], int option)
 
 int solve_linear_equation (double roots_array[], double koef_a, double koef_b, double koef_c)
 {
+    __TRACK__
     assert (roots_array != NULL && koef_a < INF && koef_b < INF);
 
     //ax + b = 0
@@ -183,6 +186,7 @@ bool is_zero (double number)
 
 void fill_array (double arr[], int length, double filler)
 {
+    __TRACK__
     assert (length <= MAX_DATA_SIZE && arr != NULL);
 
     for (int i = 0; i< length; i++)
@@ -202,6 +206,7 @@ bool is_equal (double num_1, double num_2)
 
 int quadratic_equation::calculate_roots (double roots_array[], double data_arr[])
 {
+    __TRACK__
     assert (roots_array != NULL && data_arr != NULL);
 
     double koef_a = data_arr[0];
@@ -245,6 +250,7 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
 
 void quadratic_equation::print_answer (int roots_amount, double roots_array[])
 {
+    __TRACK__
     printf ("Equation has solutions in quantity: %d \n", roots_amount);
 
     assert (roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
@@ -272,6 +278,7 @@ void quadratic_equation::print_answer (int roots_amount, double roots_array[])
 
 void quadratic_equation::solve_quadratic_equation (double data_array[])
 {
+    __TRACK__
     assert (data_array != NULL);
 
     double roots_array[2] = {POISON_NUM, POISON_NUM};
