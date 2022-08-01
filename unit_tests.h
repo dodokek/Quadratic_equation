@@ -49,7 +49,7 @@ int start_unit_test (int argc, const char* argv[], int pos)
 
     FILE *tests_file = get_tests_file(file_name);
 
-    if (tests_file == NULL)
+    if (!tests_file)
     {
         printf ("Failed to open the file %s\n", default_file_name);
 
@@ -129,14 +129,8 @@ FILE* get_tests_file(char file_name[])
 {
 
 
-    if (file_name == '\0')
+    if (file_name != '\0')
     {
-        printf ("Enter file name.\n");
-
-        scanf  ("%s", file_name);
-
-        assert (file_name[0] != '\0');
-
         printf ("File name %s\n", file_name);
 
         return fopen (file_name, "r");

@@ -16,6 +16,9 @@
 #include "argument_proccessing.h"
 #include "unit_tests.h"
 #include "input.h"
+#include "log.h"
+
+#define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
 //-----------------------------------------------------------------------------
 
@@ -30,7 +33,11 @@ const OptionDef Options[] =
 
     {"--help", print_help},
     {"-h",     print_help},
-    {"/h",     print_help}
+    {"/h",     print_help},
+
+    {"--log",  open_log},
+    {"-l",     open_log},
+    {"/l",     open_log}
 };
 
 // Command line arguments
@@ -42,7 +49,7 @@ int main (int argc, const char* argv[])
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 
-    if (!Debug)
+    if (Debug)
     {
         double data_array[MAX_DATA_SIZE] = {};
 
@@ -55,6 +62,8 @@ int main (int argc, const char* argv[])
             quadratic_equation::solve_quadratic_equation (data_array);
         }
     }
+
+    fclose (LOG_FILE);
 }
 
 
@@ -66,7 +75,7 @@ bool get_input (double data_arr[], int option)
     {
         bool is_input_correct = false;
 
-        printf ("Enter q to exit\n");
+        DO ( printf ("Enter q to exit\n") );
 
         while (!is_input_correct)
         {
@@ -78,15 +87,15 @@ bool get_input (double data_arr[], int option)
 
             if (Debug)
             {
-                $sy;
-                printf ("line %d: %lg %lg %lg - coefficient\n",
-                                    __LINE__, data_arr[0], data_arr[1], data_arr[2]);
+                $y;
+                _$ printf ("%lg %lg %lg - coefficient\n",
+                                     data_arr[0], data_arr[1], data_arr[2]);
 
-                printf ("line %d: %d - Value of scanf\n",
-                                    __LINE__, scanf_amount);
+                _$ printf ("%d - Value of scanf\n",
+                                     scanf_amount);
 
-                printf ("line %d: %d - is_input_correct\n",
-                                    __LINE__, is_input_correct);
+                _$ printf ("%d - is_input_correct\n",
+                                     is_input_correct);
             }
 
             if (check_on_exit('q'))
@@ -201,6 +210,8 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
 
     int x1_indx = 0;
     int x2_indx = 1;
+
+    LOG_ARGV("x1: %d, x2: %d", x1_indx, x2_indx);
 
     if (is_zero (koef_a) || is_zero(koef_c))
     {

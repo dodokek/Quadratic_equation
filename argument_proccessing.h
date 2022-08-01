@@ -14,7 +14,7 @@ struct OptionDef
 
 //Global/Constants
 
-bool Debug = false;
+bool Debug = true;
 
 const char default_file_name[] = "tests.txt";
 
