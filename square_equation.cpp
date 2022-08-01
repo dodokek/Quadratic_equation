@@ -79,7 +79,7 @@ bool get_input (double data_arr[], int option)
 
         while (!is_input_correct)
         {
-            printf ("Enter coefficients for equation similar to ax^2 + bx + c = 0\n");
+            printf ("Enter coefficents for equation similar to ax^2 + bx + c = 0\n");
 
             int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
