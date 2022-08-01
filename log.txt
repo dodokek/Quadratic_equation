@@ -1,2 +1,15 @@
-X:\square_equation.cpp:078>>>printf ("Enter q to exit\n")
-X:\square_equation.cpp:214>>>x1: 0, x2: 1
+Started logging...
+X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:214>>> x1: 0, x2: 1
+Finishing logging... Goodluck in debugging :)
+
+Started logging...
+X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:214>>> x1: 0, x2: 1
+Finishing logging... Goodluck in debugging :)
+
+Started logging...
+X:\square_equation.cpp:078>>> printf ("Enter q to exit\n")
+X:\square_equation.cpp:214>>> x1: 0, x2: 1
+Finishing logging... Goodluck in debugging :)
+

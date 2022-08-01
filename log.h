@@ -1,13 +1,13 @@
 
 //-----------------------------------------------------------------------------
 
-#define $(X) printf ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
+#define $(X)  printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
 
-#define DO(X) fprintf (LOG_FILE, "%s:%03d>>>" #X "\n", __FILE__, __LINE__), X
+#define DO(X) fprintf (LOG_FILE, "%s:%03d>>> " #X "\n", __FILE__, __LINE__), X
 
-#define LOG_ARGV(...) fprintf (LOG_FILE, "%s:%03d>>>", __FILE__, __LINE__),  \
+#define LOG_ARGV(...) fprintf (LOG_FILE, "%s:%03d>>> ", __FILE__, __LINE__),  \
                       fprintf (LOG_FILE, __VA_ARGS__),                       \
-                      fputc ('\n', LOG_FILE)
+                      fputc   ('\n', LOG_FILE)
 
 //Global/Const-----------------------------------------------------------------
 
@@ -15,7 +15,9 @@ FILE* LOG_FILE = nullptr;
 
 int LOG_LEVEL = 9;
 
-char DEFAULT_LOG_NAME[] = "log.txt";
+const char DEFAULT_LOG_NAME[] = "log.txt";
+
+char ACTIVE_LOGFILE_NAME[] = "log.txt";
 
 //Global/Const-----------------------------------------------------------------
 
@@ -25,16 +27,22 @@ bool get_log_file(char file_name[]);
 
 int open_log (int argc, const char* argv[], int pos);
 
+void finish_log ();
+
 //-----------------------------------------------------------------------------
 
 
 bool get_log_file(char file_name[])
 {
+    atexit(&finish_log);
+
     if (file_name[0] != '\0')
     {
         printf ("File name %s\n", file_name);
 
         LOG_FILE = fopen (file_name, "a");
+
+        strcpy(ACTIVE_LOGFILE_NAME, file_name);
 
         return true;
     }
@@ -88,9 +96,21 @@ int open_log (int argc, const char* argv[], int pos)
     if (!LOG_FILE)
     {
         printf ("Failed to open the file %s\n", file_name);
+        return argument_indx;
     }
 
+    fprintf (LOG_FILE, "Started logging...\n");
+
     return argument_indx;
+}
+
+
+void finish_log ()
+{
+    fprintf (LOG_FILE, "Finishing logging... Goodluck in debugging :)\n");
+    fputc   ('\n', LOG_FILE);
+
+    fclose (LOG_FILE);
 }
 
 
