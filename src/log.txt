@@ -1,0 +1,72 @@
+Started logging...
+                 X:\log.h:053 |    start_unit_test
+                 X:\log.h:053 |        get_tests_file
+                 X:\log.h:064 |        get_tests_file
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:053 |                solve_linear_equation
+                 X:\log.h:064 |                solve_linear_equation
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:053 |                solve_linear_equation
+                 X:\log.h:064 |                solve_linear_equation
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:053 |                solve_linear_equation
+                 X:\log.h:064 |                solve_linear_equation
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:053 |        unit_test_quadratic_equation
+                 X:\log.h:053 |            calculate_roots
+   X:\square_equation.cpp:222 |                x1: 0, x2: 1
+                 X:\log.h:053 |                solve_linear_equation
+                 X:\log.h:064 |                solve_linear_equation
+                 X:\log.h:064 |            calculate_roots
+                 X:\log.h:064 |        unit_test_quadratic_equation
+                 X:\log.h:064 |    start_unit_test
+                 X:\log.h:064 | process_arguments
+                 X:\log.h:053 | main
+                 X:\log.h:053 |    fill_array
+                 X:\log.h:064 |    fill_array
+                 X:\log.h:053 |    get_input
+   X:\square_equation.cpp:083 |           X:\square_equation.cpp:083>>> printf ("Enter q to exit\n")
+                 X:\log.h:053 |        check_on_exit
+                 X:\log.h:064 |        check_on_exit
+                 X:\log.h:064 |    get_input
+                 X:\log.h:053 |    solve_quadratic_equation
+                 X:\log.h:053 |        calculate_roots
+   X:\square_equation.cpp:222 |            x1: 0, x2: 1
+                 X:\log.h:064 |        calculate_roots
+                 X:\log.h:053 |        print_answer
+                 X:\log.h:064 |        print_answer
+                 X:\log.h:064 |    solve_quadratic_equation
+                 X:\log.h:064 | main
+Finishing logging... Goodluck in debugging :)
+

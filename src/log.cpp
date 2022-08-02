@@ -11,7 +11,7 @@ int LOG_LEVEL = 9;
 
 const char DEFAULT_LOG_NAME[] = "log.txt";
 
-char ACTIVE_LOGFILE_NAME[] = "log.txt";
+char ACTIVE_LOGFILE_NAME[]    = "log.txt";
 
 int SPACING = 0;
 

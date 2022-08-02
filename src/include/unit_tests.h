@@ -2,6 +2,17 @@
 //! @file unit_tests.h
 //{---------------------------
 
+#include <txlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "log.h"
+
+
+
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 
 int start_unit_test (int argc, const char* argv[], int pos);

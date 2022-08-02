@@ -19,6 +19,12 @@
 #define __TRACK__       MakeSpace Tmp (__func__);
 
 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <assert.h>
+
 //-----------------------------------------------------------------------------
 
 bool get_log_file(char file_name[]);
@@ -68,7 +74,7 @@ extern FILE* LOG_FILE = nullptr;
 
 extern int LOG_LEVEL = 9;
 
-extern const char DEFAULT_LOG_NAME[] = "log.txt";
+const char DEFAULT_LOG_NAME[] = "log.txt";
 
 extern char ACTIVE_LOGFILE_NAME[] = "log.txt";
 

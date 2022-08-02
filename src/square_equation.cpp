@@ -13,6 +13,11 @@
 #include <assert.h>
 
 #include "include/square_equation.h"
+#include "argument_proccessing.h"
+#include "input.h"
+#include "unit_test.h"
+#include "log.h"
+
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
 //-----------------------------------------------------------------------------

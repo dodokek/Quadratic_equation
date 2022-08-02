@@ -2,6 +2,14 @@
 //! @file argument_proccessing.h
 //{---------------------------
 
+#include <txlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "log.h"
 
 /// Структура для хранения значений аргументов командной строки
 struct OptionDef
@@ -14,7 +22,7 @@ struct OptionDef
 
 //Global/Constant
 
-extern const char default_file_name[] = "tests.txt";
+const char default_file_name[] = "tests.txt";
 
 //Global/Constants
 
@@ -33,4 +41,5 @@ void process_arguments (int                    argc,      const char* argv[],
 int print_help(int argc, const char* argv[], int pos);
 
 //-----------------------------------------------------------------------------
+
 
