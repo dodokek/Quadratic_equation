@@ -1,0 +1,16 @@
+In file included from square_equation.cpp:16:0:
+../unit_test.h:24:49: warning: redundant redeclaration of 'bool is_equal(double, double)' in same scope [-Wredundant-decls]
+ extern bool is_equal (double num_1, double num_2);
+                                                 ^
+In file included from square_equation.cpp:14:0:
+../square_equation.h:59:6: warning: previous declaration of 'bool is_equal(double, double)' [-Wredundant-decls]
+ bool is_equal (double num_1, double num_2);
+      ^
+In file included from square_equation.cpp:16:0:
+../unit_test.h:28:72: warning: redundant redeclaration of 'int quadratic_equation::calculate_roots(double*, double*)' in same scope [-Wredundant-decls]
+     extern int calculate_roots (double roots_array[], double data_arr[]);
+                                                                        ^
+In file included from square_equation.cpp:14:0:
+../square_equation.h:37:9: warning: previous declaration of 'int quadratic_equation::calculate_roots(double*, double*)' [-Wredundant-decls]
+     int calculate_roots (double roots_array[], double data_arr[]);
+         ^

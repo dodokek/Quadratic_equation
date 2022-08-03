@@ -2,6 +2,12 @@
 //! @file square_equation.h
 //{---------------------------
 
+#include <txlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <assert.h>
 
 /// Нумерация количества корей уравнения.
 enum NUM_OF_ROOTS
@@ -75,17 +81,3 @@ bool check_on_exit();
 
 void print_help();
 
-
-//Constants
-
-const double Accuracy = 0.000001;
-
-const int SolveSqrOpt = 1;
-
-const double POISON_NUM = 12345.6;
-
-const int MAX_DATA_SIZE = 100;
-
-const double INF = 1000000000;
-
-//---------

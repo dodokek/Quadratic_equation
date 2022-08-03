@@ -1,24 +1,26 @@
-//{---------------------------
-//! @file unit_tests.h
-//{---------------------------
 
-/// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
+#include "../unit_test.h"
 
-int start_unit_test (int argc, const char* argv[], int pos);
 
-/// \brief Функция, отвечающая за отдельный тест
-/// \param test_data[] Массив хранит в себе тестовые данные(коэфиценты и ответы)
-/// \param num_of_test
-/// \warning Можно впасть в тильт от написания тестов
+//Constants
 
-void unit_test_quadratic_equation (double test_data[], int num_of_test);
+const double Accuracy = 0.000001;
 
-FILE* get_tests_file(char file_name[]);
+const int SolveSqrOpt = 1;
+
+const double POISON_NUM = 12345.6;
+
+const int MAX_DATA_SIZE = 100;
+
+const double INF = 1000000000;
+
+const char *default_file_name = "tests.txt";
+
+//---------
 
 int start_unit_test (int argc, const char* argv[], int pos)
 {
-    __TRACK__
-    Debug = true;
+    //__TRACK__
     int tests_amount = INF;
     char file_name[] = "";
     int argument_indx = 0;
@@ -87,7 +89,7 @@ int start_unit_test (int argc, const char* argv[], int pos)
 
 void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 {
-    __TRACK__
+    //__TRACK__
     assert (test_data != NULL && num_of_test > 0);
 
     int a_indx = 0;
@@ -100,8 +102,6 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
     double roots_array[2] = { POISON_NUM, POISON_NUM };
 
     quadratic_equation::calculate_roots (roots_array, test_data);
-
-    assert (roots_array[0] == roots_array[0] && roots_array[1] == roots_array[1]);
 
     if (roots_array[0] < roots_array[1])
     {
@@ -130,7 +130,7 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 FILE* get_tests_file(char file_name[])
 {
 
-    __TRACK__
+    //__TRACK__
     if (file_name[0] != '\0')
     {
         printf ("File name %s\n", file_name);
