@@ -11,10 +11,11 @@ const bool Debug = true;
 
 //-----------------------------------------------------------------------------
 
-#include "../square_equation.h"
-#include "../argument_proccessing.h"
-#include "../unit_test.h"
-#include "../input.h"
+#include "include/square_equation.h"
+#include "include/argument_proccessing.h"
+#include "include/unit_test.h"
+#include "include/input.h"
+#include "include/log.h"
 
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
@@ -42,7 +43,11 @@ const OptionDef Options[] =
 
     {"--help", print_help},
     {"-h",     print_help},
-    {"/h",     print_help}
+    {"/h",     print_help},
+
+    {"--log",  open_log},
+    {"-l",     open_log},
+    {"/l",     open_log}
 };
 
 // Command line arguments
@@ -53,7 +58,7 @@ int main (int argc, const char* argv[])
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 
-    //__TRACK__
+    __TRACKBEGIN__
 
     if (Debug)
     {
@@ -69,7 +74,7 @@ int main (int argc, const char* argv[])
         }
     }
 
-
+    __TRACKEND__
 }
 
 

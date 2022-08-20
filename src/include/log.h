@@ -16,7 +16,8 @@
 
 #define LOG_FUNC(...)   fprintf (LOG_FILE, __VA_ARGS__)
 
-#define __TRACK__       MakeSpace Tmp (__func__);
+#define __TRACKBEGIN__       add_tree_level       (__func__);
+#define __TRACKEND__         substract_tree_level (__func__);
 
 //Global/Const-----------------------------------------------------------------
 
@@ -28,19 +29,23 @@ const char DEFAULT_LOG_NAME[] = "log.txt";
 
 static char ACTIVE_LOGFILE_NAME[] = "log.txt";
 
-int SPACING = 0;
+static int SPACING = 0;
 
 //Global/Const-----------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 
-bool get_log_file(char file_name[]);
+bool get_log_file         (char file_name[]);
 
-int open_log (int argc, const char* argv[], int pos);
+int open_log              (int argc, const char* argv[], int pos);
 
-void finish_log ();
+void finish_log           ();
 
-void put_spaces(int spaces_amount);
+void put_spaces           (int spaces_amount);
+
+void add_tree_level       (const char* func_name);
+
+void substract_tree_level (const char* func_name);
 
 //-----------------------------------------------------------------------------
 

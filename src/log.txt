@@ -1,0 +1,5 @@
+.Started logging...
+                  log.cpp:041 | main
+                  log.cpp:051 | main
+Finishing logging... Goodluck in debugging :)
+

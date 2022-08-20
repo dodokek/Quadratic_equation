@@ -1,7 +1,9 @@
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-#include "../log.h"
+#include "include/log.h"
 
 class MakeSpace
 {
@@ -33,6 +35,26 @@ private:
 };
 
 //-----------------------------------------------------------------------------
+
+void add_tree_level (const char* func_name)
+{
+    fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
+    fputc      ('|', LOG_FILE);
+    put_spaces (SPACING++ * 4);
+
+    LOG_FUNC("%s\n", func_name);
+}
+
+
+void substract_tree_level (const char* func_name)
+{
+    fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);
+    fputc      ('|', LOG_FILE);
+    put_spaces (--SPACING * 4);
+
+    LOG_FUNC("%s\n", func_name);
+}
+
 
 bool get_log_file(char file_name[])
 {
@@ -66,7 +88,7 @@ bool get_log_file(char file_name[])
 int open_log (int argc, const char* argv[], int pos)
 {
 
-    Debug = true;
+    //Debug = true;
     char file_name[] = "";
     int argument_indx = 0;
 

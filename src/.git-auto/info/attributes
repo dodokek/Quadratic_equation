@@ -1,0 +1,4 @@
+ 
+*.txt filter=win-1251          
+*.c*  filter=win-1251          
+*.h*  filter=win-1251          
