@@ -51,18 +51,7 @@ square_equation.exe -l logfile.txt
 ~~~
 square_equation.exe -h
 ~~~
-By writing this you are being redirected to documentation, that is store in **html/index.html** 
+By writing this you are being redirected to documentation, which is stored in **html/index.html** 
 
-                           
-
-
-
-
-
-              
-
-
-
-This project solves quadratic equation. .exe file supports console arguments <br>
-/h, -h, --help - Stands for getting some help by redirecting you to documentation<br>
-/t, -t, --test - Stands for running Unit tests which you can modify in specified file. 
+## Conclusion
+This project gave me an insane amount of knowledge about C/C++, i hope you will respect my code :3
