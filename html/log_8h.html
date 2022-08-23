@@ -89,10 +89,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_FUNC</b>(...)&#160;&#160;&#160;fprintf (LOG_FILE, __VA_ARGS__)</td></tr>
 <tr class="separator:a7b0e30484ec4dae3996be253f5b90bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace3502250c0a0436ee00741e366bb69e"><td class="memItemLeft" align="right" valign="top"><a id="ace3502250c0a0436ee00741e366bb69e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>__TRACKBEGIN__</b>&#160;&#160;&#160;add_tree_level       (__func__);</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>__TRACKBEGIN__</b>&#160;&#160;&#160;<a class="el" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">add_tree_level</a>       (__func__);</td></tr>
 <tr class="separator:ace3502250c0a0436ee00741e366bb69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9556df3cfeb32c9c4ef867bdb3518ee"><td class="memItemLeft" align="right" valign="top"><a id="ae9556df3cfeb32c9c4ef867bdb3518ee"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>__TRACKEND__</b>&#160;&#160;&#160;substract_tree_level (__func__);</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>__TRACKEND__</b>&#160;&#160;&#160;<a class="el" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">substract_tree_level</a> (__func__);</td></tr>
 <tr class="separator:ae9556df3cfeb32c9c4ef867bdb3518ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a31f60b063af0e662125ea2427b140"><td class="memItemLeft" align="right" valign="top"><a id="a24a31f60b063af0e662125ea2427b140"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LOGGING</b>&#160;&#160;&#160;_LOGGING</td></tr>
@@ -100,23 +100,24 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a13ef626e231fcb8d598e5c9b6b47b0ba"><td class="memItemLeft" align="right" valign="top"><a id="a13ef626e231fcb8d598e5c9b6b47b0ba"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_log_file</b> (char file_name[])</td></tr>
+<tr class="memitem:a13ef626e231fcb8d598e5c9b6b47b0ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">get_log_file</a> (char file_name[])</td></tr>
+<tr class="memdesc:a13ef626e231fcb8d598e5c9b6b47b0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для считывания файла, куда будут писаться логи  <a href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">More...</a><br /></td></tr>
 <tr class="separator:a13ef626e231fcb8d598e5c9b6b47b0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f172893e66ed085edcf6d9e3c777877"><td class="memItemLeft" align="right" valign="top"><a id="a0f172893e66ed085edcf6d9e3c777877"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>open_log</b> (int argc, const char *argv[], int pos)</td></tr>
+<tr class="memitem:a0f172893e66ed085edcf6d9e3c777877"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">open_log</a> (int argc, const char *argv[], int pos)</td></tr>
+<tr class="memdesc:a0f172893e66ed085edcf6d9e3c777877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для считывания аргументов командной строки для работы с логами  <a href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">More...</a><br /></td></tr>
 <tr class="separator:a0f172893e66ed085edcf6d9e3c777877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af83a39f9a4e889f26704eecd068e9ab4"><td class="memItemLeft" align="right" valign="top"><a id="af83a39f9a4e889f26704eecd068e9ab4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>finish_log</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#af83a39f9a4e889f26704eecd068e9ab4">finish_log</a> ()</td></tr>
+<tr class="memdesc:af83a39f9a4e889f26704eecd068e9ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Окончание логирования <br /></td></tr>
 <tr class="separator:af83a39f9a4e889f26704eecd068e9ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad48eac3a8e92a3679c1f7dd076c6f044"><td class="memItemLeft" align="right" valign="top"><a id="ad48eac3a8e92a3679c1f7dd076c6f044"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>put_spaces</b> (int spaces_amount)</td></tr>
+<tr class="memitem:ad48eac3a8e92a3679c1f7dd076c6f044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">put_spaces</a> (int spaces_amount)</td></tr>
+<tr class="memdesc:ad48eac3a8e92a3679c1f7dd076c6f044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Постановка пробелов для дерева функций  <a href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">More...</a><br /></td></tr>
 <tr class="separator:ad48eac3a8e92a3679c1f7dd076c6f044"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef79a63a8c8c39c2575b6e8e8afb970"><td class="memItemLeft" align="right" valign="top"><a id="a4ef79a63a8c8c39c2575b6e8e8afb970"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_tree_level</b> (const char *func_name)</td></tr>
+<tr class="memitem:a4ef79a63a8c8c39c2575b6e8e8afb970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">add_tree_level</a> (const char *func_name)</td></tr>
+<tr class="memdesc:a4ef79a63a8c8c39c2575b6e8e8afb970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для углубления на один уровень в дереве функций  <a href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">More...</a><br /></td></tr>
 <tr class="separator:a4ef79a63a8c8c39c2575b6e8e8afb970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb00e57f43a88073f65edeffc138406"><td class="memItemLeft" align="right" valign="top"><a id="a8eb00e57f43a88073f65edeffc138406"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>substract_tree_level</b> (const char *func_name)</td></tr>
+<tr class="memitem:a8eb00e57f43a88073f65edeffc138406"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">substract_tree_level</a> (const char *func_name)</td></tr>
+<tr class="memdesc:a8eb00e57f43a88073f65edeffc138406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция, противоположная add_tree_level.  <a href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">More...</a><br /></td></tr>
 <tr class="separator:a8eb00e57f43a88073f65edeffc138406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -169,6 +170,152 @@ const char&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_LOG_NAM
 <div class="line">                        fprintf    (LOG_FILE, __VA_ARGS__),                                   \</div>
 <div class="line">                        fputc      (<span class="charliteral">&#39;\n&#39;</span>, LOG_FILE)</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a4ef79a63a8c8c39c2575b6e8e8afb970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef79a63a8c8c39c2575b6e8e8afb970">&#9670;&nbsp;</a></span>add_tree_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add_tree_level </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция для углубления на один уровень в дереве функций </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Имя</td><td>функцию, в которую мы входим </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Важно писать в самом начале </dd></dl>
+
+</div>
+</div>
+<a id="a13ef626e231fcb8d598e5c9b6b47b0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13ef626e231fcb8d598e5c9b6b47b0ba">&#9670;&nbsp;</a></span>get_log_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool get_log_file </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>file_name</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция для считывания файла, куда будут писаться логи </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td>[in] Имя файла </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Успешно ли было считывание файла </dd></dl>
+
+</div>
+</div>
+<a id="a0f172893e66ed085edcf6d9e3c777877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f172893e66ed085edcf6d9e3c777877">&#9670;&nbsp;</a></span>open_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int open_log </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция для считывания аргументов командной строки для работы с логами </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>[in] Количество аргументов командной строки </td></tr>
+    <tr><td class="paramname">pos</td><td>[in] Текущая позиция аргумента командной строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Файл можно задавать самому </dd></dl>
+
+</div>
+</div>
+<a id="ad48eac3a8e92a3679c1f7dd076c6f044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48eac3a8e92a3679c1f7dd076c6f044">&#9670;&nbsp;</a></span>put_spaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void put_spaces </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spaces_amount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Постановка пробелов для дерева функций </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">spaces_amount</td><td>Количество нужных для постановки пробелов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8eb00e57f43a88073f65edeffc138406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb00e57f43a88073f65edeffc138406">&#9670;&nbsp;</a></span>substract_tree_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void substract_tree_level </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция, противоположная add_tree_level. </p>
+<dl class="section note"><dt>Note</dt><dd>Важно писать прямо перед завершающим элементом функции </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
