@@ -1,41 +1,67 @@
-In file included from square_equation.cpp:18:0:
-include/log.h:4:0: warning: "$" redefined
- #define $(X)  printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
- 
+In file included from include/unit_test.h:11:0,
+                 from square_equation.cpp:16:
+include/log.h:5:0: warning: "$" redefined [enabled by default]
+ #define $(X)            printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
+ ^
 In file included from include/square_equation.h:5:0,
                  from square_equation.cpp:14:
 include/TXlib.h:15833:0: note: this is the location of the previous definition
  #define $(   var, ...)        (               _txDumpVar ((var), _tx$Prefix  (#var, __VA_ARGS__), "]\n") )
- 
+ ^
 In file included from square_equation.cpp:16:0:
-include/unit_test.h:24:13: warning: redundant redeclaration of 'bool is_equal(double, double)' in same scope [-Wredundant-decls]
+include/unit_test.h:26:49: warning: redundant redeclaration of 'bool is_equal(double, double)' in same scope [-Wredundant-decls]
  extern bool is_equal (double num_1, double num_2);
-             ^~~~~~~~
+                                                 ^
 In file included from square_equation.cpp:14:0:
-include/square_equation.h:59:6: note: previous declaration of 'bool is_equal(double, double)'
+include/square_equation.h:59:6: warning: previous declaration of 'bool is_equal(double, double)' [-Wredundant-decls]
  bool is_equal (double num_1, double num_2);
-      ^~~~~~~~
+      ^
 In file included from square_equation.cpp:16:0:
-include/unit_test.h:28:16: warning: redundant redeclaration of 'int quadratic_equation::calculate_roots(double*, double*)' in same scope [-Wredundant-decls]
+include/unit_test.h:30:72: warning: redundant redeclaration of 'int quadratic_equation::calculate_roots(double*, double*)' in same scope [-Wredundant-decls]
      extern int calculate_roots (double roots_array[], double data_arr[]);
-                ^~~~~~~~~~~~~~~
+                                                                        ^
 In file included from square_equation.cpp:14:0:
-include/square_equation.h:37:9: note: previous declaration of 'int quadratic_equation::calculate_roots(double*, double*)'
+include/square_equation.h:37:9: warning: previous declaration of 'int quadratic_equation::calculate_roots(double*, double*)' [-Wredundant-decls]
      int calculate_roots (double roots_array[], double data_arr[]);
-         ^~~~~~~~~~~~~~~
-In file included from square_equation.cpp:18:0:
-include/log.h:32:12: warning: 'SPACING' defined but not used [-Wunused-variable]
- static int SPACING = 0;
-            ^~~~~~~
-include/log.h:30:13: warning: 'ACTIVE_LOGFILE_NAME' defined but not used [-Wunused-variable]
- static char ACTIVE_LOGFILE_NAME[] = "log.txt";
-             ^~~~~~~~~~~~~~~~~~~
-include/log.h:26:12: warning: 'LOG_LEVEL' defined but not used [-Wunused-variable]
- static int LOG_LEVEL = 9;
-            ^~~~~~~~~
-include/log.h:24:14: warning: 'LOG_FILE' defined but not used [-Wunused-variable]
+         ^
+In file included from include/unit_test.h:11:0,
+                 from square_equation.cpp:16:
+include/log.h:27:14: warning: 'LOG_FILE' defined but not used [-Wunused-variable]
  static FILE* LOG_FILE = nullptr;
-              ^~~~~~~~
+              ^
+include/log.h:29:12: warning: 'LOG_LEVEL' defined but not used [-Wunused-variable]
+ static int LOG_LEVEL = 9;
+            ^
+include/log.h:33:13: warning: 'ACTIVE_LOGFILE_NAME' defined but not used [-Wunused-variable]
+ static char ACTIVE_LOGFILE_NAME[] = "log.txt";
+             ^
+include/log.h:35:12: warning: 'SPACING' defined but not used [-Wunused-variable]
+ static int SPACING = 0;
+            ^
+In file included from include/unit_test.h:11:0,
+                 from unit_test.cpp:2:
+include/log.h:5:0: warning: "$" redefined [enabled by default]
+ #define $(X)            printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
+ ^
+In file included from include/unit_test.h:10:0,
+                 from unit_test.cpp:2:
+include/TXlib.h:15833:0: note: this is the location of the previous definition
+ #define $(   var, ...)        (               _txDumpVar ((var), _tx$Prefix  (#var, __VA_ARGS__), "]\n") )
+ ^
+In file included from include/unit_test.h:11:0,
+                 from unit_test.cpp:2:
+include/log.h:27:14: warning: 'LOG_FILE' defined but not used [-Wunused-variable]
+ static FILE* LOG_FILE = nullptr;
+              ^
+include/log.h:29:12: warning: 'LOG_LEVEL' defined but not used [-Wunused-variable]
+ static int LOG_LEVEL = 9;
+            ^
+include/log.h:33:13: warning: 'ACTIVE_LOGFILE_NAME' defined but not used [-Wunused-variable]
+ static char ACTIVE_LOGFILE_NAME[] = "log.txt";
+             ^
+include/log.h:35:12: warning: 'SPACING' defined but not used [-Wunused-variable]
+ static int SPACING = 0;
+            ^
 
 [Нажмите любую клавишу для завершения]
 

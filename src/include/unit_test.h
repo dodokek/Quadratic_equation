@@ -6,7 +6,9 @@
 #include <string.h>
 #include <assert.h>
 #include <stdlib.h>
+
 #include "TXlib.h"
+#include "log.h"
 
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 

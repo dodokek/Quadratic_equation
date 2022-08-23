@@ -1,7 +1,6 @@
 
 #include "include/unit_test.h"
 
-
 //Constants
 
 const double Accuracy = 0.000001;
@@ -20,7 +19,8 @@ const char *default_file_name = "tests.txt";
 
 int start_unit_test (int argc, const char* argv[], int pos)
 {
-    //__TRACK__
+    __TRACKBEGIN__
+
     int tests_amount = INF;
     char file_name[] = "";
     int argument_indx = 0;
@@ -83,13 +83,16 @@ int start_unit_test (int argc, const char* argv[], int pos)
 
     fclose (tests_file);
 
+    __TRACKEND__
+
     return argument_indx;
 }
 
 
 void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 {
-    //__TRACK__
+    __TRACKBEGIN__
+
     assert (test_data != NULL && num_of_test > 0);
 
     int a_indx = 0;
@@ -124,6 +127,8 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
     }
 
     txSleep (100);
+
+    __TRACKEND__
 }
 
 

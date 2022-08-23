@@ -138,7 +138,9 @@ bool get_input (double data_arr[], int option)
 
 int solve_linear_equation (double roots_array[], double koef_a, double koef_b, double koef_c)
 {
-    //__TRACK__
+    __TRACKBEGIN__
+    __TRACKEND__
+
     assert (roots_array != NULL && koef_a < INF && koef_b < INF);
 
     //ax + b = 0
@@ -196,13 +198,16 @@ bool is_zero (double number)
 
 void fill_array (double arr[], int length, double filler)
 {
-    //__TRACK__
+    __TRACKBEGIN__
+
     assert (length <= MAX_DATA_SIZE && arr != NULL);
 
     for (int i = 0; i< length; i++)
     {
         arr[i] = filler;
     }
+
+    __TRACKEND__
 }
 
 
@@ -216,7 +221,6 @@ bool is_equal (double num_1, double num_2)
 
 int quadratic_equation::calculate_roots (double roots_array[], double data_arr[])
 {
-    //__TRACK__
     assert (roots_array != NULL && data_arr != NULL);
 
     double koef_a = data_arr[0];
@@ -260,7 +264,8 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
 
 void quadratic_equation::print_answer (int roots_amount, double roots_array[])
 {
-    //__TRACK__
+    __TRACKBEGIN__
+
     printf ("Equation has solutions in quantity: %d \n", roots_amount);
 
     assert (roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
@@ -283,6 +288,7 @@ void quadratic_equation::print_answer (int roots_amount, double roots_array[])
             printf ("Root %lg, Root %lg \n", roots_array[0], roots_array[1]);
     }
 
+    __TRACKEND__
 }
 
 

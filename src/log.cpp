@@ -65,7 +65,7 @@ bool get_log_file(char file_name[])
     {
         printf ("File name %s\n", file_name);
 
-        LOG_FILE = fopen (file_name, "a");
+        LOG_FILE = fopen (file_name, "w");
 
         strcpy(ACTIVE_LOGFILE_NAME, file_name);
 

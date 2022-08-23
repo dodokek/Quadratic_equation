@@ -1,7 +1,8 @@
+#ifndef LOGGING
 
 //-----------------------------------------------------------------------------
 
-#define $(X)  printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
+#define $(X)            printf  ("%s:%03d>>> " #X "\n", __FILE__, __LINE__); X
 
 #define DO(X)           fprintf    (LOG_FILE, "%25s:%03d ", __FILE__, __LINE__);              \
                         fputc      ('|', LOG_FILE);                                           \
@@ -18,6 +19,8 @@
 
 #define __TRACKBEGIN__       add_tree_level       (__func__);
 #define __TRACKEND__         substract_tree_level (__func__);
+
+#define LOGGING _LOGGING
 
 //Global/Const-----------------------------------------------------------------
 
@@ -49,4 +52,4 @@ void substract_tree_level (const char* func_name);
 
 //-----------------------------------------------------------------------------
 
-
+#endif
