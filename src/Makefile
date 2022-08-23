@@ -26,4 +26,4 @@ log.o : log.cpp include/log.h
 	$(CC) $(CFLAGS) log.cpp -c
 
 clean:
-	rm -rf *.o $(TARGET)
+	rm -rf *.o *.save $(TARGET)
