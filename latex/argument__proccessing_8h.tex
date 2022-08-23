@@ -1,0 +1,51 @@
+\hypertarget{argument__proccessing_8h}{}\doxysection{src/include/argument\+\_\+proccessing.h File Reference}
+\label{argument__proccessing_8h}\index{src/include/argument\_proccessing.h@{src/include/argument\_proccessing.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_option_def}{Option\+Def}}
+\begin{DoxyCompactList}\small\item\em Структура для хранения значений аргументов командной строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{argument__proccessing_8h_a52d54451a39a06d41fe2d716610ea0b5}{process\+\_\+arguments}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, const struct \mbox{\hyperlink{struct_option_def}{Option\+Def}} Options\mbox{[}$\,$\mbox{]}, int options\+\_\+range)
+\begin{DoxyCompactList}\small\item\em Функция обработки аргументов командной строки \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{argument__proccessing_8h_ad04fddbe6d3fcde4a14afe81fd23e942}{print\+\_\+help}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, int pos)
+\begin{DoxyCompactList}\small\item\em Функция для обработки аргумента командной строки -\/h, /h, --help. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{argument__proccessing_8h_ad04fddbe6d3fcde4a14afe81fd23e942}\label{argument__proccessing_8h_ad04fddbe6d3fcde4a14afe81fd23e942}} 
+\index{argument\_proccessing.h@{argument\_proccessing.h}!print\_help@{print\_help}}
+\index{print\_help@{print\_help}!argument\_proccessing.h@{argument\_proccessing.h}}
+\doxysubsubsection{\texorpdfstring{print\_help()}{print\_help()}}
+{\footnotesize\ttfamily int print\+\_\+help (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Функция для обработки аргумента командной строки -\/h, /h, --help. 
+
+\begin{DoxyItemize}
+\item argc -\/ Количество аргументов командной строки при запуске .exe файла \item argv -\/ Массив значений аргументов \textbackslash{} \end{DoxyItemize}
+\mbox{\Hypertarget{argument__proccessing_8h_a52d54451a39a06d41fe2d716610ea0b5}\label{argument__proccessing_8h_a52d54451a39a06d41fe2d716610ea0b5}} 
+\index{argument\_proccessing.h@{argument\_proccessing.h}!process\_arguments@{process\_arguments}}
+\index{process\_arguments@{process\_arguments}!argument\_proccessing.h@{argument\_proccessing.h}}
+\doxysubsubsection{\texorpdfstring{process\_arguments()}{process\_arguments()}}
+{\footnotesize\ttfamily void process\+\_\+arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const struct \mbox{\hyperlink{struct_option_def}{Option\+Def}}}]{Options\mbox{[}$\,$\mbox{]},  }\item[{int}]{options\+\_\+range }\end{DoxyParamCaption})}
+
+
+
+Функция обработки аргументов командной строки 
+
+\begin{DoxyItemize}
+\item argc -\/ Количество аргументов командной строки при запуске .exe файла \item argv -\/ Массив значений аргументов \item options -\/ Массив структур с названием аргумента и соответствующей ему функцией \item options\+\_\+range -\/ Размер массива аргументов \begin{DoxyNote}{Note}
+Происходит сравнение всех введенных аргументов со всеми заранее известными. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Функция не может определять какой именно аргумент введен неверно. 
+\end{DoxyWarning}
+\end{DoxyItemize}

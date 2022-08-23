@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['add_5ftree_5flevel_0',['add_tree_level',['../log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970',1,'log.h']]],
-  ['argument_5fproccessing_2eh_1',['argument_proccessing.h',['../argument__proccessing_8h.html',1,'']]]
+  ['_5f_5ftrackbegin_5f_5f_0',['__TRACKBEGIN__',['../log_8h.html#ace3502250c0a0436ee00741e366bb69e',1,'log.h']]],
+  ['_5f_5ftrackend_5f_5f_1',['__TRACKEND__',['../log_8h.html#ae9556df3cfeb32c9c4ef867bdb3518ee',1,'log.h']]]
 ];

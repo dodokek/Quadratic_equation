@@ -1,0 +1,127 @@
+\hypertarget{square__equation_8h}{}\doxysection{src/include/square\+\_\+equation.h File Reference}
+\label{square__equation_8h}\index{src/include/square\_equation.h@{src/include/square\_equation.h}}
+{\ttfamily \#include $<$TXLib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacequadratic__equation}{quadratic\+\_\+equation}}
+\begin{DoxyCompactList}\small\item\em Кластер функций для решений квадратного уравнения \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{square__equation_8h_adba75749ca0149ec7deff430f61efc85}\label{square__equation_8h_adba75749ca0149ec7deff430f61efc85}} 
+enum \mbox{\hyperlink{square__equation_8h_adba75749ca0149ec7deff430f61efc85}{NUM\+\_\+\+OF\+\_\+\+ROOTS}} \{ {\bfseries NO\+\_\+\+ROOTS} = 0
+, {\bfseries ONE\+\_\+\+ROOT}
+, {\bfseries TWO\+\_\+\+ROOTS}
+, {\bfseries INFINITE\+\_\+\+ROOTS}
+ \}
+\begin{DoxyCompactList}\small\item\em Нумерация количества корей уравнения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacequadratic__equation_a6121bf8dfaa1e214bf5f50eb359ea62b}{quadratic\+\_\+equation\+::print\+\_\+answer}} (int roots\+\_\+amount, double roots\+\_\+array\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция отвечает за вывод ответа, количество корней \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacequadratic__equation_ae142b0e0a22865fb66d66dd84e3ed5af}{quadratic\+\_\+equation\+::calculate\+\_\+roots}} (double roots\+\_\+array\mbox{[}$\,$\mbox{]}, double data\+\_\+arr\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция подсчета количества корней и их значения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacequadratic__equation_aa7c8110bf6a074928f892ce19377e25f}{quadratic\+\_\+equation\+::solve\+\_\+quadratic\+\_\+equation}} (double data\+\_\+arr\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Главная функция для решения квадратного уравнения \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}{get\+\_\+input}} (double data\+\_\+arr\mbox{[}$\,$\mbox{]}, int option)
+\begin{DoxyCompactList}\small\item\em Функция для считывания вводимых данных \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{square__equation_8h_a5a5ade8d38bdbc8a41c30b0b2c8d85c7}{solve\+\_\+linear\+\_\+equation}} (double roots\+\_\+array\mbox{[}$\,$\mbox{]}, double koef\+\_\+a, double koef\+\_\+b, double koef\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Решение линейного уравнения \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}{is\+\_\+equal}} (double num\+\_\+1, double num\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Проверка равнества двух чисел типа double. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}\label{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}} 
+bool \mbox{\hyperlink{square__equation_8h_ab13b1c9485c8838473f159818dcd0be9}{is\+\_\+zero}} (double number)
+\begin{DoxyCompactList}\small\item\em Проверка равнества числа нулю \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{square__equation_8h_ae84b6bc3aa3a660f55386d5571855c7d}{fill\+\_\+array}} (double arr\mbox{[}$\,$\mbox{]}, int length, double filler)
+\begin{DoxyCompactList}\small\item\em Заполнение конкретного массива данными NAN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}\label{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}} 
+void \mbox{\hyperlink{square__equation_8h_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Вспомогательная функция для очищения буфера ввода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_a526b916de3e67b181a214c96ac307762}\label{square__equation_8h_a526b916de3e67b181a214c96ac307762}} 
+bool \mbox{\hyperlink{square__equation_8h_a526b916de3e67b181a214c96ac307762}{check\+\_\+on\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em Проверка введенной \char`\"{}q\char`\"{} Для выхода из меню ввода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}\label{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}} 
+void \mbox{\hyperlink{square__equation_8h_a853216ac51aa181669ff4d3de74058a7}{print\+\_\+help}} ()
+\begin{DoxyCompactList}\small\item\em Вывод сообщения с помощью. Переход на документацию \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{square__equation_8h_ae84b6bc3aa3a660f55386d5571855c7d}\label{square__equation_8h_ae84b6bc3aa3a660f55386d5571855c7d}} 
+\index{square\_equation.h@{square\_equation.h}!fill\_array@{fill\_array}}
+\index{fill\_array@{fill\_array}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{fill\_array()}{fill\_array()}}
+{\footnotesize\ttfamily void fill\+\_\+array (\begin{DoxyParamCaption}\item[{double}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{length,  }\item[{double}]{filler }\end{DoxyParamCaption})}
+
+
+
+Заполнение конкретного массива данными NAN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & \mbox{[}in\mbox{]} Входной массив \\
+\hline
+{\em length} & \mbox{[}in\mbox{]} Длина массива \\
+\hline
+{\em filler} & \mbox{[}in\mbox{]} Чем заполняется массив \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}\label{square__equation_8h_a1db7e4cd7b2e14705c3fe8db75ea2cf6}} 
+\index{square\_equation.h@{square\_equation.h}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily bool get\+\_\+input (\begin{DoxyParamCaption}\item[{double}]{data\+\_\+arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{option }\end{DoxyParamCaption})}
+
+
+
+Функция для считывания вводимых данных 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+arr} & -\/ Заполняемый массив данных ввода \\
+\hline
+{\em option} & -\/ Переменная для выбора типа операции. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}\label{square__equation_8h_a5d252e6ddf62724b8b022d6d1f1442e9}} 
+\index{square\_equation.h@{square\_equation.h}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily bool is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{num\+\_\+1,  }\item[{double}]{num\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Проверка равнества двух чисел типа double. 
+
+\begin{DoxyNote}{Note}
+Числа сравниваются с точностью до глобальной константы Accuracy 
+\end{DoxyNote}
+\mbox{\Hypertarget{square__equation_8h_a5a5ade8d38bdbc8a41c30b0b2c8d85c7}\label{square__equation_8h_a5a5ade8d38bdbc8a41c30b0b2c8d85c7}} 
+\index{square\_equation.h@{square\_equation.h}!solve\_linear\_equation@{solve\_linear\_equation}}
+\index{solve\_linear\_equation@{solve\_linear\_equation}!square\_equation.h@{square\_equation.h}}
+\doxysubsubsection{\texorpdfstring{solve\_linear\_equation()}{solve\_linear\_equation()}}
+{\footnotesize\ttfamily int solve\+\_\+linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{roots\+\_\+array\mbox{[}$\,$\mbox{]},  }\item[{double}]{koef\+\_\+a,  }\item[{double}]{koef\+\_\+b,  }\item[{double}]{koef\+\_\+c }\end{DoxyParamCaption})}
+
+
+
+Решение линейного уравнения 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roots\+\_\+array} & Заполняемый список корней уравнения \\
+\hline
+{\em koef\+\_\+a,koef\+\_\+b} & -\/ Коэфиценты линейного уравнения вида ax + b = 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Может быть бесконечное количество решений 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Количество корней 
+\end{DoxyReturn}
