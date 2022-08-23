@@ -266,7 +266,7 @@ void quadratic_equation::print_answer (int roots_amount, double roots_array[])
 {
     __TRACKBEGIN__
 
-    printf ("Equation has solutions in quantity: %d \n", roots_amount);
+    $sr; printf ("EEEquation has solutions in quantity: %d \n", roots_amount);
 
     assert (roots_amount >= 0 && roots_amount <= 2 && roots_array != NULL);
 

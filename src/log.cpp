@@ -5,7 +5,7 @@
 
 #include "include/log.h"
 
-class MakeSpace
+/*class MakeSpace
 {
 
 public:
@@ -32,7 +32,7 @@ public:
 private:
     const char* func_name;
 
-};
+};*/
 
 //-----------------------------------------------------------------------------
 

@@ -19,6 +19,8 @@ const char *default_file_name = "tests.txt";
 
 int start_unit_test (int argc, const char* argv[], int pos)
 {
+    assert(argc > 0 && argv != NULL & pos >= 0);
+
     __TRACKBEGIN__
 
     int tests_amount = INF;
