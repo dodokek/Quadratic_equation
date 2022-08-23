@@ -100,8 +100,8 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
     assert (test_data != NULL && num_of_test > 0);
 
     int a_indx = 0;
-    int b_indx = 0;
-    int c_indx = 0;
+    int b_indx = 1;
+    int c_indx = 2;
 
     int x1_indx = 3;
     int x2_indx = 4;
@@ -138,9 +138,6 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 
 FILE* get_tests_file(char file_name[])
 {
-
-
-
     if (file_name[0] != '\0')
     {
         printf ("File name %s\n", file_name);
@@ -154,6 +151,4 @@ FILE* get_tests_file(char file_name[])
 
         return fopen (default_file_name, "r");
     }
-
-
 }

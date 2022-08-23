@@ -195,7 +195,7 @@ bool is_zero (double number)
 {
     assert (number < INF);
 
-    return (fabs(number) < Accuracy) ? true : false;
+    return fabs(number) < Accuracy;
 }
 
 
