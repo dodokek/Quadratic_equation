@@ -1,5 +1,5 @@
 # Quadratic_equation
-##Overview
+## Overview
 Meet the true approach for solving quadratic equation. With this tiny program you can easily solve:
 - Quadratic equations
 - Linear equations
@@ -12,12 +12,12 @@ It also includes a libraries, which allow you to:
 
 The program is separated on files, that's why make file is included.
 
-##Installatio
-First and foremost you need to clone the repo and build the project with makefile.
+## Installatio
+First and foremost you need to clone the repo and build the project with makefile. <br>
 `
-git clone https://github.com/dodokek/Quadratic_equation.git
-cd Quadratic_equation/src
-make
+git clone https://github.com/dodokek/Quadratic_equation.git                             <br>
+cd Quadratic_equation/src                                                               <br>    
+make                                                                                    <br>
 `
 
 
