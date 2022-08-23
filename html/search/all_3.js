@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['is_5fequal_0',['is_equal',['../square__equation_8h.html#a5d252e6ddf62724b8b022d6d1f1442e9',1,'square_equation.h']]],
-  ['is_5fzero_1',['is_zero',['../square__equation_8h.html#ab13b1c9485c8838473f159818dcd0be9',1,'square_equation.h']]]
+  ['get_5finput_5',['get_input',['../square__equation_8h.html#a1db7e4cd7b2e14705c3fe8db75ea2cf6',1,'square_equation.h']]],
+  ['get_5ftests_5ffile_6',['get_tests_file',['../unit__test_8h.html#a37a32493a3cb3354636fb8718a08373d',1,'unit_test.h']]]
 ];

@@ -1,0 +1,83 @@
+\hypertarget{log_8h}{}\doxysection{src/include/log.h File Reference}
+\label{log_8h}\index{src/include/log.h@{src/include/log.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a207fd5507206d307cd63f95374fcd00d}\label{log_8h_a207fd5507206d307cd63f95374fcd00d}} 
+\#define {\bfseries X}~)            printf  (\char`\"{}\%s\+:\%03d$>$$>$$>$ \char`\"{} \#X \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+); X
+\item 
+\#define {\bfseries DO}(X)
+\item 
+\#define {\bfseries LOG\+\_\+\+ARGV}(...)
+\item 
+\mbox{\Hypertarget{log_8h_a7b0e30484ec4dae3996be253f5b90bdb}\label{log_8h_a7b0e30484ec4dae3996be253f5b90bdb}} 
+\#define {\bfseries LOG\+\_\+\+FUNC}(...)~fprintf (LOG\+\_\+\+FILE, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{log_8h_ace3502250c0a0436ee00741e366bb69e}\label{log_8h_ace3502250c0a0436ee00741e366bb69e}} 
+\#define {\bfseries \+\_\+\+\_\+\+TRACKBEGIN\+\_\+\+\_\+}~add\+\_\+tree\+\_\+level       (\+\_\+\+\_\+func\+\_\+\+\_\+);
+\item 
+\mbox{\Hypertarget{log_8h_ae9556df3cfeb32c9c4ef867bdb3518ee}\label{log_8h_ae9556df3cfeb32c9c4ef867bdb3518ee}} 
+\#define {\bfseries \+\_\+\+\_\+\+TRACKEND\+\_\+\+\_\+}~substract\+\_\+tree\+\_\+level (\+\_\+\+\_\+func\+\_\+\+\_\+);
+\item 
+\mbox{\Hypertarget{log_8h_a24a31f60b063af0e662125ea2427b140}\label{log_8h_a24a31f60b063af0e662125ea2427b140}} 
+\#define {\bfseries LOGGING}~\+\_\+\+LOGGING
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a13ef626e231fcb8d598e5c9b6b47b0ba}\label{log_8h_a13ef626e231fcb8d598e5c9b6b47b0ba}} 
+bool {\bfseries get\+\_\+log\+\_\+file} (char file\+\_\+name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{log_8h_a0f172893e66ed085edcf6d9e3c777877}\label{log_8h_a0f172893e66ed085edcf6d9e3c777877}} 
+int {\bfseries open\+\_\+log} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, int pos)
+\item 
+\mbox{\Hypertarget{log_8h_af83a39f9a4e889f26704eecd068e9ab4}\label{log_8h_af83a39f9a4e889f26704eecd068e9ab4}} 
+void {\bfseries finish\+\_\+log} ()
+\item 
+\mbox{\Hypertarget{log_8h_ad48eac3a8e92a3679c1f7dd076c6f044}\label{log_8h_ad48eac3a8e92a3679c1f7dd076c6f044}} 
+void {\bfseries put\+\_\+spaces} (int spaces\+\_\+amount)
+\item 
+\mbox{\Hypertarget{log_8h_a4ef79a63a8c8c39c2575b6e8e8afb970}\label{log_8h_a4ef79a63a8c8c39c2575b6e8e8afb970}} 
+void {\bfseries add\+\_\+tree\+\_\+level} (const char $\ast$func\+\_\+name)
+\item 
+\mbox{\Hypertarget{log_8h_a8eb00e57f43a88073f65edeffc138406}\label{log_8h_a8eb00e57f43a88073f65edeffc138406}} 
+void {\bfseries substract\+\_\+tree\+\_\+level} (const char $\ast$func\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_ad75128cff67c97f36b25580dad46b5bd}\label{log_8h_ad75128cff67c97f36b25580dad46b5bd}} 
+const char {\bfseries DEFAULT\+\_\+\+LOG\+\_\+\+NAME} \mbox{[}$\,$\mbox{]} = \char`\"{}log.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{log_8h_a47427412fe7f986c3de124cfd7ac3a2d}\label{log_8h_a47427412fe7f986c3de124cfd7ac3a2d}} 
+\index{log.h@{log.h}!DO@{DO}}
+\index{DO@{DO}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{DO}{DO}}
+{\footnotesize\ttfamily \#define DO(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        fprintf    (LOG\_FILE, \textcolor{stringliteral}{"{}\%25s:\%03d "{}}, \_\_FILE\_\_, \_\_LINE\_\_);              \(\backslash\)}
+\DoxyCodeLine{                        fputc      (\textcolor{charliteral}{'|'}, LOG\_FILE);                                           \(\backslash\)}
+\DoxyCodeLine{                        put\_spaces (SPACING*4),                                               \(\backslash\)}
+\DoxyCodeLine{                        fprintf    (LOG\_FILE, \textcolor{stringliteral}{"{}\%25s:\%03d>>> "{}} \#X \textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \_\_FILE\_\_, \_\_LINE\_\_), X}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{log_8h_abe783c84945b95f4fe9c2db7820e0c46}\label{log_8h_abe783c84945b95f4fe9c2db7820e0c46}} 
+\index{log.h@{log.h}!LOG\_ARGV@{LOG\_ARGV}}
+\index{LOG\_ARGV@{LOG\_ARGV}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_ARGV}{LOG\_ARGV}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+ARGV(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        fprintf    (LOG\_FILE, \textcolor{stringliteral}{"{}\%25s:\%03d "{}}, \_\_FILE\_\_, \_\_LINE\_\_);              \(\backslash\)}
+\DoxyCodeLine{                        fputc      (\textcolor{charliteral}{'|'}, LOG\_FILE);                                           \(\backslash\)}
+\DoxyCodeLine{                        put\_spaces (SPACING*4),                                               \(\backslash\)}
+\DoxyCodeLine{                        fprintf    (LOG\_FILE, \_\_VA\_ARGS\_\_),                                   \(\backslash\)}
+\DoxyCodeLine{                        fputc      (\textcolor{charliteral}{'\(\backslash\)n'}, LOG\_FILE)}
+
+\end{DoxyCode}

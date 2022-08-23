@@ -15,6 +15,8 @@ const double INF = 1000000000;
 
 const char *default_file_name = "tests.txt";
 
+const char *file_path = "..//files//";
+
 //---------
 
 int start_unit_test (int argc, const char* argv[], int pos)
@@ -137,7 +139,8 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 FILE* get_tests_file(char file_name[])
 {
 
-    //__TRACK__
+
+
     if (file_name[0] != '\0')
     {
         printf ("File name %s\n", file_name);

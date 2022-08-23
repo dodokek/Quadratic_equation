@@ -1,5 +1,5 @@
 //{---------------------------
-//! @file unit_tests.h
+//! @file unit_test.h
 //{---------------------------
 
 #include <stdio.h>
@@ -7,19 +7,26 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "TXlib.h"
+#include <TXlib.h>
 #include "log.h"
 
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
+/// \param [in] argc Количество аргументов командной строки
+/// \param [in] argv Массив аргументов командной строки
+/// \param [in] Позиция аргумента командной строки
 
 int start_unit_test (int argc, const char* argv[], int pos);
 
 /// \brief Функция, отвечающая за отдельный тест
-/// \param test_data[] Массив хранит в себе тестовые данные(коэфиценты и ответы)
-/// \param num_of_test
+/// \param [in] test_data[] Массив хранит в себе тестовые данные(коэфиценты и ответы)
+/// \param [in] num_of_test
 /// \warning Можно впасть в тильт от написания тестов
 
 void unit_test_quadratic_equation (double test_data[], int num_of_test);
+
+/// \brief Функция для считывание файлы
+/// \param [in] Имя файла
+/// \return File stream
 
 FILE* get_tests_file(char file_name[]);
 

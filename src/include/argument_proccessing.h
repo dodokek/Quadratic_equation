@@ -28,6 +28,11 @@ struct OptionDef
 void process_arguments (int                    argc,      const char* argv[],
                        const struct OptionDef  Options[], int         options_range);
 
+/// \brief Функция для обработки аргумента командной строки -h, /h, --help
+/// \arg     argc - Количество аргументов командной строки при запуске .exe файла
+/// \arg     argv - Массив значений аргументов
+/// \arg   Позиция аргумента командной строки
+
 int print_help(int argc, const char* argv[], int pos);
 
 //-----------------------------------------------------------------------------

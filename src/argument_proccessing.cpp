@@ -9,7 +9,6 @@ double INF = 1000000000;
 
 int print_help(int argc, const char* argv[], int pos)
 {
-    //__TRACK__
     printf ("Guess you need some help, try to find an answer in our documentation!\n");
 
     char help_src[] = "html\\index.html";
@@ -23,7 +22,6 @@ int print_help(int argc, const char* argv[], int pos)
 void process_arguments (int                    argc,      const char* argv[],
                         const struct OptionDef Options[], int         options_range)
 {
-    //__TRACK__
     assert (argc > 0 && argv != NULL && Options != NULL && options_range < INF);
 
     int count_processed_options = 0;
@@ -40,9 +38,4 @@ void process_arguments (int                    argc,      const char* argv[],
             }
         }
     }
-
-    //if (count_processed_options != argc - 1)
-    //{
-    //    printf ("Some arguments are incorrect.\n");
-    //}
 }

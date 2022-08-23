@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['solve_5flinear_5fequation_5freturn_5famount_0',['solve_linear_equation_return_amount',['../square__equation_8h.html#a1ff881d4bfda1ce9fb199e139ce7ac1f',1,'square_equation.h']]],
-  ['solve_5fquadratic_5fequation_1',['solve_quadratic_equation',['../namespacequadratic__equation.html#aa7c8110bf6a074928f892ce19377e25f',1,'quadratic_equation']]],
-  ['square_5fequation_2eh_2',['square_equation.h',['../square__equation_8h.html',1,'']]],
-  ['start_5funit_5ftest_3',['start_unit_test',['../square__equation_8h.html#a2622cec9cef6f3847bee38a19c42a91c',1,'square_equation.h']]]
+  ['print_5fanswer_13',['print_answer',['../namespacequadratic__equation.html#a6121bf8dfaa1e214bf5f50eb359ea62b',1,'quadratic_equation']]],
+  ['print_5fhelp_14',['print_help',['../argument__proccessing_8h.html#ad04fddbe6d3fcde4a14afe81fd23e942',1,'print_help(int argc, const char *argv[], int pos):&#160;argument_proccessing.h'],['../square__equation_8h.html#a853216ac51aa181669ff4d3de74058a7',1,'print_help():&#160;square_equation.h']]],
+  ['process_5farguments_15',['process_arguments',['../argument__proccessing_8h.html#a52d54451a39a06d41fe2d716610ea0b5',1,'argument_proccessing.h']]]
 ];

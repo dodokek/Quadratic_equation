@@ -54,9 +54,13 @@ const OptionDef Options[] =
 
 int main (int argc, const char* argv[])
 {
+    printf("#Quadratic equation by DodoKek");
+    printf("#Why don't you just solve it yourself?");
+
     assert (argc != 0 && argv != NULL);
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
+
 
     __TRACKBEGIN__
 
@@ -80,7 +84,6 @@ int main (int argc, const char* argv[])
 
 bool get_input (double data_arr[], int option)
 {
-    //__TRACK__
     assert (option == 1 && data_arr != NULL);
 
     if (option == SolveSqrOpt)

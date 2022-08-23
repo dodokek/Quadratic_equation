@@ -1,0 +1,155 @@
+\hypertarget{group___mouse}{}\doxysection{Поддержка Мыши!}
+\label{group___mouse}\index{Поддержка Мыши"!@{Поддержка Мыши"!}}
+\doxysubsection*{Работа с Мышью!}
+\begin{DoxyCompactItemize}
+\item 
+POINT \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos}} () tx\+\_\+nodiscard
+\begin{DoxyCompactList}\small\item\em Возвращает позицию Мыши! \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{tx\+MouseX}} () tx\+\_\+nodiscard
+\begin{DoxyCompactList}\small\item\em Возвращает X-\/Координату Мыши! \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{tx\+MouseY}} () tx\+\_\+nodiscard
+\begin{DoxyCompactList}\small\item\em Возвращает Y-\/Координату Мыши! \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{tx\+Mouse\+Buttons}} () tx\+\_\+nodiscard
+\begin{DoxyCompactList}\small\item\em Возвращает состояние Кнопок Мыши! \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}\label{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}} 
+\index{Поддержка Мыши"!@{Поддержка Мыши"!}!txMouseButtons@{txMouseButtons}}
+\index{txMouseButtons@{txMouseButtons}!Поддержка Мыши"!@{Поддержка Мыши"!}}
+\doxysubsubsection{\texorpdfstring{txMouseButtons()}{txMouseButtons()}}
+{\footnotesize\ttfamily unsigned tx\+Mouse\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает состояние Кнопок Мыши! 
+
+\begin{DoxyReturn}{Returns}
+Состояние Кнопок Мыши! \begin{DoxyVerb}     В возвращаемом значении выставленный в единицу 1-й (младший) бит означает нажатую левую Кнопку Мыши!,
+     2-й -- правую Кнопку. @n
+     Например, возвращенное число 3 (двоичное 11) означает одновременное нажатие левой и правой Кнопок.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Если окно TXLib или соответствующее ему консольное окно неактивно, то возвращается {\ttfamily 0}. @nn
+
+Будьте осторожны в многофайловом проекте. Если эта функция вызвана не из того файла, где открыто окно, будет всегда возвращаться 0. См. замечания по многофайловому проекту для функции \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{tx\+Create\+Window()}}. @nn
+
+Если нужно проверить состояние Кнопок Мыши! в любом случае, то можно пользоваться функцией {\ttfamily Get\+Async\+Key\+State()} с аргументами {\ttfamily VK\+\_\+\+LBUTTON}, {\ttfamily VK\+\_\+\+RBUTTON} или {\ttfamily VK\+\_\+\+MBUTTON}. Старший бит 16-\/битового слова (битовая маска {\ttfamily 0x8000}) покажет состояние соответствующей Кнопки Мыши! (см. пример).
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{tx\+Mouse\+X()}}, \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{tx\+Mouse\+Y()}}, \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}, \mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{tx\+Mouse\+Buttons()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() != 3)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() \& 1) \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{txMouseX}}(), \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{txMouseY}}(), 20);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() \& 2) \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}}   (\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{txMouseX}}(), \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{txMouseY}}(), 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (GetAsyncKeyState (VK\_LBUTTON) \& 0x8000) printf (\textcolor{stringliteral}{"{}VK\_LBUTTON "{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}\label{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}} 
+\index{Поддержка Мыши"!@{Поддержка Мыши"!}!txMousePos@{txMousePos}}
+\index{txMousePos@{txMousePos}!Поддержка Мыши"!@{Поддержка Мыши"!}}
+\doxysubsubsection{\texorpdfstring{txMousePos()}{txMousePos()}}
+{\footnotesize\ttfamily POINT tx\+Mouse\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает позицию Мыши! 
+
+\begin{DoxyReturn}{Returns}
+Позиция Мыши! как структура POINT, отсчитывающаяся от левого верхнего угла окна.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Если окна TXLib нет @strike (какой ужас!), @endstrike то координаты отсчитываются от верхнего левого угла экрана.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Будьте осторожны в многофайловом проекте. Если эта функция вызвана не из того файла, где открыто окно, координаты будут отсчитываться от верхнего левого угла экрана, а не от угла окна. См. замечания по многофайловому проекту для функции \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{tx\+Create\+Window()}}.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{tx\+Mouse\+X()}}, \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{tx\+Mouse\+Y()}}, \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}, \mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{tx\+Mouse\+Buttons()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{RECT area = \{ 100, 100, 110, 110 \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() != 1)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}{In}} (\mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{txMousePos}}(), area)) \mbox{\hyperlink{group___drawing_ga52e119361961d9eee33c176a3084e55d}{txTextOut}} (100, 100, \textcolor{stringliteral}{"{}http://vk.com/TiShtoTamDelaesh?!"{}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___mouse_gae56f541d32ff7324dd6dd340411c1130}\label{group___mouse_gae56f541d32ff7324dd6dd340411c1130}} 
+\index{Поддержка Мыши"!@{Поддержка Мыши"!}!txMouseX@{txMouseX}}
+\index{txMouseX@{txMouseX}!Поддержка Мыши"!@{Поддержка Мыши"!}}
+\doxysubsubsection{\texorpdfstring{txMouseX()}{txMouseX()}}
+{\footnotesize\ttfamily double tx\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает X-\/Координату Мыши! 
+
+\begin{DoxyReturn}{Returns}
+X-\/координата Мыши!, отсчитывающаяся от левого верхнего угла окна.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Если окна TXLib нет @strike (какой ужас!), @endstrike то координаты отсчитываются от верхнего левого угла экрана.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Будьте осторожны в многофайловом проекте. См. замечание для функции \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{tx\+Mouse\+X()}}, \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{tx\+Mouse\+Y()}}, \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}, \mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{tx\+Mouse\+Buttons()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() != 1)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{txMouseX}}(), \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{txMouseY}}(), 20);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___mouse_ga481847278ec77647082072325be5c226}\label{group___mouse_ga481847278ec77647082072325be5c226}} 
+\index{Поддержка Мыши"!@{Поддержка Мыши"!}!txMouseY@{txMouseY}}
+\index{txMouseY@{txMouseY}!Поддержка Мыши"!@{Поддержка Мыши"!}}
+\doxysubsubsection{\texorpdfstring{txMouseY()}{txMouseY()}}
+{\footnotesize\ttfamily double tx\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает Y-\/Координату Мыши! 
+
+\begin{DoxyReturn}{Returns}
+Y-\/координата Мыши!, отсчитывающаяся от левого верхнего угла окна.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Если окна TXLib нет @strike (какой ужас!), @endstrike то координаты отсчитываются от верхнего левого угла экрана.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Будьте осторожны в многофайловом проекте. См. замечание для функции \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{tx\+Mouse\+X()}}, \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{tx\+Mouse\+Y()}}, \mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{tx\+Mouse\+Pos()}}, \mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{tx\+Mouse\+Buttons()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() != 1)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{txMouseX}}(), \mbox{\hyperlink{group___mouse_ga481847278ec77647082072325be5c226}{txMouseY}}(), 20);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ 

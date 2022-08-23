@@ -2,7 +2,15 @@
 //! @file square_equation.h
 //{---------------------------
 
-#include "TXlib.h"
+
+//-----------------------------------------------------------------------------
+//! \mainpage Welcome to the documentation, what lead you here?
+//! \section  Guess you were so interested in my project, that you wanted to read more about it! I am veeeeery happy...
+//-----------------------------------------------------------------------------
+
+
+
+#include <TXLib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -42,8 +50,11 @@ namespace quadratic_equation
     void solve_quadratic_equation (double data_arr[]);
 }
 
-bool get_input (double data_arr[], int option);
+/// \brief Функция для считывания вводимых данных
+/// \param data_arr - Заполняемый массив данных ввода
+/// \param option - Переменная для выбора типа операции.
 
+bool get_input (double data_arr[], int option);
 
 /// \brief   Решение линейного уравнения
 /// \param   roots_array Заполняемый список корней уравнения
@@ -58,18 +69,18 @@ int solve_linear_equation (double roots_array[], double koef_a, double koef_b, d
 
 bool is_equal (double num_1, double num_2);
 
-/// \brief Функция для считывания вводимых данных
-/// \param data_arr - Заполняемый массив данных ввода
-/// \param option - Переменная для выбора типа операции.
+/// \brief Проверка равнества числа нулю
 
 bool is_zero (double number);
 
 /// \brief Заполнение конкретного массива данными NAN.
+/// \param arr [in] Входной массив
+/// \param length [in] Длина массива
+/// \param filler [in] Чем заполняется массив
 
 void fill_array (double arr[], int length, double filler);
 
 /// \brief Вспомогательная функция для очищения буфера ввода.
-/// \param length - количество элементов, начиная с 0-го для заполнения.
 
 void clear_buffer();
 

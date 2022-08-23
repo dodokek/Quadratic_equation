@@ -1,0 +1,2272 @@
+\hypertarget{group___misc}{}\doxysection{Разное}
+\label{group___misc}\index{Разное@{Разное}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtx_auto_lock}{tx\+Auto\+Lock}}
+\begin{DoxyCompactList}\small\item\em Класс для автоматической блокировки и разблокировки критической секции. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___misc_ga973d717438fe468dd5a5d8d45ede5312}\label{group___misc_ga973d717438fe468dd5a5d8d45ede5312}} 
+\#define \mbox{\hyperlink{group___misc_ga973d717438fe468dd5a5d8d45ede5312}{\+\_\+\+\_\+\+TX\+\_\+\+FILELINE\+\_\+\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Макрос, раскрывающийся в имя файла и номер строки файла, где он встретился. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gab170f39ac0e379c324c73495f14a1309}{\+\_\+\+\_\+\+TX\+\_\+\+FUNCTION\+\_\+\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Имя текущей функции \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)
+\begin{DoxyCompactList}\small\item\em Возвращает максимальное из двух чисел \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)
+\begin{DoxyCompactList}\small\item\em Возвращает минимальное из двух чисел \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}{ROUND}}(x)
+\begin{DoxyCompactList}\small\item\em Округляет число до целого \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gade9b60c36576ef735b3e1d1f628ad9c6}{ZERO}}(type)
+\begin{DoxyCompactList}\small\item\em Обнулитель типов, не имеющих конструкторов \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\+\_\+\+ASSERT}}(cond)
+\begin{DoxyCompactList}\small\item\em Замена стандартного макроса assert(), с выдачей сообщения через \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, консоль и Output\+Debug\+String(). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}
+\begin{DoxyCompactList}\small\item\em Выводит диагностическое сообщение в случае нулевого или ложного результата. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify}}
+\begin{DoxyCompactList}\small\item\em Выполняет команду (вычисляет выражение) и проверяет результат. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR}}(...)
+\begin{DoxyCompactList}\small\item\em Выводит развернутое диагностическое сообщение. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR}}(...)
+\begin{DoxyCompactList}\small\item\em Выводит развернутое диагностическое сообщение в отладочном режиме. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace}}()
+\begin{DoxyCompactList}\small\item\em Распечатывает дамп области памяти в консоли. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gac3163c41843503fb9ed5b51d37fbfb66}{TX\+\_\+\+DLLIMPORT}}(required,  lib\+Name,  ret\+Val\+Type,  func\+Name,  func\+Params, ...)
+\begin{DoxyCompactList}\small\item\em Импортирует функцию из динамической библиотеки @с .dll. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{tx\+GDI}}(command,  dc)
+\begin{DoxyCompactList}\small\item\em Вызов функции Win32 GDI с автоматической блокировкой и разблокировкой. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box}} (const char text\mbox{[}$\,$\mbox{]}=\char`\"{}Муаххаха! \+:)\char`\"{}, const char header\mbox{[}$\,$\mbox{]}=\char`\"{}TXLib сообщает\char`\"{}, unsigned flags=MB\+\_\+\+ICONINFORMATION$\vert$MB\+\_\+\+OKCANCEL)
+\begin{DoxyCompactList}\small\item\em Выводит различные сообщения в окне с помощью функции Message\+Box. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{group___misc_ga3f81b81baf3d43ec066bac4493149708}{tx\+Set\+Progress}} (double percent, unsigned type=2, HWND wnd=NULL)
+\begin{DoxyCompactList}\small\item\em Устанавливает Progress bar окна на панели задач. {\itshape @strike Весело и вкусно @endstrike Красиво и иногда полезно.} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___misc_gaa81c1c7c499d76619d5d9d3369560881}{random}} (int range) tx\+\_\+deprecated
+\begin{DoxyCompactList}\small\item\em Генератор случайных чисел \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group___misc_ga33933dc1baf2a181b7f9fabd61a4163e}{random}} (double left, double right) tx\+\_\+nodiscard tx\+\_\+deprecated
+\begin{DoxyCompactList}\small\item\em Генератор случайных чисел \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Tx , typename Ta , typename Tb $>$ }\\bool \mbox{\hyperlink{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}{In}} (Tx x, Ta a, Tb b) tx\+\_\+nodiscard tx\+\_\+deprecated
+\begin{DoxyCompactList}\small\item\em Проверка, находится ли параметр х внутри замкнутого интервала \mbox{[}a; b\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___misc_ga5de732de72c46b992ac2feeac2de7e42}{tx\+\_\+fpreset}} ()
+\begin{DoxyCompactList}\small\item\em Переинициализирует математический сопроцессор \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}{tx\+Sqr}} (double x)
+\begin{DoxyCompactList}\small\item\em {\itshape Очень удобное} возведение числа в квадрат. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___misc_gad942f797bce07af74cd11c88d50ddd3e}{tx\+Reg\+Query}} (const char $\ast$key\+Name, const char $\ast$value\+Name, void $\ast$value, size\+\_\+t sz\+Value)
+\begin{DoxyCompactList}\small\item\em Читает информацию из реестра Windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{group___misc_gaf59817ad656dcbb3f9baebeb4d7f82f7}{tx\+PI}}
+\begin{DoxyCompactList}\small\item\em Число Пи \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{group___misc_gaf40cd03b465387a736443214b7b44c32}{\+\_\+\+TX\+\_\+\+CODEPAGE}} = 1251
+\begin{DoxyCompactList}\small\item\em Смена кодовой страницы консоли и локали стандартной библиотеки С++. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Вспомогательные функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group___drawing_gaff3d9c60900531f438a19216485bdd41}{tx\+Update\+Window}} (int update=true)
+\begin{DoxyCompactList}\small\item\em Разрешает или запрещает автоматическое обновление изображения в окне. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___drawing_gabc64e03f4ca966e76bc714bbe8173761}{tx\+Select\+Object}} (HGDIOBJ obj, HDC dc=\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC}}())
+\begin{DoxyCompactList}\small\item\em Устанавливает текущий активный объект GDI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___drawing_ga93cecf6b117fc403c0488f388b78a6d1}{tx\+IDont\+Want\+To\+Have\+APause\+After\+My\+Program\+Before\+The\+Window\+Will\+Close\+\_\+\+And\+IWill\+Not\+Be\+Asking\+Where\+Is\+My\+Picture}} ()
+\begin{DoxyCompactList}\small\item\em Делает нечто иногда удобное. См. название функции. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Другие полезные функции, не связанные с рисованием}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}{tx\+Play\+Sound}} (const char filename\mbox{[}$\,$\mbox{]}=NULL, DWORD mode=SND\+\_\+\+ASYNC)
+\begin{DoxyCompactList}\small\item\em Воспроизводит звуковой файл. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak}} (const char $\ast$text,...) tx\+\_\+printfy(1)
+\begin{DoxyCompactList}\small\item\em Читает @strike мысли @endstrike текст вслух. \end{DoxyCompactList}\item 
+intptr\+\_\+t \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video}} (int x, int y, int width, int height, const char file\+Name\mbox{[}$\,$\mbox{]}, double zoom=0, double gain=1, HWND wnd=\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window}}())
+\begin{DoxyCompactList}\small\item\em Проигрывает видео. \end{DoxyCompactList}\item 
+intptr\+\_\+t \mbox{\hyperlink{group___misc_gaf5a6626fa2606a7f374fcc077fc92363}{tx\+Play\+Video}} (const char file\+Name\mbox{[}$\,$\mbox{]}, double zoom=0, double gain=1, HWND wnd=\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window}}())
+\begin{DoxyCompactList}\small\item\em Проигрывает видео. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{tx\+Get\+Async\+Key\+State}} (int key)
+\begin{DoxyCompactList}\small\item\em Проверяет, нажата ли указанная клавиша. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf}} (const char format\mbox{[}$\,$\mbox{]},...) tx\+\_\+printfy(1)
+\begin{DoxyCompactList}\small\item\em Выводит всплывающее сообщение в системном трее. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}{sizearr}}(arr)
+\begin{DoxyCompactList}\small\item\em Добрый дядюшка Принтф. Теперь шаболонный. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___misc_ga3379d227f91f891ac97d068ab90ee871}\label{group___misc_ga3379d227f91f891ac97d068ab90ee871}} 
+\#define {\bfseries SIZEARR}(arr)~( sizeof (arr) / sizeof ((arr)\mbox{[}0\mbox{]}) )
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group___misc_gadfae620e55d8798711d4a0c72f6af99e}{In}} (const POINT \&pt, const RECT \&rect) tx\+\_\+nodiscard tx\+\_\+deprecated
+\begin{DoxyCompactList}\small\item\em Проверка, находится ли точка pt внутри прямоугольника rect. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___misc_ga5f6ca2eaa2ff152301239bcefbda5dfe}\label{group___misc_ga5f6ca2eaa2ff152301239bcefbda5dfe}} 
+bool {\bfseries In} (const COORD \&pt, const SMALL\+\_\+\+RECT \&rect) tx\+\_\+nodiscard tx\+\_\+deprecated
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group___misc_gafbd4278ff893fc1c1e28b086197adebe}{tx\+Demangle}} (const char $\ast$mangled\+Name)
+\begin{DoxyCompactList}\small\item\em Преобразует декорированное имя С++ в название типа. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Очень служебные функции}
+\begin{DoxyCompactItemize}
+\item 
+WNDPROC \mbox{\hyperlink{group___misc_ga30fb1a6913174dfcea5079391f655be2}{tx\+Set\+Windows\+Hook}} (WNDPROC wnd\+Proc=NULL)
+\begin{DoxyCompactList}\small\item\em Устанавливает альтернативную функцию обработки оконных сообщений Windows (оконную функцию) для окна TXLib. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}{tx\+Lock}} (bool wait=true)
+\begin{DoxyCompactList}\small\item\em Блокировка холста (контекста рисования). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}{tx\+Unlock}} ()
+\begin{DoxyCompactList}\small\item\em Разблокировка холста \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___misc_ga02598f3908bcc003b19ece88e7a78815}\label{group___misc_ga02598f3908bcc003b19ece88e7a78815}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{struct__tx__auto__func__}{\+\_\+tx\+\_\+auto\+\_\+func\+\_\+}}$<$ T $>$ {\bfseries \+\_\+tx\+\_\+auto\+\_\+func} (T func)
+\item 
+\#define \mbox{\hyperlink{group___misc_gab0307cd0525c34547a286f7dc34993b7}{tx\+\_\+auto\+\_\+func}}( func)
+\begin{DoxyCompactList}\small\item\em Автоматический вызов функции при завершении другой функции (аналог {\ttfamily \+\_\+\+\_\+finally}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___misc_ga71e20c6118464420ecbee808b89bc449}\label{group___misc_ga71e20c6118464420ecbee808b89bc449}} 
+\#define {\bfseries \+\_\+tx\+\_\+auto\+\_\+fun1}(n,  func)~\+\_\+tx\+\_\+auto\+\_\+fun2 ( n,        func )
+\item 
+\mbox{\Hypertarget{group___misc_ga24aee9d2bd2409fa01c32742380c2612}\label{group___misc_ga24aee9d2bd2409fa01c32742380c2612}} 
+\#define {\bfseries \+\_\+tx\+\_\+auto\+\_\+fun2}(n,  func)~auto \mbox{\hyperlink{struct__tx__auto__func__}{\+\_\+tx\+\_\+auto\+\_\+func\+\_\+}}\#\#n = \+\_\+tx\+\_\+auto\+\_\+func (\mbox{[}\&\mbox{]}() \{ func; \})
+\item 
+\mbox{\Hypertarget{group___misc_gaab77850c89f56995dca40b02d9c44218}\label{group___misc_gaab77850c89f56995dca40b02d9c44218}} 
+\#define {\bfseries tx\+\_\+finally}(...)~\mbox{\hyperlink{group___misc_gab0307cd0525c34547a286f7dc34993b7}{tx\+\_\+auto\+\_\+func}} (\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___misc_gaa25e1fdabc28195f490c7a03b7c7cbfb}{meow}}
+\begin{DoxyCompactList}\small\item\em {\itshape Ну просто {\bfseries{очень}} удобный} макрос. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___misc_ga0b75271f60823b3c49a42cdd3c196ce5}\label{group___misc_ga0b75271f60823b3c49a42cdd3c196ce5}} 
+\#define {\bfseries please}
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Макрос, позволяющий передать переменное число параметров в какой-\/либо другой макрос. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___misc_gaaff3c8e496327bec13a821061787878f}\label{group___misc_gaaff3c8e496327bec13a821061787878f}} 
+\#define \mbox{\hyperlink{group___misc_gaaff3c8e496327bec13a821061787878f}{TX\+\_\+\+COMMA}}~,
+\begin{DoxyCompactList}\small\item\em Синоним макроса \+\_\+ (\mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{символ подчеркивания}}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Макросы для построения статической карты сообщений (Message Map)}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}{TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP}}()
+\begin{DoxyCompactList}\small\item\em Заголовок карты сообщений (Message Map). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_gadbe2f17002d8d41056e9770066ef558b}{TX\+\_\+\+HANDLE}}(id)
+\begin{DoxyCompactList}\small\item\em Заголовок обработчика сообщения (Message handler) карты сообщений. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga3637c3398b6ebfa337171beec0770fe4}{TX\+\_\+\+COMMAND\+\_\+\+MAP}}
+\begin{DoxyCompactList}\small\item\em Начало карты команд (Command map) в карте сообщений. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}{TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}}
+\begin{DoxyCompactList}\small\item\em Завершитель карты сообщений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Экспериментальные отладочные макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___misc_gaaa5d2cd4ba134312dcaca4e8316bbe9e}{\+\_\+\+\_\+\+TX\+\_\+\+DEBUG\+\_\+\+MACROS}}~(\char`\"{}Группа отладочных \$-\/макросов\char`\"{})
+\begin{DoxyCompactList}\small\item\em Отладочная печать переменной во время вычисления выражения или участка кода во время его выполнения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}\label{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}} 
+\index{Разное@{Разное}!\_@{\_}}
+\index{\_@{\_}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{\_}{\_}}
+{\footnotesize\ttfamily \#define \+\_\+}
+
+
+
+Макрос, позволяющий передать переменное число параметров в какой-\/либо другой макрос. 
+
+\begin{DoxyNote}{Note}
+{\bfseries{Символ подчеркивания и символ TX\+\_\+\+COMMA просто переопределяются в запятую.}}
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\_ERROR}} (\textcolor{stringliteral}{"{}Слишком умный абзац: роман 'Война и мир', файл '\%s', строка \%d"{}} \mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{\_}} fileName \mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{\_}} lineNum);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaaa5d2cd4ba134312dcaca4e8316bbe9e}\label{group___misc_gaaa5d2cd4ba134312dcaca4e8316bbe9e}} 
+\index{Разное@{Разное}!\_\_TX\_DEBUG\_MACROS@{\_\_TX\_DEBUG\_MACROS}}
+\index{\_\_TX\_DEBUG\_MACROS@{\_\_TX\_DEBUG\_MACROS}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{\_\_TX\_DEBUG\_MACROS}{\_\_TX\_DEBUG\_MACROS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+TX\+\_\+\+DEBUG\+\_\+\+MACROS~(\char`\"{}Группа отладочных \$-\/макросов\char`\"{})}
+
+
+
+Отладочная печать переменной во время вычисления выражения или участка кода во время его выполнения. 
+
+Сделай приятными твои {\itshape круглые сутки} отладки!
+
+\begin{DoxyWarning}{Warning}
+Эти макросы могут измениться в будущих версиях. @strike Чтобы вам повеселее жилось. @endstrike
+\end{DoxyWarning}
+@title Назначение\+: @table @tr {\ttfamily  \$ (var, \mbox{[}name\mbox{]}) } @td Печать имени и значения переменной или выражения {\ttfamily var}. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tr {\ttfamily  \$\+\_\+(var,  \mbox{[}name\mbox{]}) } @td То же, что и {\ttfamily ,} но без новой строки. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tbr @tr {\ttfamily  \$x (var, \mbox{[}name\mbox{]}) } @td Печать имени и значения переменной или выражения {\ttfamily var} в 16-\/ричной системе счисления. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tr {\ttfamily  \$x\+\_\+(var, \mbox{[}name\mbox{]}) } @td То же, что и {\ttfamily \$x(var),} но без новой строки. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tbr @tr {\ttfamily  \$v (var, cond, \mbox{[}name\mbox{]}) } @td То же, что и {\ttfamily ,} но различным цветом в зависимости от условия {\ttfamily cond}. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tr {\ttfamily  \$v\+\_\+(var, cond, \mbox{[}name\mbox{]}) } @td То же, что и {\ttfamily \$v(var),} но без новой строки. {\itshape \mbox{[}name\mbox{]} @d необязательное примечание.} @tbr @tr {\ttfamily  \$do(code) } @td Печать строки кода, затем выполнение этого кода. @tr {\ttfamily  \$\+DO(code) } @td То же, что и {\ttfamily \$do(code),} но с паузой (нажмите любую клавишу). @tr {\ttfamily  \$\+Do(code) } @td То же, что и {\ttfamily \$do(code),} но с паузой (tx\+Message\+Box). @tbr @tr {\ttfamily  \$\$\$ (expr) } @td Печать выражения, его вычисление, печать и возврат значения. ~\newline
+ Если выражение содержит оператор \char`\"{}запятая\char`\"{}, не взятый в скобки, необходимо окружать expr еще одной парой скобок. @tr {\ttfamily  \$\$\$\+\_\+(expr) } @td То же, что и {\ttfamily \$\$,} но вторая печать идет без новой строки. @tbr @tr {\ttfamily  \$\$\$\$ (code) } @td То же, что и {\ttfamily \$\$,} но для операторов или блоков кода (без возврата значения). @tr {\ttfamily  \$\$\$\$\+\_\+(code) } @td То же, что и {\ttfamily \$\$\$,} но вторая печать идет без новой строки. @tbr @tr {\ttfamily  \$\$ } @td Печать местоположения в коде. @tr {\ttfamily  \$\$\+\_\+ } @td Печать местоположения в коде (только имя функции и номер строки). @tr {\ttfamily  \$meow (msg) } @td То же, что и \$\$, но еще и печатает сообщение {\ttfamily msg}. @tbr @tr {\ttfamily  \$test (cond) } @td Печать результата теста различным цветом в зависимости от условия {\ttfamily cond}. @tr {\ttfamily  \$unittest (code, expected) } @td Печать результата {\bfseries{юнит-\/теста}} {\ttfamily code} с ожидаемым результатом {\ttfamily expected}. @tbr @tr {\ttfamily  \$n } @td Перевод строки (печать {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}}). @tr {\ttfamily  \$nn } @td Пустая строка (печать {\ttfamily \textquotesingle{}\textbackslash{}n\textbackslash{}n\textquotesingle{}}). @tr {\ttfamily  \$t } @td Табуляция (печать {\ttfamily \textquotesingle{}\textbackslash{}t\textquotesingle{}}). @endtable
+
+@title Установка атрибутов символов консоли\+: @table @tr {\ttfamily \$d} @td Светло-\/серый цвет @td @td {\ttfamily \$D} @td Темно-\/серый цвет @tr {\ttfamily \$b} @td Светло-\/синий цвет @td @td {\ttfamily \$B} @td Темно-\/синий цвет @tr {\ttfamily \$g} @td Светло-\/зеленый цвет @td @td {\ttfamily \$G} @td Темно-\/зеленый цвет @tr {\ttfamily \$c} @td Светло-\/бирюзовый цвет @td @td {\ttfamily \$C} @td Темно-\/бирюзовый цвет @tr {\ttfamily \$r} @td Светло-\/красный цвет @td @td {\ttfamily \$R} @td Темно-\/красный цвет @tr {\ttfamily \$m} @td Светло-\/малиновый цвет @td @td {\ttfamily \$M} @td Темно-\/малиновый цвет @tr {\ttfamily \$y} @td Желтый цвет @td @td {\ttfamily \$Y} @td Темно-\/желтый цвет @tr {\ttfamily \$h} @td Белый цвет @td @td {\ttfamily \$H} @td Прозрачный цвет @endtable @title @table @tr {\ttfamily \$o} @td OK @td Светло-\/зеленый на зеленом @td @td {\ttfamily \$O} @td OK bold @td Желтый на зеленом @td @tr {\ttfamily \$i} @td Information @td Светло-\/синий на синем @td @td {\ttfamily \$I} @td Information bold @td Желтый на синем @td @tr {\ttfamily \$w} @td Warning @td Светло-\/малиновый на малиновом @td @td {\ttfamily \$W} @td Warning bold @td Желтый на малиновом @td @tr {\ttfamily \$e} @td Error @td Светло-\/красный на красном @td @td {\ttfamily \$E} @td Error bold @td Желтый на красном @td @tr {\ttfamily \$f} @td Fatal @td Черный на светло-\/красном @td @td {\ttfamily \$F} @td Fatal bold @td Малиновый на светло-\/красном @td @tr {\ttfamily \$l} @td Location @td Черный на темно-\/сером @td @td {\ttfamily \$L} @td Location bold @td Светло-\/серый на темно-\/сером @td @endtable @title @table @tr {\ttfamily \$T} (cond) @td Светло-\/зеленый {\bfseries{или}} светло-\/красный, в зависимости от условия {\ttfamily cond}. @endtable @title @table @tr {\ttfamily \$s} @td Запомнить атрибуты. При выходе из {\ttfamily \{} блока кода {\ttfamily \}} атрибуты восстанавливаются. @tr {\ttfamily \$s$\ast$} @td Запомнить атрибуты и установить цвет (замените звездочку кодом цвета, см. выше). Пример\+: {\ttfamily \$sg} -\/ запомнить атрибуты и установить светло-\/зеленый цвет. @endtable
+
+{\bfseries{Что такое юнит-\/тест?}} А вот что\+: \href{http://google.com/search?q=\%D0\%AE\%D0\%BD\%D0\%B8\%D1\%82-\%D1\%82\%D0\%B5\%D1\%81\%D1\%82\%D0\%B8\%D1\%80\%D0\%BE\%D0\%B2\%D0\%B0\%D0\%BD\%D0\%B8\%D0\%B5+C\%2B\%2B}{\texttt{ www.\+google.\+com/search?q=Юнит-\/тестирование+\+C++.}} {\bfseries{Это когда ошибки ищутся сами.}}
+
+\begin{DoxySeeAlso}{See also}
+assert(), \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Есть еще другие (недокументированные) подобные макросы. Загляните в исходный текст \mbox{\hyperlink{_t_x_lib_8h}{TXLib.\+h}}, ищите \+\_\+\+\_\+\+TX\+\_\+\+DEBUG\+\_\+\+MACROS и см. ниже.
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$g  \textcolor{comment}{// green}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} x = 5;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} y = \$(x) + 1;}
+\DoxyCodeLine{\$(  x = \$(y) + 2 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} xx[] = \{ 10, 20, 30 \};}
+\DoxyCodeLine{\$(xx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$r  \textcolor{comment}{// red}}
+\DoxyCodeLine{\textcolor{keywordtype}{double} xy = \$( pow (x, y) );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$meow (\textcolor{stringliteral}{"{}Computing hypothenuse..."{}})}
+\DoxyCodeLine{double h  = \$\$\$(( \$(x) = x*x, y = y*y, sqrt (\$(x+y)) ));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$\$ \$\$P;}
+\DoxyCodeLine{\$\$\$( \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{txCreateWindow}} (800, 600) );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$d  \textcolor{comment}{// default color}}
+\DoxyCodeLine{\$\$\$\$( if (\$(xy) < \$(h)) \{ \$sE \textcolor{keywordflow}{return} \$(h); \} );  \textcolor{comment}{// Save color, print h in error color, restore color}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$T (h <  10); \$(h);  \textcolor{comment}{// Print h again, but in success color (h < 10)...}}
+\DoxyCodeLine{\$T (h <= 10); \$(h);  \textcolor{comment}{// ...or error color (otherwize)}}
+\DoxyCodeLine{\$n                   \textcolor{comment}{// New line}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$Do (\textcolor{keywordtype}{bool} isPositive = (h > 0));}
+\DoxyCodeLine{\$test (isPositive); \$n                          \textcolor{comment}{// Print a test result}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef \_MSC\_VER}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} ok = ( \$unittest (strlen (\textcolor{stringliteral}{"{}abc"{}}), 3) );    \textcolor{comment}{// Checks in unit-\/test style, thanks GCC}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$unittest (strlen (\textcolor{stringliteral}{"{}abc"{}}), 3);                  \textcolor{comment}{// Checks in unit-\/test style, Microsoft compatible way.}}
+\DoxyCodeLine{                                                \textcolor{comment}{// No return result from \$unittest here, sorry (:}}
+\DoxyCodeLine{\$\$ \$\$p;}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gab170f39ac0e379c324c73495f14a1309}\label{group___misc_gab170f39ac0e379c324c73495f14a1309}} 
+\index{Разное@{Разное}!\_\_TX\_FUNCTION\_\_@{\_\_TX\_FUNCTION\_\_}}
+\index{\_\_TX\_FUNCTION\_\_@{\_\_TX\_FUNCTION\_\_}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{\_\_TX\_FUNCTION\_\_}{\_\_TX\_FUNCTION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+TX\+\_\+\+FUNCTION\+\_\+\+\_\+}
+
+
+
+Имя текущей функции 
+
+\begin{DoxyWarning}{Warning}
+Если определение имени функции не поддерживается компилятором, то {\bfseries{TX\+\_\+\+FUNCTION}} раскрывается в имя исходного файла и номер строки. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{group___misc_ga889b74443b3e918adee3e31fad4653f7}\label{group___misc_ga889b74443b3e918adee3e31fad4653f7}} 
+\index{Разное@{Разное}!asserted@{asserted}}
+\index{asserted@{asserted}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{asserted}{asserted}}
+{\footnotesize\ttfamily \#define asserted}
+
+
+
+Выводит диагностическое сообщение в случае нулевого или ложного результата. 
+
+\begin{DoxyReturn}{Returns}
+Всегда 0. \begin{DoxyVerb}     Суффиксная форма макроса assert(), не теряющая в режиме Release исполнения предиката.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Предполагается, что операция в случае неуспеха возвращает 0 или false.}} ~\newline
+~\newline
+ {\bfseries{При компиляции в режиме Release (или если определен NDEBUG) asserted превращается в пустое место.}}
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+assert(), \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify()}}, \mbox{\hyperlink{_t_x_lib_8h_a66cb8e8fe20d9d05d02e73373bda7f8a}{verified}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{FILE* input = fopen (\textcolor{stringliteral}{"{}a.txt"{}}, \textcolor{stringliteral}{"{}r"{}}); assert (input);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Этот вызов fgets() будет выполнен в любом случае:}}
+\DoxyCodeLine{fgets (str, \textcolor{keyword}{sizeof} (str) -\/ 1, input) \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Этот вызов fgets() НЕ будет выполнен в режиме Release:}}
+\DoxyCodeLine{assert (fgets (str, \textcolor{keyword}{sizeof} (str) -\/ 1, input));}
+\DoxyCodeLine{}
+\DoxyCodeLine{(fclose (input) != 0) \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}};}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{group___misc_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{Разное@{Разное}!MAX@{MAX}}
+\index{MAX@{MAX}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+
+
+Возвращает максимальное из двух чисел 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Одно из чисел \+:) \\
+\hline
+{\em b} & Другое из чисел \+:)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Максимальное из двух чисел a и b.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Это {\bfseries{макрос}}, и аргументы {\ttfamily a} и {\ttfamily b} могут вычисляться в нем два раза. Поэтому не используйте в нем побочных действий {\ttfamily ++}, {\ttfamily --}, {\ttfamily +=} и т.\+п. Например, {\bfseries{не}} пишите так\+: {\ttfamily int m = MAX (++x, y += 2);}
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga3acffbd305ee72dcd4593c0d8af64a4f}{MIN()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}} (3, 7) != 7) printf (\textcolor{stringliteral}{"{}Your CPU is broken, throw it away."{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaa25e1fdabc28195f490c7a03b7c7cbfb}\label{group___misc_gaa25e1fdabc28195f490c7a03b7c7cbfb}} 
+\index{Разное@{Разное}!meow@{meow}}
+\index{meow@{meow}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{meow}{meow}}
+{\footnotesize\ttfamily \#define meow}
+
+
+
+{\itshape Ну просто {\bfseries{очень}} удобный} макрос. 
+
+\begin{DoxyWarning}{Warning}
+Это еще один пример, как {\bfseries{ не надо }} писать код. @nn Макрос определен так\+: @nn {\ttfamily  \#define z 0 } @nn Замечательный макрос! Теперь на одну переменную в программе стало меньше. \+:((
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+(Используйте {\ttfamily \#undef}. С {\ttfamily \href{http://www.google.ru/search?q=\%23undef}{\texttt{ http\+://www.\+google.\+ru/search?q=\%23undef}}\#undef}  ваша программа станет мягкой и шелковистой.)
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_TX\_DESTROY\_3D}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_t_x_lib_8h}{TXLib.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// А теперь попробуйте объявить переменную z для расчета 3-\/D координат x, y, z:}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} z = 0;  \textcolor{comment}{// Да! TXLib уничтожает трехмерность! Очень круто. :=/}}
+
+\end{DoxyCode}
+
+
+{\itshape Еще парочка макросов.} \begin{DoxyVerb}     @c please  увеличивает вероятность успешного выполнения кода*.
+
+     @c meow -- ...просто мяу :)
+\end{DoxyVerb}
+ \begin{DoxyNote}{Note}
+
+\footnotesize $\ast$ Это шутка \+:)
+\normalsize 
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_t_x_lib_8h}{TXLib.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} x = rand() \mbox{\hyperlink{group___misc_gaa25e1fdabc28195f490c7a03b7c7cbfb}{meow}}   \textcolor{comment}{// Как же без котиков?}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} y = rand() \mbox{\hyperlink{group___misc_gaa25e1fdabc28195f490c7a03b7c7cbfb}{meow}}}
+\DoxyCodeLine{if (x+y > RAMD\_MAX/2) please x = y = 0;}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga3acffbd305ee72dcd4593c0d8af64a4f}\label{group___misc_ga3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{Разное@{Разное}!MIN@{MIN}}
+\index{MIN@{MIN}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+
+
+Возвращает минимальное из двух чисел 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Одно из чисел \+:) \\
+\hline
+{\em b} & Другое из чисел \+:)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Минимальное из двух чисел a и b.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Это {\bfseries{макрос}}, и аргументы {\ttfamily a} и {\ttfamily b} могут вычисляться в нем два раза. Поэтому не используйте в нем побочных действий {\ttfamily ++}, {\ttfamily --}, {\ttfamily +=} и т.\+п. Например, {\bfseries{не}} пишите так\+: {\ttfamily int m = MIN (x--, y /= 2);}
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga3acffbd305ee72dcd4593c0d8af64a4f}{MIN}} (3, 7) != 3) printf (\textcolor{stringliteral}{"{}Your CPU is still broken, throw it away twice."{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}\label{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}} 
+\index{Разное@{Разное}!ROUND@{ROUND}}
+\index{ROUND@{ROUND}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{ROUND}{ROUND}}
+{\footnotesize\ttfamily \#define ROUND(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Округляет число до целого 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Число. @strike А вы как думали? @endstrike\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Округленное число, преобразованное в тип {\ttfamily long}.
+\end{DoxyReturn}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} weight = 5.5;        \textcolor{comment}{// 5.5 kilos is the weight of Maru the Cat in 2012.}}
+\DoxyCodeLine{\textcolor{keywordtype}{long} Maru = \mbox{\hyperlink{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}{ROUND}} (weight); \textcolor{comment}{// Should use ROUND() because Maru is so round. And long.}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}\label{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}} 
+\index{Разное@{Разное}!sizearr@{sizearr}}
+\index{sizearr@{sizearr}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{sizearr}{sizearr}}
+{\footnotesize\ttfamily \#define sizearr(\begin{DoxyParamCaption}\item[{}]{arr }\end{DoxyParamCaption})}
+
+
+
+Добрый дядюшка Принтф. Теперь шаболонный. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Строка для печати, все как в вашем любимом printf(). \\
+\hline
+{\em args} & Значения для печати.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество напечатанных символов. \begin{DoxyVerb}     Функция работает аналогично @c printf(). Однако, в силу применения @strike сноубордических @endstrike
+     вариадических шаблонов, она типобезопасна @d сама определяет тип печатаемых аргументов и подставляет
+     нужные символы преобразования типов. Допускается применение универсального символа типа @c %$ (или @c %?)
+     вместо других символов типов, таких как <tt>%d, %i, %c, %s, %p, %g</tt> и других.
+
+     txPrintf() позволяет распечатывать типы, не встроенные в язык С++: строки С++ @c (std::string),
+     некоторые типы Win32 (например, @c POINT) и ваши собственные типы. Для того, чтобы ваши типы могли
+     печататься, надо определить пользовательский оператор вывода в поток STL. Вот, например, как определен
+     оператор вывода для структуры POINT:
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::ostream\& operator << (std::ostream\& stream, \textcolor{keyword}{const} POINT\& point)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    stream << \textcolor{stringliteral}{"{}\{ x: "{}} << point.x << \textcolor{stringliteral}{"{}, y: "{}} << point.y << \textcolor{stringliteral}{"{} \}"{}};}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} stream;}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ Вы можете определить свой оператор вывода аналогично.
+\end{DoxyReturn}
+На самом деле функция tx\+Printf() @d это обертка над операторами потокового вывода STL\+: {\ttfamily operator} {\ttfamily $<$$<$}. Чудес не бывает, и в любом случае вывод пользовательских типов и автоматический подбор преобразований так или иначе был бы основан на семействе перегруженных функций. Вместо того, чтобы создавать такое семейство с нуля, TXLib использует уже существующий оператор {\ttfamily $<$$<$}, уже перегруженный для всех стандартных типов, и про который все хорошо знают.
+
+\begin{DoxyNote}{Note}
+Если нужно передать спецификаторы ширины или точности в виде переменных (для форматов {\ttfamily \%$\ast$}, {\ttfamily \%}.$\ast$ или {\ttfamily \%$\ast$}.$\ast$), их нужно оборачивать в конструкции {\ttfamily width()} и {\ttfamily precision()} с помощью соответствующих функций. См. пример ниже. @nn
+\begin{DoxyItemize}
+\item {\ttfamily width\+\_\+t width (int)} @d Функция, оборачивающая спецификатор ширины в тип enum {\ttfamily width\+\_\+t}.
+\item {\ttfamily precision\+\_\+t precision (int)} @d Функция, оборачивающая спецификатор точности в тип enum {\ttfamily precision\+\_\+t}.
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Функция довольно медленная и жадная на ресурсы\+: во-\/первых, в силу применения весьма неоптимальных потоков вывода STL {\ttfamily }(std\+::ostream), во-\/вторых, вывод сначала идет в строку (через поток {\ttfamily std\+::ostringstream}), и только потом печатается. @nn Если хочется быстрее и экономнее @d юзайте обычный принтф, он относительно быстрый. Или, как это принято в {\ttfamily TXLib} @d делайте сами.
+\end{DoxyWarning}
+Идея реализации взята у @strike признанного демона современного С++ @endstrike (Alexandrescu A., \char`\"{}\+Variadic          Templates are Funadic\char`\"{}, Going Native 2012, Redmond, WA, USA, \href{https://www.youtube.com/watch?v=dD57tJjkumE}{\texttt{ https\+://www.\+youtube.\+com/watch?v=d\+D57t\+JjkumE}}, краткий обзор докладов см. \href{https://habr.com/ru/post/139064}{\texttt{ https\+://habr.\+com/ru/post/139064}}).
+
+Есть также макрос {\ttfamily TX\+\_\+\+PRINTF (format, ...)}, который проверяет аргументы согласно спецификации стандартной функции {\ttfamily printf()} и потом вызывает tx\+Printf(). Но он отвергает c \%\$ (\%?), требует точного соответствия символов преобразований типов и не позволяет передавать типы, не встроенные изначально в язык С++ (структурные и классовые типы). Используйте его, если в дальнейшем вы планируете перейти на обычный {\ttfamily printf()}.
+
+\begin{DoxyWarning}{Warning}
+Эта функция доступна только если ваш компилятор поддерживает стандарт C++11 (g++ с опцией {\ttfamily -\/std=c++11} или выше, Microsoft Visual Studio 2013 или выше). Используйте макрос \+\_\+\+TX\+\_\+\+CPP11, который определен, если компилятор поддерживает стандарт C++11.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+tx\+Format(), \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//         +-\/-\/+-\/-\/+-\/-\/-\/+-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/+-\/-\/+}}
+\DoxyCodeLine{\textcolor{comment}{//         |2 |3 | 4 | 5 | 6  |  7  | 8 |  |}}
+\DoxyCodeLine{\textcolor{comment}{//         +-\/-\/+-\/-\/+-\/-\/-\/+-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/+-\/-\/+}}
+\DoxyCodeLine{txPrintf (\textcolor{stringliteral}{"{}|\%\$|\%s|\%5s|\%*d|\%.*f|\%*.*\$|\%*\$|\%\%|\(\backslash\)n"{}},            \textcolor{comment}{// Arg\#1}}
+\DoxyCodeLine{\textcolor{comment}{//         |  |  |   |   |    |     |   |  |}}
+\DoxyCodeLine{\textcolor{comment}{//         +-\/-\/+-\/-\/+-\/-\/-\/+-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/+-\/-\/+}}
+\DoxyCodeLine{                                     12,                    \textcolor{comment}{// Arg\#2}}
+\DoxyCodeLine{                                    \textcolor{stringliteral}{"{}Cats power!"{}},          \textcolor{comment}{// Arg\#3}}
+\DoxyCodeLine{                                     std::string (\textcolor{stringliteral}{"{}meow"{}}),  \textcolor{comment}{// Arg\#4}}
+\DoxyCodeLine{          width (10),                56,                    \textcolor{comment}{// Arg\#5}}
+\DoxyCodeLine{          precision (3),             3.141592653,           \textcolor{comment}{// Arg\#6}}
+\DoxyCodeLine{          width (15), precision (6), 2.718281828,           \textcolor{comment}{// Arg\#7}}
+\DoxyCodeLine{          width (20),                POINT \{ 10, 20 \});     \textcolor{comment}{// Arg\#8}}
+
+\end{DoxyCode}
+
+
+Печатает в строковый поток вывода, как sprintf().
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Строка, как в sprintf(). \\
+\hline
+{\em stream} & Строковый поток вывода. \\
+\hline
+{\em args} & Значения для печати.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество напечатанных символов.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция доступна только если ваш компилятор поддерживает стандарт C++11 (g++ с опцией {\ttfamily -\/std=c++11} или выше, MSVC 2013 или выше). Используйте макрос \+\_\+\+TX\+\_\+\+CPP11, который определен, если компилятор поддерживает стандарт C++11.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+tx\+Printf(), \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, tx\+Printf(), tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}
+\end{DoxySeeAlso}
+@usage См. пример в функции tx\+Printf() выше.
+
+Печатает в строковый буфер, как sprintf().
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Строка, как в sprintf(). \\
+\hline
+{\em buffer} & Буфер для вывода. \\
+\hline
+{\em size} & Длина буфера вывода. \\
+\hline
+{\em args} & Значения для печати.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество напечатанных символов.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция доступна только если ваш компилятор поддерживает стандарт C++11 (g++ с опцией {\ttfamily -\/std=c++11} или выше, MSVC 2013 или выше). Используйте макрос \+\_\+\+TX\+\_\+\+CPP11, который определен, если компилятор поддерживает стандарт C++11.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+tx\+Printf(), \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, tx\+Printf(), tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}
+\end{DoxySeeAlso}
+@usage См. пример в функции tx\+Printf() выше.
+
+Форматирует строку, как sprintf().
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Строка, как в sprintf(). \\
+\hline
+{\em args} & Значения для печати.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Отформатированная строка в виде {\ttfamily std\+::string}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция доступна только если ваш компилятор поддерживает стандарт C++11 (g++ с опцией {\ttfamily -\/std=c++11} или выше, MSVC 2013 или выше). Используйте макрос \+\_\+\+TX\+\_\+\+CPP11, который определен, если компилятор поддерживает стандарт C++11.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+tx\+Printf(), \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, tx\+Printf(), tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}
+\end{DoxySeeAlso}
+@usage См. пример в функции tx\+Printf() выше.
+
+Вычисление размера массива в элементах
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Имя массива.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Размер массива в элементах (не в байтах). \begin{DoxyVerb}     Макрос sizearr() вычисляет размер массива в элементах, проверяя, можно ли его правильно вычислить при
+     компиляции.
+
+     Макрос SIZEARR() просто делит размер всего массива в байтах на размер его элемента, получается размер
+     массива в элементах. @n
+     Он <b>не проверяет,</b> можно ли его правильно вычислить, и при неправильном использовании может
+     выдать <b>неверный размер.</b>
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+SIZEARR() выдает неверный размер, если определение массива вместе с его размером, известным при компиляции, недоступно в месте использования SIZEARR(). См. пример ниже.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} test()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{comment}{// Размер этого массива, хоть и не указан, но может быть автоматически определен}}
+\DoxyCodeLine{    \textcolor{comment}{// компилятором при компиляции программы. Он равен 4 (четыре структуры POINT).}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    POINT coord[] = \{ \{110, 110\}, \{120, 120\}, \{130, 110\}, \{140, 120\} \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Здесь размер массива известен при компиляции, т.к. он был определен тут же.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}{sizearr}} (coord) -\/ 1; i++)}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (coord[i].x, coord[i].y, coord[i+1].x, coord[i+1].y);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    DrawLines1 (coord);                  \textcolor{comment}{// Попытка передать массив без передачи размера.}}
+\DoxyCodeLine{    DrawLines2 (coord, \mbox{\hyperlink{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}{sizearr}} (coord)); \textcolor{comment}{// Правильная передача размера массива.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    DrawLines3 (coord);                  \textcolor{comment}{// В принципе, можно и так, но тут ВОДЯТСЯ ШАБЛОНЫ.}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Функции DrawLines1 и DrawLines2 определены так:}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawLines1 (\textcolor{keyword}{const} POINT coord[])}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{comment}{// Массивы в Си передаются как указатели на начало массива. Поэтому:}}
+\DoxyCodeLine{    \textcolor{comment}{// 1) sizearr здесь выдаст ошибку компиляции, и ее легко будет найти.}}
+\DoxyCodeLine{    \textcolor{comment}{// 2) SIZEARR здесь неверно посчитает размер, что намного хуже, чем ошибка компиляции,}}
+\DoxyCodeLine{    \textcolor{comment}{//      т.к. он будет равен sizeof (POINT*) / sizeof (POINT) == 4/8 == 0, что станет}}
+\DoxyCodeLine{    \textcolor{comment}{//      трудноуловимой логической ошибкой времени исполнения.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{group___misc_ga799c47c1a2a151647cd765e1fa4b27b5}{sizearr}} (coord) -\/ 1; i++)}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (coord[i].x, coord[i].y, coord[i+1].x, coord[i+1].y);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawLines2 (\textcolor{keyword}{const} POINT coord[], \textcolor{keywordtype}{int} n)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{comment}{// Здесь размер приходит как параметр n, так что все просто. Вызывающая сторона (функция}}
+\DoxyCodeLine{    \textcolor{comment}{// test) правильно вычисляет его и передает функции DrawLines2, которая им пользуется.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n -\/ 1; i++)}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (coord[i].x, coord[i].y, coord[i+1].x, coord[i+1].y);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// HIC SVNT TEMPLATES}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template} <\textcolor{keywordtype}{int} size>}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawLines3 (\textcolor{keyword}{const} POINT (\&coord) [size])}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size -\/ 1; i++)}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (coord[i].x, coord[i].y, coord[i+1].x, coord[i+1].y);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaf6d32e17de45766eea363ad72824ecad}\label{group___misc_gaf6d32e17de45766eea363ad72824ecad}} 
+\index{Разное@{Разное}!TX\_ASSERT@{TX\_ASSERT}}
+\index{TX\_ASSERT@{TX\_ASSERT}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_ASSERT}{TX\_ASSERT}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{cond }\end{DoxyParamCaption})}
+
+
+
+Замена стандартного макроса assert(), с выдачей сообщения через \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, консоль и Output\+Debug\+String(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cond} & Условие для проверки.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Не определено. \begin{DoxyVerb}     Если условие, проверяемое TX_ASSERT(), истинно, то макрос ничего не делает. @n
+     Если условие оказывается ложно, то выводится диагностическое сообщение и программа аварийно завершается.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+{\bfseries{При компиляции в режиме Release (или если определен NDEBUG) TX\+\_\+\+ASSERT превращается в пустой оператор.}} ~\newline
+ Не надо помещать в \mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\+\_\+\+ASSERT()}} или в assert() действия, которые важны для работы алгоритма!
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Если условие {\ttfamily cond} может быть вычислено уже во время компиляции как ложное, компилятор может предупредить об этом (как о делении на 0). 
+
+
+\footnotesize See\+: \href{http://lars-lab.jpl.nasa.gov/JPL_Coding_Standard_C.pdf}{\texttt{ \char`\"{}\+JPL Institutional Coding          Standard for the C Programming Language\char`\"{}, Jet Propulsion Laboratory, California Institute of Technology, JPL DOCID D-\/60411, Ver. 1.\+0, March 3, 2009}}, page 15.
+\normalsize  @nn
+
+Стандартный макрос assert() переопределяется так, что становится эквивалентен \mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\+\_\+\+ASSERT()}}.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Кто не юзает assert(), тот ест баги на десерт!
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}, \mbox{\hyperlink{_t_x_lib_8h_a66cb8e8fe20d9d05d02e73373bda7f8a}{verified}}, \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify()}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\_ASSERT}} (0 <= i \&\& i < ARRAY\_SIZE);}
+\DoxyCodeLine{assert    (0 <= i \&\& i < ARRAY\_SIZE);  \textcolor{comment}{// То же самое, что и TX\_ASSERT}}
+\DoxyCodeLine{}
+\DoxyCodeLine{FILE* input = fopen (\textcolor{stringliteral}{"{}a.txt"{}}, \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\_ASSERT}} (input);}
+\DoxyCodeLine{assert    (input);                     \textcolor{comment}{// То же самое, что и TX\_ASSERT}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Этот вызов fgets() НЕ будет выполнен в режиме Release:}}
+\DoxyCodeLine{assert (fgets (str, \textcolor{keyword}{sizeof} (str) -\/ 1, input));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Здесь все будет правильно:}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} ok = (fclose (input) == 0);}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gaf6d32e17de45766eea363ad72824ecad}{TX\_ASSERT}} (ok);}
+\DoxyCodeLine{assert    (ok);                        \textcolor{comment}{// То же самое, что и TX\_ASSERT}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gab0307cd0525c34547a286f7dc34993b7}\label{group___misc_gab0307cd0525c34547a286f7dc34993b7}} 
+\index{Разное@{Разное}!tx\_auto\_func@{tx\_auto\_func}}
+\index{tx\_auto\_func@{tx\_auto\_func}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{tx\_auto\_func}{tx\_auto\_func}}
+{\footnotesize\ttfamily \#define tx\+\_\+auto\+\_\+func(\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})}
+
+
+
+Автоматический вызов функции при завершении другой функции (аналог {\ttfamily \+\_\+\+\_\+finally}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Тело автоматически вызываемой функции (фигурные скобки не обязательны).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+-\/ {\itshape Все} переменные вызываемой функции связываются с переменными внешней функции по ссылке.
+\begin{DoxyItemize}
+\item Их названия и типы {\itshape не} указываются. Указывается только тело вызываемой функции.
+\item Синоним\+: tx\+\_\+finally
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classtx_auto_lock}{tx\+Auto\+Lock}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} some\_func()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} x = 1;}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gab0307cd0525c34547a286f7dc34993b7}{tx\_auto\_func}} (\$(x));                      \textcolor{comment}{// Will be printed at return}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    FILE* f = fopen (\_\_FILE\_\_\textcolor{stringliteral}{"{}.o.txt"{}}, \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gab0307cd0525c34547a286f7dc34993b7}{tx\_auto\_func}} (fclose (f));                \textcolor{comment}{// Will be closed at return}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    fprintf (f, \textcolor{stringliteral}{"{}start: x = \%d\(\backslash\)n"{}}, x);        \textcolor{comment}{// Do some job}}
+\DoxyCodeLine{    x = 2;                                    \textcolor{comment}{// Do some job}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}\label{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}} 
+\index{Разное@{Разное}!TX\_BEGIN\_MESSAGE\_MAP@{TX\_BEGIN\_MESSAGE\_MAP}}
+\index{TX\_BEGIN\_MESSAGE\_MAP@{TX\_BEGIN\_MESSAGE\_MAP}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_BEGIN\_MESSAGE\_MAP}{TX\_BEGIN\_MESSAGE\_MAP}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Заголовок карты сообщений (Message Map). 
+
+\begin{DoxyParagraph}{Раскрывается в}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{int} dialogProc (HWND \_wnd, UINT \_msg, WPARAM \_wParam, LPARAM \_lParam)\textcolor{keyword}{ override}}
+\DoxyCodeLine{\textcolor{keyword}{    }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} \_result = \mbox{\hyperlink{structtx_dialog_a39efe9383833aedb0839d2519173930e}{txDialog::dialogProc}} (\_wnd, \_msg, \_wParam, \_lParam);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{switch} (\_msg)}
+\DoxyCodeLine{        \{}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}{TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP()}}, \mbox{\hyperlink{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}{TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}}, \mbox{\hyperlink{group___misc_gadbe2f17002d8d41056e9770066ef558b}{TX\+\_\+\+HANDLE()}}, \mbox{\hyperlink{group___misc_ga3637c3398b6ebfa337171beec0770fe4}{TX\+\_\+\+COMMAND\+\_\+\+MAP}}, \mbox{\hyperlink{structtx_dialog_a39efe9383833aedb0839d2519173930e}{tx\+Dialog\+::dialog\+Proc()}}, \mbox{\hyperlink{structtx_dialog}{tx\+Dialog}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Cм. реализацию функции \mbox{\hyperlink{group___dialogs_gaf1f2c033b7edc26174a28771a708ee7c}{txInputBox}}().}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga3637c3398b6ebfa337171beec0770fe4}\label{group___misc_ga3637c3398b6ebfa337171beec0770fe4}} 
+\index{Разное@{Разное}!TX\_COMMAND\_MAP@{TX\_COMMAND\_MAP}}
+\index{TX\_COMMAND\_MAP@{TX\_COMMAND\_MAP}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_COMMAND\_MAP}{TX\_COMMAND\_MAP}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+COMMAND\+\_\+\+MAP}
+
+
+
+Начало карты команд (Command map) в карте сообщений. 
+
+\begin{DoxyParagraph}{Раскрывается в}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \}  \textcolor{comment}{// Конец switch (\_msg)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\_msg == WM\_COMMAND)}
+\DoxyCodeLine{    \textcolor{keywordflow}{switch} (LOWORD (\_wParam))}
+\DoxyCodeLine{        \{}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}{TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP()}}, \mbox{\hyperlink{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}{TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}}, \mbox{\hyperlink{group___misc_gadbe2f17002d8d41056e9770066ef558b}{TX\+\_\+\+HANDLE()}}, \mbox{\hyperlink{group___misc_ga3637c3398b6ebfa337171beec0770fe4}{TX\+\_\+\+COMMAND\+\_\+\+MAP}}, \mbox{\hyperlink{structtx_dialog_a39efe9383833aedb0839d2519173930e}{tx\+Dialog\+::dialog\+Proc()}}, \mbox{\hyperlink{structtx_dialog}{tx\+Dialog}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Cм. реализацию функции \mbox{\hyperlink{group___dialogs_gaf1f2c033b7edc26174a28771a708ee7c}{txInputBox}}().}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gabe7d5b7083c7588b457f73c1e0461044}\label{group___misc_gabe7d5b7083c7588b457f73c1e0461044}} 
+\index{Разное@{Разное}!TX\_DEBUG\_ERROR@{TX\_DEBUG\_ERROR}}
+\index{TX\_DEBUG\_ERROR@{TX\_DEBUG\_ERROR}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_DEBUG\_ERROR}{TX\_DEBUG\_ERROR}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+DEBUG\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Выводит развернутое диагностическое сообщение в отладочном режиме. 
+
+\begin{DoxyVerb}     Описание см. в TX_ERROR.
+\end{DoxyVerb}
+ \begin{DoxyNote}{Note}
+В режиме Release этот макрос не выводит ничего.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{\+\_\+}}, \mbox{\hyperlink{group___misc_gaaff3c8e496327bec13a821061787878f}{TX\+\_\+\+COMMA}}, assert(), \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}, \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify()}}, \mbox{\hyperlink{_t_x_lib_8h_a66cb8e8fe20d9d05d02e73373bda7f8a}{verified}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\_DEBUG\_ERROR}} (\textcolor{stringliteral}{"{}Так и не смог прочитать 'Войну и мир'. Отмазка \%d: потерял '\%s'"{}}, reasonNum, fileName);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gac3163c41843503fb9ed5b51d37fbfb66}\label{group___misc_gac3163c41843503fb9ed5b51d37fbfb66}} 
+\index{Разное@{Разное}!TX\_DLLIMPORT@{TX\_DLLIMPORT}}
+\index{TX\_DLLIMPORT@{TX\_DLLIMPORT}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_DLLIMPORT}{TX\_DLLIMPORT}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+DLLIMPORT(\begin{DoxyParamCaption}\item[{}]{required,  }\item[{}]{lib\+Name,  }\item[{}]{ret\+Val\+Type,  }\item[{}]{func\+Name,  }\item[{}]{func\+Params,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Импортирует функцию из динамической библиотеки @с .dll. 
+
+\begin{DoxyVerb}     Макрос создает указатель на функцию, пригодный для вызова так, как будто это была бы сама функция.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em required} & {\itshape }(true/false) Обязательно ли требуется импортировать функцию. Если обязательно, то в случае отсутствия функции будет фатальная ошибка. \\
+\hline
+{\em lib\+Name} & {\itshape }(char$\ast$) Имя библиотеки, включая расширение (обычно {\ttfamily }.dll). \\
+\hline
+{\em ret\+Val\+Type} & Тип возвращаемого значения импортируемой функции. \\
+\hline
+{\em func\+Name} & {\itshape }(char$\ast$) Имя импортируемой функции. \\
+\hline
+{\em func\+Params} & Параметры импортируемой функции. \\
+\hline
+{\em call\+Type} & Тип вызова импортируемой функции (для функций Windows -\/ {\ttfamily WINAPI}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Если параметр {\ttfamily required} равен {\ttfamily false}, и функция в библиотеке не найдена, или библиотека не загрузилась, то указатель на функцию будет {\ttfamily NULL} и при ее вызове программа упадет. Проверяйте, равен ли нулю указатель перед таким вызовом.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace }ComDlg32}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gac3163c41843503fb9ed5b51d37fbfb66}{TX\_DLLIMPORT}} (\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}ComDlg32.dll"{}}, \textcolor{keywordtype}{bool}, GetOpenFileNameA, (OPENFILENAMEA* ofnStruct), WINAPI);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gac3163c41843503fb9ed5b51d37fbfb66}{TX\_DLLIMPORT}} (\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}ComDlg32.dll"{}}, \textcolor{keywordtype}{bool}, GetSaveFileNameA, (OPENFILENAMEA* ofnStruct), WINAPI);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} fileName[MAX\_PATH] = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    OPENFILENAME ofn    = \{ \textcolor{keyword}{sizeof} (ofn), \mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{txWindow}}() \};  \textcolor{comment}{//  +-\/-\/ Загадка Жака Фреско... на размышление дается 20 секунд}}
+\DoxyCodeLine{                                                         \textcolor{comment}{//  V}}
+\DoxyCodeLine{    ofn.lpstrTitle      = \textcolor{stringliteral}{"{}\(\backslash\)xcd\(\backslash\)xe5\(\backslash\)x20\(\backslash\)xea\(\backslash\)xee\(\backslash\)xef\(\backslash\)xe8\(\backslash\)xef\(\backslash\)xe0\(\backslash\)xf1\(\backslash\)xf2\(\backslash\)xfc\(\backslash\)x2c\(\backslash\)x20\(\backslash\)xe0\(\backslash\)x20\(\backslash\)xf0\(\backslash\)xe0\(\backslash\)xe7\(\backslash\)xe1\(\backslash\)xe5\(\backslash\)xf0\(\backslash\)xe8"{}}}
+\DoxyCodeLine{                          \textcolor{stringliteral}{"{}\(\backslash\)xf1\(\backslash\)xfc\(\backslash\)x20\(\backslash\)xe8\(\backslash\)x20\(\backslash\)xf1\(\backslash\)xe4\(\backslash\)xe5\(\backslash\)xeb\(\backslash\)xe0\(\backslash\)xe9\(\backslash\)x20\(\backslash\)xf4\(\backslash\)xf3\(\backslash\)xed\(\backslash\)xea\(\backslash\)xf6\(\backslash\)xe8\(\backslash\)xfe\(\backslash\)x21\(\backslash\)x21\(\backslash\)x21"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ofn.lpstrFile       = fileName;}
+\DoxyCodeLine{    ofn.nMaxFile        = \textcolor{keyword}{sizeof} (fileName);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ofn.lpstrFilter     = \textcolor{stringliteral}{"{}C++ Files\(\backslash\)0"{}} \textcolor{stringliteral}{"{}*.cpp\(\backslash\)0"{}}  \textcolor{comment}{// ofn.nFilterIndex = 1. Please change it!}}
+\DoxyCodeLine{                          \textcolor{stringliteral}{"{}X-\/-\/ Files\(\backslash\)0"{}} \textcolor{stringliteral}{"{}*.xpp\(\backslash\)0"{}}  \textcolor{comment}{// ofn.nFilterIndex = 2. Remove it if you didn't simply copied this code}}
+\DoxyCodeLine{                          \textcolor{stringliteral}{"{}All Files\(\backslash\)0"{}} \textcolor{stringliteral}{"{}*.*\(\backslash\)0"{}};   \textcolor{comment}{// ofn.nFilterIndex = 3}}
+\DoxyCodeLine{    ofn.nFilterIndex    = 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ofn.lpstrInitialDir = NULL;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ofn.Flags           = OFN\_PATHMUSTEXIST | OFN\_FILEMUSTEXIST;}
+\DoxyCodeLine{\textcolor{comment}{//  ofn.FlagsEx         = OFN\_EX\_NOPLACESBAR;}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} oldPSW = \mbox{\hyperlink{group___technical_ga90ceca3b49e5f889f5f07a996b28b0b3}{\_txProcessSystemWarnings}};}
+\DoxyCodeLine{    \mbox{\hyperlink{group___technical_ga90ceca3b49e5f889f5f07a996b28b0b3}{\_txProcessSystemWarnings}} = \textcolor{keyword}{false};            \textcolor{comment}{// Just do it. (C) NAN -\/ Not a Nike :)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (ComDlg32::GetOpenFileNameA)}
+\DoxyCodeLine{        ComDlg32::GetOpenFileNameA (\&ofn);       \textcolor{comment}{// Весьма полезная функция, отображает диалог выбора файла.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___technical_ga90ceca3b49e5f889f5f07a996b28b0b3}{\_txProcessSystemWarnings}} = oldPSW;           \textcolor{comment}{// Just do it too.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}} \textcolor{stringliteral}{"{}GetOpenFileName() returned: fileName = \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}}, fileName);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}\label{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}} 
+\index{Разное@{Разное}!TX\_END\_MESSAGE\_MAP@{TX\_END\_MESSAGE\_MAP}}
+\index{TX\_END\_MESSAGE\_MAP@{TX\_END\_MESSAGE\_MAP}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_END\_MESSAGE\_MAP}{TX\_END\_MESSAGE\_MAP}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}
+
+
+
+Завершитель карты сообщений. 
+
+\begin{DoxyParagraph}{Раскрывается в}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \}  \textcolor{comment}{// Конец switch (\_msg) или switch (LOWORD (\_wParam))}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}{TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP()}}, \mbox{\hyperlink{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}{TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}}, \mbox{\hyperlink{group___misc_gadbe2f17002d8d41056e9770066ef558b}{TX\+\_\+\+HANDLE()}}, \mbox{\hyperlink{group___misc_ga3637c3398b6ebfa337171beec0770fe4}{TX\+\_\+\+COMMAND\+\_\+\+MAP}}, \mbox{\hyperlink{structtx_dialog_a39efe9383833aedb0839d2519173930e}{tx\+Dialog\+::dialog\+Proc()}}, \mbox{\hyperlink{structtx_dialog}{tx\+Dialog}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Cм. реализацию функции \mbox{\hyperlink{group___dialogs_gaf1f2c033b7edc26174a28771a708ee7c}{txInputBox}}().}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga3e4a82a10130528f63b6f19476a0943a}\label{group___misc_ga3e4a82a10130528f63b6f19476a0943a}} 
+\index{Разное@{Разное}!TX\_ERROR@{TX\_ERROR}}
+\index{TX\_ERROR@{TX\_ERROR}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_ERROR}{TX\_ERROR}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Выводит развернутое диагностическое сообщение. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Сообщение с произвольным количеством параметров в стиле функции {\ttfamily printf()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Этот макрос может распечатывать стек вызовов функций в консоли. По этому поводу см. замечания к функции \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}} и раздел Установка библиотеки, п.4.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Всегда false.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gae4dfd7b0d66121016d6466d2ff10e8ba}{\+\_\+}}, \mbox{\hyperlink{group___misc_gaaff3c8e496327bec13a821061787878f}{TX\+\_\+\+COMMA}}, assert(), \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}, \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify()}}, \mbox{\hyperlink{_t_x_lib_8h_a66cb8e8fe20d9d05d02e73373bda7f8a}{verified}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\_ERROR}} (\textcolor{stringliteral}{"{}Не смог прочитать 'Войну и мир'. Отмазка \%d: не нашел '\%s'"{}}, reasonNum, fileName);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gadbe2f17002d8d41056e9770066ef558b}\label{group___misc_gadbe2f17002d8d41056e9770066ef558b}} 
+\index{Разное@{Разное}!TX\_HANDLE@{TX\_HANDLE}}
+\index{TX\_HANDLE@{TX\_HANDLE}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{TX\_HANDLE}{TX\_HANDLE}}
+{\footnotesize\ttfamily \#define TX\+\_\+\+HANDLE(\begin{DoxyParamCaption}\item[{}]{id }\end{DoxyParamCaption})}
+
+
+
+Заголовок обработчика сообщения (Message handler) карты сообщений. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Идентификатор сообщения.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Раскрывается в}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{break};}
+\DoxyCodeLine{\textcolor{keywordflow}{case} (\textcolor{keywordtype}{id}):}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gaf6ea524e3c76ba5c8a0d1fa6b81d55b8}{TX\+\_\+\+BEGIN\+\_\+\+MESSAGE\+\_\+\+MAP()}}, \mbox{\hyperlink{group___misc_ga3f4a70a0e5076cb4f4addcab0ca760cd}{TX\+\_\+\+END\+\_\+\+MESSAGE\+\_\+\+MAP}}, \mbox{\hyperlink{group___misc_gadbe2f17002d8d41056e9770066ef558b}{TX\+\_\+\+HANDLE()}}, \mbox{\hyperlink{group___misc_ga3637c3398b6ebfa337171beec0770fe4}{TX\+\_\+\+COMMAND\+\_\+\+MAP}}, \mbox{\hyperlink{structtx_dialog_a39efe9383833aedb0839d2519173930e}{tx\+Dialog\+::dialog\+Proc()}}, \mbox{\hyperlink{structtx_dialog}{tx\+Dialog}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Cм. реализацию функции \mbox{\hyperlink{group___dialogs_gaf1f2c033b7edc26174a28771a708ee7c}{txInputBox}}().}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gafdd807831b131ba38d5856b6ee4e8287}\label{group___misc_gafdd807831b131ba38d5856b6ee4e8287}} 
+\index{Разное@{Разное}!txGDI@{txGDI}}
+\index{txGDI@{txGDI}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txGDI}{txGDI}}
+{\footnotesize\ttfamily \#define tx\+GDI(\begin{DoxyParamCaption}\item[{}]{command,  }\item[{}]{dc }\end{DoxyParamCaption})}
+
+
+
+Вызов функции Win32 GDI с автоматической блокировкой и разблокировкой. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Функция GDI (возможно, возвращающая значение). \\
+\hline
+{\em dc} & Дескриптор контекста рисования (холста), использующийся в вызове функции GDI (см. параметр {\ttfamily command}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Значение, возвращаемое вызываемой функцией GDI.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Если параметр dc соответствует основному холсту TXLib (совпадает с возвращаемым значением \mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC()}}), то на время выполнения функции GDI поток, обновляющий окно TXLib, блокируется. ~\newline
+ 
+
+Если в вызове функции GDI используются запятые, то используйте двойные скобки, чтобы получился один параметр, так как \mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{tx\+GDI()}} это все же макрос.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC()}}, \mbox{\hyperlink{group___drawing_ga3a8ec79acc0dcbcc04bff3aecc235b4e}{tx\+Video\+Memory()}}, \mbox{\hyperlink{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}{tx\+Lock()}}, \mbox{\hyperlink{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}{tx\+Unlock()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{txGDI}} (( Rectangle (\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{txDC}}(), x1, y1, x2, y2) ));  \textcolor{comment}{// Не забудьте про две ((ДВЕ)) скобки}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}\label{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}} 
+\index{Разное@{Разное}!txStackBackTrace@{txStackBackTrace}}
+\index{txStackBackTrace@{txStackBackTrace}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txStackBackTrace}{txStackBackTrace}}
+{\footnotesize\ttfamily \#define tx\+Stack\+Back\+Trace(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Распечатывает дамп области памяти в консоли. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Адрес начала распечатки. \\
+\hline
+{\em pause} & {\itshape Делать ли паузу в конце распечатки. Необязательно.} \\
+\hline
+{\em name} & {\itshape Название распечатки (усекается до 8 символов). Необязательно.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Распечатывается область памяти размером 256 байт.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \textcolor{keywordtype}{char} text[] = \textcolor{stringliteral}{"{}Каждому лектору -\/-\/ в портфель по вектору"{}};}
+\DoxyCodeLine{txDump (text);}
+\DoxyCodeLine{}
+\DoxyCodeLine{SetConsoleOutputCP (437);    \textcolor{comment}{// Будет отображаться псевдографика, но НЕ русские буквы}}
+\DoxyCodeLine{txDump (text);}
+\DoxyCodeLine{SetConsoleOutputCP (1251);}
+
+\end{DoxyCode}
+
+
+Распечатывает текущий стек вызовов функций в консоли.
+
+\begin{DoxyWarning}{Warning}
+Для корректной работы этой функкции требуются модули, которые нужно установить (скопировать) в папку Windows. См. раздел Установка библиотеки, п.4.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Для наиболее корректной работы этой функции полностью отключайте оптимизацию при компиляции. Например, для компилятора GCC {\ttfamily g++} -- с помощью ключа командной строки {\ttfamily -\/O0}. Разные среды программирования позволяют задать эти ключи по-\/разному, например, в Code\+Blocks через Главное меню -- Settings -- Compiler -- (Global Compiler Settings) -- (Compiler Settings) -- Other Options.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+tx\+Dump(), \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} Recursion()  \textcolor{comment}{// http://google.ru/search?q=\%D1\%80\%D0\%B5\%D0\%BA\%D1\%83\%D1\%80\%D1\%81\%D0\%B8\%D1\%8F}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{txStackBackTrace}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf (\textcolor{stringliteral}{"{}Press any key...\(\backslash\)n"{}});}
+\DoxyCodeLine{    \_getch();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    Recursion();}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}\label{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}} 
+\index{Разное@{Разное}!verify@{verify}}
+\index{verify@{verify}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{verify}{verify}}
+{\footnotesize\ttfamily \#define verify}
+
+
+
+Выполняет команду (вычисляет выражение) и проверяет результат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expr} & Команда (выражение).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1, если выражение {\ttfamily expr} истинно, иначе 0. \begin{DoxyVerb}     Если условие, проверяемое verify(), истинно, то макрос ничего не делает. @n
+     Если условие оказывается ложно, то выводится диагностическое сообщение и программа аварийно завершается.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Действие макроса аналогично assert(), но при компиляции в режиме Release (или если определен NDEBUG) verify {\bfseries{не}} превращается в пустой оператор.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_t_x_lib_8h_a66cb8e8fe20d9d05d02e73373bda7f8a}{verified}}, assert(), \mbox{\hyperlink{group___misc_ga889b74443b3e918adee3e31fad4653f7}{asserted}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, {\bfseries{TX\+\_\+\+FILELINE}}, {\bfseries{TX\+\_\+\+FUNCTION}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{FILE* input = \mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify}} (fopen (\textcolor{stringliteral}{"{}a.txt"{}}, \textcolor{stringliteral}{"{}r"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Этот вызов fgets() БУДЕТ выполнен в режиме Release:}}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify}} (fgets (str, \textcolor{keyword}{sizeof} (str) -\/ 1, input));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Здесь все тоже будет правильно:}}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga14fecb1c008314444a74c1fe7d9a113b}{verify}} (fclose (input) == 0);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gade9b60c36576ef735b3e1d1f628ad9c6}\label{group___misc_gade9b60c36576ef735b3e1d1f628ad9c6}} 
+\index{Разное@{Разное}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily \#define ZERO(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})}
+
+
+
+Обнулитель типов, не имеющих конструкторов 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Имя типа.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Значение типа {\ttfamily type}, покомпонентно инициализированное по умолчанию (для встроенных типов -- нулем).
+\end{DoxyReturn}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} f (POINT p);}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{POINT z = \{\}; f (z);  \textcolor{comment}{// Так без ZERO}}
+\DoxyCodeLine{}
+\DoxyCodeLine{f (\mbox{\hyperlink{group___misc_gade9b60c36576ef735b3e1d1f628ad9c6}{ZERO}} (POINT));     \textcolor{comment}{// Так с ZERO}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___misc_gadfae620e55d8798711d4a0c72f6af99e}\label{group___misc_gadfae620e55d8798711d4a0c72f6af99e}} 
+\index{Разное@{Разное}!In@{In}}
+\index{In@{In}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{In()}{In()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool In (\begin{DoxyParamCaption}\item[{const POINT \&}]{pt,  }\item[{const RECT \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка, находится ли точка pt внутри прямоугольника rect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & Проверяемая точка в виде {\ttfamily  POINT \{x, y\} }. \\
+\hline
+{\em rect} & Прямоугольник в виде {\ttfamily  RECT \{left, top, right, bottom\} }.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат проверки. \begin{DoxyVerb}     Удобно для реализации экранных кнопок, нажимаемых курсором мыши.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция может мяукать. @strike Because cats are always right. @endstrike Потому что она не часть стандарта С++ или Windows, а зависит от TXLib\textquotesingle{}а. Если это вам не нравится, вы можете написать ее сами.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{RECT button = \{ 100, 100, 150, 120 \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga6625deb7ac8953a7e516285ac81c0b34}{TX\_LIGHTGRAY}});}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_ga18a0418f3c06463e958077cddf2a4864}{txRectangle}} (button.left, button.top, button.right, button.bottom);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_ga09938df8859ae8b62638a3af76ee6735}{txSetTextAlign}}();}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga90c5bf9144d5eed4926fb92ba854eca9}{TX\_WHITE}});}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_ga52e119361961d9eee33c176a3084e55d}{txTextOut}} (125, 115, \textcolor{stringliteral}{"{}Cookie"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (;;)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}{In}} (\mbox{\hyperlink{group___mouse_ga44606f3b7f5f345d15bb20d46fcf78b6}{txMousePos}}(), button))}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga5d70fde53b10abdb4e9511268b9e1ee9}{TX\_TRANSPARENT}});}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_ga18a0418f3c06463e958077cddf2a4864}{txRectangle}} (button.left, button.top, button.right, button.bottom);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}())}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{            \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga16ef56f4dfb0cf5f8422bab9663eb7a9}{TX\_DARKGRAY}});}
+\DoxyCodeLine{            \mbox{\hyperlink{group___drawing_ga18a0418f3c06463e958077cddf2a4864}{txRectangle}} (button.left, button.top, button.right, button.bottom);}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga90c5bf9144d5eed4926fb92ba854eca9}{TX\_WHITE}});}
+\DoxyCodeLine{            \mbox{\hyperlink{group___drawing_ga52e119361961d9eee33c176a3084e55d}{txTextOut}} (125, 115, \textcolor{stringliteral}{"{}You got cookie"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}\label{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}} 
+\index{Разное@{Разное}!In@{In}}
+\index{In@{In}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{In()}{In()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Tx , typename Ta , typename Tb $>$ \\
+bool In (\begin{DoxyParamCaption}\item[{Tx}]{x,  }\item[{Ta}]{a,  }\item[{Tb}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка, находится ли параметр х внутри замкнутого интервала \mbox{[}a; b\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Проверяемый параметр. \\
+\hline
+{\em a} & Левая граница (включительно). \\
+\hline
+{\em b} & Правая граница (включительно).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Если a $<$= x \&\& x $<$= b, то истина, если нет -- ложь.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Параметры этой функции названы не по смыслу\+: просто {\ttfamily a} и просто {\ttfamily b}. Так как {\ttfamily a} -\/ это минимальное значение, лучше бы назвать этот параметр {\ttfamily min} или как-\/либо еще, но осмысленно. 
+\footnotesize Пусть математики и любят короткие обозначения, но мы будем любить осмысленные -\/ потому что мы круче. \+:)) {\itshape На самом деле это потому, что математики много пишут рукой, и писать длинные имена им сложно, а программисты набирают текст в редакторе, где это делать проще. Не будем обижать математиков, они крутые. {\bfseries{MLM}} -\/ Math Lives Matter! \+:)}
+\normalsize  @nn Когда будете писать свою аналогичную функцию (а вы точно будете ее писать, см. предупреждение), назовите параметры осмысленно. Не следуйте плохим примерам из TXLib\textquotesingle{}а! (Они там есть для этого специально.)
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Эта функция может мяукать. @strike Because cats are power! @endstrike Потому что она не часть стандарта С++ или Windows, а зависит от TXLib\textquotesingle{}а. Если это вам не нравится, вы можете написать ее сами, используя неравенства.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{group___mouse_ga3317e38b22d8e6f116c29503144c2cc2}{txMouseButtons}}() != 1)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga1298dbfaaff41786f77c7cd302d73c31}{In}} (\mbox{\hyperlink{group___mouse_gae56f541d32ff7324dd6dd340411c1130}{txMouseX}}(), 110, 120)) \mbox{\hyperlink{group___drawing_ga52e119361961d9eee33c176a3084e55d}{txTextOut}} (100, 100, \textcolor{stringliteral}{"{}Meet the wall!"{}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (0);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga33933dc1baf2a181b7f9fabd61a4163e}\label{group___misc_ga33933dc1baf2a181b7f9fabd61a4163e}} 
+\index{Разное@{Разное}!random@{random}}
+\index{random@{random}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{random()}{random()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double random (\begin{DoxyParamCaption}\item[{double}]{left,  }\item[{double}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генератор случайных чисел 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Левая граница диапазона ({\bfseries{включая}} саму границу). \\
+\hline
+{\em right} & Правая граница диапазона ({\bfseries{включая}} саму границу).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Случайное целое число в диапазоне \mbox{[}left; right\mbox{]}. \begin{DoxyVerb}     Вы все еще помните, что означают разные скобочки в обозначении интервалов? :)
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция может мяукать. @strike Just in case. @endstrike Потому что она не часть стандарта С++ или Windows, а зависит от TXLib\textquotesingle{}а. Если это вам не нравится, вы можете написать ее сами, с помощью стандартной функции rand() и небольшой @strike уличной @endstrike магии с делением на RAND\+\_\+\+MAX и @strike таинственной @endstrike операцией вычитания.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} money = \mbox{\hyperlink{group___misc_gaa81c1c7c499d76619d5d9d3369560881}{random}} (-\/100, +100);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (money < 0)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} message[100] = \textcolor{stringliteral}{"{}Maybe..."{}};}
+\DoxyCodeLine{    sprintf (\textcolor{stringliteral}{"{}Проиграли в лотерею? Отдайте долг в \%d рублей"{}}, -\/money);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (message, \textcolor{stringliteral}{"{}Быстро!"{}});}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaa81c1c7c499d76619d5d9d3369560881}\label{group___misc_gaa81c1c7c499d76619d5d9d3369560881}} 
+\index{Разное@{Разное}!random@{random}}
+\index{random@{random}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{random()}{random()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int random (\begin{DoxyParamCaption}\item[{int}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Генератор случайных чисел 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & Правая граница диапазона ({\bfseries{не}} включая саму границу).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Случайное целое число в диапазоне \mbox{[}0; range). \begin{DoxyVerb}     Вы еще помните, что означают разные скобочки в обозначении интервалов? :)
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Эта функция может мяукать. @strike Just because it can. @endstrike Потому что она не часть стандарта С++ или Windows, а зависит от TXLib\textquotesingle{}а. Если это вам не нравится, вы можете написать ее сами, с помощью стандартной функции rand() и операции остатка от деления \%. Подсказка\+: rand() \% range.
+\end{DoxyWarning}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} message[100] = \textcolor{stringliteral}{"{}Maybe..."{}};}
+\DoxyCodeLine{sprintf (message, \textcolor{stringliteral}{"{}You SUDDENLY got \%d bucks now. But note that tax rate is \$\%d."{}}, \mbox{\hyperlink{group___misc_gaa81c1c7c499d76619d5d9d3369560881}{random}} (100), 100);}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (message, \textcolor{stringliteral}{"{}Lottery"{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga5de732de72c46b992ac2feeac2de7e42}\label{group___misc_ga5de732de72c46b992ac2feeac2de7e42}} 
+\index{Разное@{Разное}!tx\_fpreset@{tx\_fpreset}}
+\index{tx\_fpreset@{tx\_fpreset}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{tx\_fpreset()}{tx\_fpreset()}}
+{\footnotesize\ttfamily void tx\+\_\+fpreset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Переинициализирует математический сопроцессор 
+
+Сбрасывает состояние математического сопроцессора, вызывая \+\_\+fpreset() и разрешая генерацию исключений сопроцессора для неверного результата (\+\_\+\+EM\+\_\+\+INVALID), денормализации (\+\_\+\+EM\+\_\+\+DENORMAL), деления на ноль (\+\_\+\+EM\+\_\+\+ZERODIVIDE), переполнения (\+\_\+\+EM\+\_\+\+OVERFLOW) и антипереполнения (\+\_\+\+EM\+\_\+\+UNDERFLOW). Обычный вызов \+\_\+fpreset() эти исключения маскирует, в результате чего вычислительные ошибки могут оказаться незамеченными.
+
+Если вы хотите замаскировать эти исключения, вызывайте обычный \+\_\+fpreset(), и затем проверяйте результат вычислений на достоверность хотя бы с помощью std\+::isfinite (x).
+
+\begin{DoxyNote}{Note}
+Поведение TXLib по умолчанию -- {\bfseries{генерация}} этих исключений и их {\bfseries{перехват}} TXLib\textquotesingle{}ом в виде {\bfseries{ошибки}}. @nn См. \mbox{[}1\mbox{]} \href{http://books.google.ru/books?id=uwgNv8VlNPgC&pg=PA343}{\texttt{ пример работы с этими исключениями,}} \mbox{[}2\mbox{]} \href{http://www.gamasutra.com/view/news/169203/Exceptional_floating_point.php}{\texttt{ статью о них.}}
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga5de732de72c46b992ac2feeac2de7e42}{tx\_fpreset}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gafbd4278ff893fc1c1e28b086197adebe}\label{group___misc_gafbd4278ff893fc1c1e28b086197adebe}} 
+\index{Разное@{Разное}!txDemangle@{txDemangle}}
+\index{txDemangle@{txDemangle}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txDemangle()}{txDemangle()}}
+{\footnotesize\ttfamily std\+::string tx\+Demangle (\begin{DoxyParamCaption}\item[{const char $\ast$}]{mangled\+Name }\end{DoxyParamCaption})}
+
+
+
+Преобразует декорированное имя С++ в название типа. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mangled\+Name} & Декорированное (mangled) имя.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Строка с полным названием типа. \begin{DoxyVerb}     <a href=http://en.wikipedia.org/wiki/Name_mangling#Simple_example>Что такое декорирование имен
+     (name mangling) см. здесь.</a>
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Если используется форма функции, возвращающая {\ttfamily char$\ast$}, вы должны {\bfseries{сами}} освободить память, занимаемую строкой, с помощью вызова {\ttfamily free()}, иначе будет утечка памяти.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+tx\+Dump(), \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}, \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} type = \mbox{\hyperlink{group___misc_gafbd4278ff893fc1c1e28b086197adebe}{txDemangle}} (\textcolor{keyword}{typeid} (std::string) .name());}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}The real type of std::string is: "{}} << type << \textcolor{stringliteral}{"{}, muahhaha! :)\(\backslash\)n"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"{}Call is shorter, but result is the same: "{}} << txTypename (std::string) << \textcolor{stringliteral}{"{}, muahhaha, too.\(\backslash\)n"{}};}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga782025393f08a0efb645b9d2e30f2586}\label{group___misc_ga782025393f08a0efb645b9d2e30f2586}} 
+\index{Разное@{Разное}!txGetAsyncKeyState@{txGetAsyncKeyState}}
+\index{txGetAsyncKeyState@{txGetAsyncKeyState}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txGetAsyncKeyState()}{txGetAsyncKeyState()}}
+{\footnotesize\ttfamily bool tx\+Get\+Async\+Key\+State (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Проверяет, нажата ли указанная клавиша. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Код (номер) клавиши, как правило, заданный константой (VK\+\_\+\+SPACE, VK\+\_\+\+LEFT, \textquotesingle{}W\textquotesingle{} и т.\+п.)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если указанная клавиша нажата, false -- если не нажата.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+В отличие от оригинальной функции Get\+Async\+Key\+State(), возвращает false, если окно TXLib не активно.
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} PlayBall();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{txCreateWindow}} (800, 600);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    PlayBall();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} PlayBall()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} x  = 100, y  = 100;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} vx = 5,   vy = 7;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} ax = 0,   ay = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} dt = 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga66facc5848748507d3ea48c75b33ba23}{txSetColor}}     (\mbox{\hyperlink{group___drawing_ga2b069ef0d81d1b217e8a4f019140ee92}{TX\_LIGHTGREEN}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_ga32abcdee1b6897c768f21bf9264fe3eb}{TX\_GREEN}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{while} (!\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_ESCAPE))  \textcolor{comment}{// Погуглите любой код VK\_...,}}
+\DoxyCodeLine{        \{                                    \textcolor{comment}{// и найдете их все}}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (x, y, 20);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        vx += ax * dt;                       \textcolor{comment}{// First velocity, then position: this gives more precision}}
+\DoxyCodeLine{        vy += ay * dt;                       \textcolor{comment}{// See: http://en.wikipedia.org/wiki/Backward\_Euler\_method}}
+\DoxyCodeLine{}
+\DoxyCodeLine{         x += vx * dt;}
+\DoxyCodeLine{         y += vy * dt;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (x > 800) \{ vx = -\/vx; x = 800; \}  \textcolor{comment}{// = 800 is not the precise solution. Can you make it better?}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (x <   0) \{ vx = -\/vx; x =   0; \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (y > 600) \{ vy = -\/vy; y = 600; \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (y <   0) \{ vy = -\/vy; y =   0; \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_LEFT))  vx-\/-\/;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_RIGHT)) vx++;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_UP))    vy-\/-\/;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_DOWN))  vy++;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (VK\_SPACE)) vx = vy = 0;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga782025393f08a0efb645b9d2e30f2586}{txGetAsyncKeyState}} (\textcolor{charliteral}{'M'}))      printf (\textcolor{stringliteral}{"{}Meow "{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}} (20);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___drawing_ga93cecf6b117fc403c0488f388b78a6d1}\label{group___drawing_ga93cecf6b117fc403c0488f388b78a6d1}} 
+\index{Разное@{Разное}!txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture@{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture}}
+\index{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture@{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture()}{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture()}}
+{\footnotesize\ttfamily bool tx\+IDont\+Want\+To\+Have\+APause\+After\+My\+Program\+Before\+The\+Window\+Will\+Close\+\_\+\+And\+IWill\+Not\+Be\+Asking\+Where\+Is\+My\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Делает нечто иногда удобное. См. название функции. 
+
+\begin{DoxyReturn}{Returns}
+Если операция была успешна -- true, иначе -- false. \begin{DoxyVerb}     У этой функции есть синоним с простым понятным названием, поищите его в файле библиотеки, около
+     @a определения этой функции. Или можно @strike скопировать @endstrike набрать это километровое имя
+     и посмотреть, что получится.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{tx\+Create\+Window()}}, \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{tx\+Sleep()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{txCreateWindow}} (800, 600);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga09938df8859ae8b62638a3af76ee6735}{txSetTextAlign}} (TA\_CENTER);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga52e119361961d9eee33c176a3084e55d}{txTextOut}} (\mbox{\hyperlink{group___drawing_gab79782d80f6c61587d02f0633aa2f198}{txGetExtentX}}()/2, \mbox{\hyperlink{group___drawing_gaa9bb7fd84e0b9f59c96be89d70c74321}{txGetExtentY}}()/2, \textcolor{stringliteral}{"{}Press any key to exit!"{}});}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_ga93cecf6b117fc403c0488f388b78a6d1}{txIDontWantToHaveAPauseAfterMyProgramBeforeTheWindowWillClose\_AndIWillNotBeAskingWhereIsMyPicture}}();}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{            \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}\label{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}} 
+\index{Разное@{Разное}!txLock@{txLock}}
+\index{txLock@{txLock}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txLock()}{txLock()}}
+{\footnotesize\ttfamily bool tx\+Lock (\begin{DoxyParamCaption}\item[{bool}]{wait = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Блокировка холста (контекста рисования). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait} & {\itshape Ожидать конца перерисовки окна вспомогательным потоком. Если не указано, то \char`\"{}ожидать\char`\"{}.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Состояние блокировки. \begin{DoxyVerb}     Перед вызовом любых функций Win32 GDI необходимо заблокировать холст функцией txLock() и затем
+     разблокировать с помощью txUnlock(). Это связано с тем, что обновление содержимого окна (для тех, кто
+     знает Win32: обработка сообщения WM_PAINT) в библиотеке TXLib происходит в отдельном вспомогательном
+     потоке. Надолго блокировать его нельзя -- при заблокированном потоке окно не обновляется.
+
+     txLock() использует EnterCriticalSection(), и физически приостанавливает поток, обновляющий окно, так
+     что надолго блокировать нельзя. Иначе тормозится обработка оконных сообщений, окно перестает
+     реагировать на действия пользователя и перерисовываться. Нельзя также вызывать txSleep() или Sleep()
+     при заблокированном потоке.
+
+     txLock() / txUnlock() -- это низкоуровневый механизм. Он отличается от более простого высокоуровневого
+     механизма txBegin() / txEnd() / txUpdateWindow(), который не приостанавливает поток, а просто
+     отключает принудительное постоянное обновление окна.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC()}}, \mbox{\hyperlink{group___drawing_ga3a8ec79acc0dcbcc04bff3aecc235b4e}{tx\+Video\+Memory()}}, \mbox{\hyperlink{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}{tx\+Lock()}}, \mbox{\hyperlink{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}{tx\+Unlock()}}, \mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{tx\+GDI()}}
+\end{DoxySeeAlso}
+@usage См. исходный текст функций \+\_\+tx\+Canvas\+\_\+\+On\+PAINT() и \+\_\+tx\+Console\+\_\+\+Draw() в \mbox{\hyperlink{_t_x_lib_8h}{TXLib.\+h}}. \mbox{\Hypertarget{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}\label{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}} 
+\index{Разное@{Разное}!txMessageBox@{txMessageBox}}
+\index{txMessageBox@{txMessageBox}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txMessageBox()}{txMessageBox()}}
+{\footnotesize\ttfamily int tx\+Message\+Box (\begin{DoxyParamCaption}\item[{const char}]{text\mbox{[}$\,$\mbox{]} = {\ttfamily \char`\"{}Муаххаха!~\+:)\char`\"{}},  }\item[{const char}]{header\mbox{[}$\,$\mbox{]} = {\ttfamily \char`\"{}TXLib~сообщает\char`\"{}},  }\item[{unsigned}]{flags = {\ttfamily MB\+\_\+ICONINFORMATION$\vert$MB\+\_\+OKCANCEL} }\end{DoxyParamCaption})}
+
+
+
+Выводит различные сообщения в окне с помощью функции Message\+Box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Текст сообщения. {\itshape В принципе, необязательно, но зачем вы тогда меня вызывали?} \\
+\hline
+{\em header} & {\itshape Заголовок сообщения. Необязательно.} \\
+\hline
+{\em flags} & {\itshape Флаги отображения сообщения. Необязательно.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Значение, возвращаемое функцией Message\+Box.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Текст не должен превышать \+\_\+\+TX\+\_\+\+BIGBUFSIZE символов, а заголовок -- \+\_\+\+TX\+\_\+\+BIGBUFSIZE символов, иначе они обрезаются.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Вместо {\ttfamily {\bfseries{tx\+Message\+Box (text, header, flags)}}} можно использовать стандартную функцию Win32 {\ttfamily {\bfseries{Message\+Box (\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window()}}, text, header, flags)}}}. Отличия tx\+Message\+Box в том, что она автоматически подставляет окно-\/родитель, и в том, что при выводе в окно строчки переводятся в формат UNICODE. Это важно лишь в том случае, когда {\itshape в региональных настройках контрольной панели Windows неверно установлена кодовая страница для программ, не поддерживающих UNICODE.} В остальных случаях нужды в {\ttfamily tx\+Message\+Box} нет.@nn
+
+При отображении окна {\ttfamily tx\+Message\+Box} программу можно завершить, нажав клавиши клавиатуры {\ttfamily Shift}, {\ttfamily Control} и {\ttfamily Alt} одновременно с нажатием мышкой на кнопку окна {\ttfamily }\mbox{[}Отмена\mbox{]} или {\ttfamily }\mbox{[}Cancel\mbox{]}. Это полезно, если окно {\ttfamily tx\+Message\+Box} постоянно отображается в цикле и программу нельтзя завершить нажатием на кнопку закрытия основного окна.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}}, \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (\textcolor{stringliteral}{"{}Получилось?"{}}, \textcolor{stringliteral}{"{}Прочти меня"{}}, MB\_YESNO) == IDYES)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    MessageBox (\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{txWindow}}(), \textcolor{stringliteral}{"{}Хватит и обычного MessageBox()"{}}, \textcolor{stringliteral}{"{}Win32 сообщает"{}}, 0);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (\textcolor{stringliteral}{"{}Спасаем от кракозябл вместо русских букв, без регистрации и СМС."{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}\label{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}} 
+\index{Разное@{Разное}!txOutputDebugPrintf@{txOutputDebugPrintf}}
+\index{txOutputDebugPrintf@{txOutputDebugPrintf}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txOutputDebugPrintf()}{txOutputDebugPrintf()}}
+{\footnotesize\ttfamily int tx\+Output\+Debug\+Printf (\begin{DoxyParamCaption}\item[{const char}]{format\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Выводит всплывающее сообщение в системном трее. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Флаги сообщения. \\
+\hline
+{\em title} & Заголовок сообщения. \\
+\hline
+{\em format} & Строка для печати, как в printf().\\
+\hline
+\end{DoxyParams}
+@title Флаги сообщения\+: @table @tr {\ttfamily NIIF\+\_\+\+INFO} @td Информация @tr {\ttfamily NIIF\+\_\+\+WARNING} @td Предупреждение @tr {\ttfamily NIIF\+\_\+\+ERROR} @td Сообщение об ошибке @endtable
+
+\begin{DoxyReturn}{Returns}
+Удалось ли отобразить сообщение. \begin{DoxyVerb}     Функция формирует сообщение по правилам printf() и выводит во всплывающем окне.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+
+\begin{DoxyItemize}
+\item Эта функция требует, чтобы при компиляции константа версии Internet Explorer {\ttfamily }(\+\_\+\+WIN32\+\_\+\+IE) была задана не ниже 0x0500. Для этого надо либо {\bfseries{включить \mbox{\hyperlink{_t_x_lib_8h}{TXLib.\+h}} вместо {\ttfamily windows.\+h} или перед ним.}} Либо надо самостоятельно определить {\ttfamily }(\#define) эту константу. ~\newline
+ 
+\footnotesize С версией Internet Explorer это связано потому, что при его установке в Windows обновляются многие компоненты (например, {\ttfamily shell32.\+dll} и {\ttfamily comctl32.\+dll}), которые влияют на функциональность системы независимо от использования браузера). Сам Internet Explorer в отображении сообщения не участвует.
+\normalsize 
+\item Сообщение не должно превышать \+\_\+\+TX\+\_\+\+BUFSIZE символов, иначе оно обрезается.
+\end{DoxyItemize}
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} hours = 3, minutes = 10;}
+\DoxyCodeLine{\textcolor{keyword}{const} \textcolor{keywordtype}{char} station[] = \textcolor{stringliteral}{"{}Юму"{}};}
+\DoxyCodeLine{...}
+\DoxyCodeLine{txNotifyIcon (NIIF\_INFO, \textcolor{stringliteral}{"{}Уважаемые пассажиры"{}},}
+\DoxyCodeLine{              \textcolor{stringliteral}{"{}Поезд на \%s отправляется в \%d:\%d."{}}, station, hours, minutes);}
+
+\end{DoxyCode}
+
+
+Выводит сообщение в отладчике.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Строка для печати, как в printf().\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество напечатанных символов. \begin{DoxyVerb}     Функция формирует сообщение по правилам printf() и передает его в OutputDebugString(). Ее вывод можно
+     перехватить отладчиком или утилитами-логгерами, например,
+     <a href=http://technet.microsoft.com/ru-ru/sysinternals/bb896647%28en-us%29.aspx>DbgView</a>.
+     Если этого не сделать, и не задать первый символ @c '\\a' (см. ниже), то о сообщении никто не узнает. :(
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Если первый символ в строке {\ttfamily \textquotesingle{}\textbackslash{}a\textquotesingle{}}, то сообщение также дублируется \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}.
+\item Если первый или второй символ в строке {\ttfamily \textquotesingle{}\textbackslash{}f\textquotesingle{}}, то сообщение также дублируется printf().
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Сообщение не должно превышать \+\_\+\+TX\+\_\+\+BIGBUFSIZE символов, иначе оно обрезается.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\+\_\+\+ERROR()}}, \mbox{\hyperlink{group___misc_gabe7d5b7083c7588b457f73c1e0461044}{TX\+\_\+\+DEBUG\+\_\+\+ERROR()}}, tx\+Printf(), tx\+Notify\+Icon(), \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_gae1f5bb8bcc99e21ed8dc46493027b267}{tx\+Stack\+Back\+Trace()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} x = 7;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{txOutputDebugPrintf (\textcolor{stringliteral}{"{}Никто не узнает, что \%d.\(\backslash\)n"{}}, x);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}\label{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}} 
+\index{Разное@{Разное}!txPlaySound@{txPlaySound}}
+\index{txPlaySound@{txPlaySound}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txPlaySound()}{txPlaySound()}}
+{\footnotesize\ttfamily bool tx\+Play\+Sound (\begin{DoxyParamCaption}\item[{const char}]{filename\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{DWORD}]{mode = {\ttfamily SND\+\_\+ASYNC} }\end{DoxyParamCaption})}
+
+
+
+Воспроизводит звуковой файл. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя звукового файла, включая расширение. {\itshape Если не указано или NULL, то останавливает звук.} \\
+\hline
+{\em mode} & {\itshape Режим воспроизведения. Необязательно. Если не указан, то SND\+\_\+\+ASYNC (см. ниже).}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Если операция была успешна -- true, иначе -- false.
+\end{DoxyReturn}
+@title Режимы воспроизведения\+: @table @tr {\ttfamily SND\+\_\+\+ASYNC} @td Звук проигрывается одновременно с работой программы. ~\newline
+ Чтобы отменить звучание, вызовите tx\+Play\+Sound (NULL). @tr {\ttfamily SND\+\_\+\+SYNC} @td Выполнение программы приостанавливается до окончания воспроизведения звука. @tr {\ttfamily SND\+\_\+\+LOOP} @td Зацикливать звук при воспроизведении. ~\newline
+ Чтобы отменить звучание, вызовите tx\+Play\+Sound (NULL). @tbr @tr {\ttfamily SND\+\_\+\+NODEFAULT} @td Не использовать звук по умолчанию, если нельзя проиграть указанный звуковой файл. @tr {\ttfamily SND\+\_\+\+NOSTOP} @td Если какой-\/либо звук уже проигрывается, {\bfseries{не}} останавливать его для запуска указанного звука. @tr {\ttfamily SND\+\_\+\+APPLICATION} @td Проигрывать звук, используя программу, зарегистрированную для данного типа звуковых файлов. @endtable
+
+\begin{DoxyNote}{Note}
+Поддерживаются только файлы в формате WAV. Остальные форматы (MP3 и др.) надо перекодировать в WAV. Переименование со сменой расширения не поможет, как и в случае с форматом картинок в \mbox{\hyperlink{group___drawing_ga2cba42b999b157ec7a7d2bd32dfcc709}{tx\+Load\+Image()}}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}}, \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}{txPlaySound}} (\textcolor{stringliteral}{"{}tada.wav"{}});  \textcolor{comment}{// So happy that this always exists}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaf5a6626fa2606a7f374fcc077fc92363}\label{group___misc_gaf5a6626fa2606a7f374fcc077fc92363}} 
+\index{Разное@{Разное}!txPlayVideo@{txPlayVideo}}
+\index{txPlayVideo@{txPlayVideo}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txPlayVideo()}{txPlayVideo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily intptr\+\_\+t tx\+Play\+Video (\begin{DoxyParamCaption}\item[{const char}]{file\+Name\mbox{[}$\,$\mbox{]},  }\item[{double}]{zoom = {\ttfamily 0},  }\item[{double}]{gain = {\ttfamily 1},  }\item[{HWND}]{wnd = {\ttfamily \mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window}}()} }\end{DoxyParamCaption})}
+
+
+
+Проигрывает видео. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Имя видеофайла (включая расширение) или любого другого источника, с которым работает Video\+LAN (rtsp\+://, \href{http://}{\texttt{ http\+://}} и т.\+д.). Если имя -- пустая строка {\ttfamily }(\char`\"{}\char`\"{}), то проводится проверка на наличие видеопроигрывателя. \\
+\hline
+{\em zoom} & {\itshape Масштаб изображения. Необязателен. Если не указан, то равен 0 (Автомасштабирование).} \\
+\hline
+{\em gain} & {\itshape Громкость звука, от 0 до 8 (800\%). Необязательна. Если не указана, то равна 1 (100\%).} \\
+\hline
+{\em wnd} & {\itshape Окно, в котором воспроизводится видео. Необязательно. Если не указано, то используется окно TXLib.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+См. в функции \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}} выше.
+\end{DoxyReturn}
+См. описание в функции \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}} выше. \mbox{\Hypertarget{group___misc_ga3d4731dd56b60635c80bc662c295c821}\label{group___misc_ga3d4731dd56b60635c80bc662c295c821}} 
+\index{Разное@{Разное}!txPlayVideo@{txPlayVideo}}
+\index{txPlayVideo@{txPlayVideo}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txPlayVideo()}{txPlayVideo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily intptr\+\_\+t tx\+Play\+Video (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{const char}]{file\+Name\mbox{[}$\,$\mbox{]},  }\item[{double}]{zoom = {\ttfamily 0},  }\item[{double}]{gain = {\ttfamily 1},  }\item[{HWND}]{wnd = {\ttfamily \mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window}}()} }\end{DoxyParamCaption})}
+
+
+
+Проигрывает видео. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/координата верхнего левого угла видео. {\itshape См. предупреждение ниже.} \\
+\hline
+{\em y} & Y-\/координата верхнего левого угла видео. {\itshape См. предупреждение ниже.} \\
+\hline
+{\em width} & Ширина видео. Если 0, то равно ширине окна. {\itshape Также см. предупреждение ниже.} \\
+\hline
+{\em height} & Высота видео. Если 0, то равно высоте окна. {\itshape Также см. предупреждение ниже.} \\
+\hline
+{\em file\+Name} & Имя видеофайла (включая расширение) или любого другого источника, с которым работает Video\+LAN (rtsp\+://, \href{http://}{\texttt{ http\+://}} и т.\+д.). Если имя -- пустая строка {\ttfamily }(\char`\"{}\char`\"{}), то проводится только проверка на наличие видеопроигрывателя. \\
+\hline
+{\em zoom} & {\itshape Масштаб изображения. Необязателен. Если не указан, то равен 0 (Автомасштабирование).} \\
+\hline
+{\em gain} & {\itshape Громкость звука, от 0 до 8 (800\%). Необязательна. Если не указана, то равна 1 (100\%).} \\
+\hline
+{\em wnd} & {\itshape Окно, в котором воспроизводится видео. Необязательно. Если не указано, то используется окно TXLib.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Время воспроизведения в миллисекундах (если не указана опция {\ttfamily \textbackslash{}a}). Если меньше или равно 0, то видео не запустилось. \+:( См. коды ошибок ниже. @nn Если указана опция {\ttfamily \textbackslash{}a}, то возвращаемое значение -- дескриптор (HWND) окна видеопотока (см. \char`\"{}Асинхронное воспроизведение\char`\"{}).
+\end{DoxyReturn}
+@title Возвращаемые значения в случае ошибки\+: @table @tr {\ttfamily INT\+\_\+\+MIN} @td Не найден видеопроигрыватель. @tr {\ttfamily INT\+\_\+\+MIN+1} @td Не найден видеофайл. @tr {\ttfamily INT\+\_\+\+MIN+2} @td Внутренняя ошибка регистрации класса окна видеопотока. @tr {\ttfamily INT\+\_\+\+MIN+3} @td Внутренняя ошибка создания окна видеопотока. @tr {\ttfamily INT\+\_\+\+MIN+4} @td Внутренняя ошибка запуска Video\+LAN. @tr Другие отрицательные значения @td Код завершения процесса Video\+LAN с обратным знаком. @endtable
+
+\begin{DoxyParagraph}{Асинхронное воспроизведение видео}
+~\newline
+ Если в параметре {\ttfamily file\+Name} самым первым символом поставить символ {\ttfamily \textbackslash{}a}, то файл будет воспроизводиться асинхронно\+: \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}} возвратится сразу после вызова, а воспроизведение видео пойдет параллельно с работой программы. Само имя файла на диске менять {\bfseries{не надо.}} Воспроизведение завершится, когда закончится видеофайл, или когда будет закрыто окно TXLib. См. пример использования. @nn Без этой опции \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}} делает паузу в программе, ожидая конца воспроизведения, и только потом возвращается. @nn В случае асинхронного воспрооизведения возвращаемым значением функции \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}} будет не время ее работы, а дескриптор окна видеопотока (HWND). С его помощью можно контролировать это окно, его положение на экране, размеры, видимость и другие свойства. См. функции \href{https://www.google.com/search?q=MoveWindow+function+Win32+apps}{\texttt{ Move\+Window}}(), \href{https://www.google.com/search?q=ShowWindow+function+Win32+apps}{\texttt{ Show\+Window}}() и многие другие в MSDN. Гуглите. Также см. пример использования. @nn Досрочно прервать асинхронное воспроизведение можно, уничтожив окно видеопотока с помощью функции \mbox{\hyperlink{group___drawing_ga0a3cf3a018cea9d5889d2626e9a37136}{tx\+Destroy\+Window()}}. @nn Принудительно завершить асинхронное воспроизведение {\bfseries{всех}} видео можно, сделав вызов {\ttfamily tx\+Play\+Video (NULL).}
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Warning}
+Если в последнем параметре {\ttfamily }(wnd) указано {\bfseries{не}} окно TXLib, а какое-\/либо другое, то координаты видео {\ttfamily x}, {\ttfamily y} и его размеры {\ttfamily width}, {\ttfamily height} игнорируются. В этом слчае видеопоток будет занимать всю клиентскую область окна, указанного параметром {\ttfamily wnd}. См. пример использования.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+{\bfseries{Воспроизведение видео требует установки внешней программы {\ttfamily Video\+LAN} {\ttfamily }(vlc.\+exe) версии 3.\+0 или новее.}} Ее можно скачать с официального сайта \href{http://videolan.org}{\texttt{ {\bfseries{Video\+LAN.\+org}}}}. Без установки {\ttfamily Video\+LAN} видео воспроизводиться не будет и выведется сообщение об ошибке. @nn {\bfseries{Если после установки Video\+LAN программа {\ttfamily }(vlc.\+exe) все равно не найдена}} и выводится сообщение об этой ошибке, то установите {\bfseries{не 64-\/битную}} версию Video\+LAN, {\bfseries{а 32-\/битную {\ttfamily }(x86).}}
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\href{https://www.youtube.com/watch?v=z_AbfPXTKms}{\texttt{ {\bfseries{Кот Мару!}}}}, \mbox{\hyperlink{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}{tx\+Play\+Sound()}}, \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Кот Мару, 24 000 000+ просмотров. А ты чего добился в жизни? :)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MARU\_ON\_YOUTUBE "{}http://ded32.net.ru/www.youtube.com-\/watch-\/z\_AbfPXTKms"{}}}
+\DoxyCodeLine{                              \textcolor{comment}{// Cached from www.youtube.com/watch/z\_AbfPXTKms}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()                    \textcolor{comment}{// Because Google prevents direct playing from Youtube}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{txCreateWindow}} (800, 500);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (\mbox{\hyperlink{group___drawing_gaa281a54954945bb0e96314fb4cfad7b9}{TX\_BLUE}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga78e83baeb6a02d5fa33dd8b062e513d9}{txClear}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaf6a9b31e58b6a0523ce1636a97053606}{txDrawText}} (0, 0, \mbox{\hyperlink{group___drawing_gab79782d80f6c61587d02f0633aa2f198}{txGetExtentX}}(), \mbox{\hyperlink{group___drawing_gaa9bb7fd84e0b9f59c96be89d70c74321}{txGetExtentY}}(), \textcolor{stringliteral}{"{}Press ESC to stop!"{}});}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{txSleep}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{txPlayVideo}} (\textcolor{stringliteral}{"{}"{}}) <= 0) \textcolor{keywordflow}{return} \mbox{\hyperlink{group___misc_ga3e4a82a10130528f63b6f19476a0943a}{TX\_ERROR}} (\textcolor{stringliteral}{"{}А чего вы хотели? VideoLAN не найден..."{}}), 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{txPlayVideo}} (\textcolor{stringliteral}{"{}\(\backslash\)a"{}} MARU\_ON\_YOUTUBE);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{txPlayVideo}} (580, 330, 200, 150, MARU\_ON\_YOUTUBE, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Для тех, кто [добился] дождался...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    system (\textcolor{stringliteral}{"{}cmd.exe /c start /min notepad.exe"{}});}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} dt = 0.04 / (\mbox{\hyperlink{group___drawing_ga49983bddca35d531c521cf04c6c2449f}{txQueryPerformance}}() + 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HWND notepad = FindWindow (\textcolor{stringliteral}{"{}Notepad"{}}, NULL);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!notepad) \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{txPlayVideo}} (\textcolor{stringliteral}{"{}\(\backslash\)a"{}} MARU\_ON\_YOUTUBE, 0, 1, notepad);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HWND wnd = (HWND) \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{txPlayVideo}} (0, 330, 200, 150, \textcolor{stringliteral}{"{}\(\backslash\)a"{}} MARU\_ON\_YOUTUBE, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} t = 0; !GetAsyncKeyState (VK\_ESCAPE); t += dt)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \textcolor{keyword}{static} \textcolor{keyword}{const} POINT cent = \{ GetSystemMetrics (SM\_CXSCREEN) / 2, GetSystemMetrics (SM\_CYSCREEN) / 2 \};}
+\DoxyCodeLine{        \textcolor{keyword}{static} \textcolor{keyword}{const} POINT size = \{ 500, 400 \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MoveWindow (notepad, cent.x + \mbox{\hyperlink{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}{ROUND}} (cent.y/2 * cos (t)) -\/ size.x/2,}
+\DoxyCodeLine{                             cent.y -\/ \mbox{\hyperlink{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}{ROUND}} (cent.y/2 * sin (t)) -\/ size.y/2, size.x, size.y, \textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        ShowWindow (notepad, SW\_RESTORE);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MoveWindow (wnd, \mbox{\hyperlink{group___misc_gacd66e8cacf954c3bc3bba81d09425a12}{ROUND}} (t*100) \% 1000 -\/ 200, 330, 200, 150, \textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        Sleep (20);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gad942f797bce07af74cd11c88d50ddd3e}\label{group___misc_gad942f797bce07af74cd11c88d50ddd3e}} 
+\index{Разное@{Разное}!txRegQuery@{txRegQuery}}
+\index{txRegQuery@{txRegQuery}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txRegQuery()}{txRegQuery()}}
+{\footnotesize\ttfamily int tx\+Reg\+Query (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key\+Name,  }\item[{const char $\ast$}]{value\+Name,  }\item[{void $\ast$}]{value,  }\item[{size\+\_\+t}]{sz\+Value }\end{DoxyParamCaption})}
+
+
+
+Читает информацию из реестра Windows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Name} & Имя ключа реестра (см. ниже) \\
+\hline
+{\em value\+Name} & Имя параметра ключа \\
+\hline
+{\em value} & Буфер, в который записывается значение \\
+\hline
+{\em sz\+Value} & Размер буфера\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество байт, записанных в буфер @strike сос мыслом @endstrike со значением value
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Имя ключа реестра {\ttfamily key\+Name} {\bfseries{обязательно}} должно начинаться c имени или обозначения одного из разделов\+:
+\end{DoxyNote}
+@table @tr {\bfseries{Обозначение}} @td {\bfseries{Ключ реестра}} @tr {\ttfamily HKLM} @td {\ttfamily HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE} @tr {\ttfamily HKCU} @td {\ttfamily HKEY\+\_\+\+CURRENT\+\_\+\+USER} @tr {\ttfamily HKCR} @td {\ttfamily HKEY\+\_\+\+CLASSES\+\_\+\+ROOT} @tr {\ttfamily HKU} @td {\ttfamily HKEY\+\_\+\+USERS} @tr {\ttfamily HKCC} @td {\ttfamily HKEY\+\_\+\+CURRENT\+\_\+\+CONFIG} @endtable
+
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} path[MAX\_PATH] = \textcolor{stringliteral}{"{}(not installed)"{}};}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_gad942f797bce07af74cd11c88d50ddd3e}{txRegQuery}} (\textcolor{stringliteral}{"{}HKCU\(\backslash\)\(\backslash\)Software\(\backslash\)\(\backslash\)TX Library"{}}, \textcolor{stringliteral}{"{}ProductDir"{}}, path, \textcolor{keyword}{sizeof} (path));}
+\DoxyCodeLine{}
+\DoxyCodeLine{printf (\textcolor{stringliteral}{"{}TX Library is installed in: \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}}, path);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___drawing_gabc64e03f4ca966e76bc714bbe8173761}\label{group___drawing_gabc64e03f4ca966e76bc714bbe8173761}} 
+\index{Разное@{Разное}!txSelectObject@{txSelectObject}}
+\index{txSelectObject@{txSelectObject}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txSelectObject()}{txSelectObject()}}
+{\footnotesize\ttfamily bool tx\+Select\+Object (\begin{DoxyParamCaption}\item[{HGDIOBJ}]{obj,  }\item[{HDC}]{dc = {\ttfamily \mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC}}()} }\end{DoxyParamCaption})}
+
+
+
+Устанавливает текущий активный объект GDI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Дескриптор объекта GDI. \\
+\hline
+{\em dc} & {\itshape Холст (контекст рисования), в котором устанавливается текущий активный объект GDI. Необязателен.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Если операция была успешна -- true, иначе -- false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Предыдущий выбранный объект того же типа (PEN/\+BRUSH/\+BITMAP и т.\+п.), как и {\ttfamily obj}, {\bfseries{уничтожается}}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_ga66facc5848748507d3ea48c75b33ba23}{tx\+Set\+Color()}}, \mbox{\hyperlink{group___drawing_gab6462db4dbcca4915d460036c6c8896d}{tx\+Get\+Color()}}, \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{tx\+Set\+Fill\+Color()}}, \mbox{\hyperlink{group___drawing_ga4d83b7e2d67f422cf703e15f2d7c4dfa}{tx\+Get\+Fill\+Color()}}, tx\+Colors, RGB(), \mbox{\hyperlink{group___drawing_ga6689b9a89add9c5eb5cf54a8c86539a4}{tx\+Select\+Font()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HPEN pen = CreatePen (PS\_DASH, 1, RGB (255, 128, 0));}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_gabc64e03f4ca966e76bc714bbe8173761}{txSelectObject}} (pen);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga3f81b81baf3d43ec066bac4493149708}\label{group___misc_ga3f81b81baf3d43ec066bac4493149708}} 
+\index{Разное@{Разное}!txSetProgress@{txSetProgress}}
+\index{txSetProgress@{txSetProgress}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txSetProgress()}{txSetProgress()}}
+{\footnotesize\ttfamily HRESULT tx\+Set\+Progress (\begin{DoxyParamCaption}\item[{double}]{percent,  }\item[{unsigned}]{type = {\ttfamily 2},  }\item[{HWND}]{wnd = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Устанавливает Progress bar окна на панели задач. {\itshape @strike Весело и вкусно @endstrike Красиво и иногда полезно.} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percent} & Процент завершения операции, от 0 до 100, определяющий размер Progress bar\textquotesingle{}a на панели задач. \\
+\hline
+{\em type} & {\itshape Тип Progress bar\textquotesingle{}a. задается одним из флагов {\ttfamily Win32\+::\+TBPF\+\_\+\+NORMAL, Win32\+::\+TBPF\+\_\+\+ERROR, Win32\+::\+TBPF\+\_\+\+PAUSED, Win32\+::\+TBPF\+\_\+\+NOPROGRESS, Win32\+::\+TBPF\+\_\+\+INDETERMINATE.} Описание флагов смотрите в Интернете. Необязательно. Если не указано, то используется Win32\+::\+TBPF\+\_\+\+NORMAL.} \\
+\hline
+{\em wnd} & {\itshape Окно для задания Progress bar\textquotesingle{}a. Необязательно. Если не указано, то используется \mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{tx\+Window()}}.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ошибка выполнения функции. Если возвращаемое значение равно 0 {\ttfamily }(S\+\_\+\+OK), то операция успешна.
+\end{DoxyReturn}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___misc_ga3f81b81baf3d43ec066bac4493149708}{txSetProgress}} (146, Win32::TBPF\_NORMAL);  \textcolor{comment}{// 146\%, or 100\%, that is the question.}}
+\DoxyCodeLine{                                          \textcolor{comment}{// Whether 'tis nobler in the mind to suffer...}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga30fb1a6913174dfcea5079391f655be2}\label{group___misc_ga30fb1a6913174dfcea5079391f655be2}} 
+\index{Разное@{Разное}!txSetWindowsHook@{txSetWindowsHook}}
+\index{txSetWindowsHook@{txSetWindowsHook}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txSetWindowsHook()}{txSetWindowsHook()}}
+{\footnotesize\ttfamily WNDPROC tx\+Set\+Windows\+Hook (\begin{DoxyParamCaption}\item[{WNDPROC}]{wnd\+Proc = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Устанавливает альтернативную функцию обработки оконных сообщений Windows (оконную функцию) для окна TXLib. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wnd\+Proc} & {\itshape Новая оконная функция окна TXLib. ~\newline
+ Если не указана или NULL, то текущая альтернативная оконная функция удаляется и устанавливается стандартная.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Адрес предыдущей оконной функции для окна TXLib. \begin{DoxyVerb}     Используйте эту функцию, чтобы самому обрабатывать сообщения Windows, например, сообщения от колесика
+     Мыши. См. примеры такой обработки в примере использования ниже.
+
+     Заданная оконная функция @c wndProc будет вызываться @b до обработки события средствами TXLib.
+     Она должна быть функцией со следующим прототипом:
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRESULT CALLBACK NewWndProc (HWND window, UINT message, WPARAM wParam, LPARAM lParam);}
+
+\end{DoxyCode}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Ваша оконная функция будет вызываться из вспомогательного (второго) потока, создаваемого \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{tx\+Create\+Window()}}. Это {\bfseries{не}} тот же самый поток, в котором выполняется main(). В связи с этим будьте внимательны при работе с глобальными переменными или их аналогами, т.\+к. может возникнуть \char`\"{}гонка          потоков\char`\"{} (race condition).
+
+Если ваша оконная функция вернет значение, не равное 0, то стандартная обработка сообщений средствами TXLib производиться {\bfseries{не}} будет. Из-\/за этого, возможно, окно даже не сможет нормально закрыться. Придется завершать программу с помощью Alt-\/\+Ctrl-\/\+Del из диспетчера задач, или из более продвинутого диспетчера \href{http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx}{\texttt{ Process Explorer}}. Если Вы берете на себя обработку оконных сообщений, делайте ее по правилам Win32 (см. в MSDN), включая вызов Def\+Window\+Proc(). Этот вызов особенно важен, если вы обрабатываете сообщение {\ttfamily WM\+\_\+\+CLOSE}.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Полностью поменять оконную функцию можно с помощью функций Set\+Window\+Long или Set\+Window\+Long\+Ptr\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{WNDPROC OldWndProc = (WNDPROC) SetWindowLongPtr (\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{txWindow}}(), GWL\_WNDPROC, (LONG\_PTR) NewWndProc);}
+
+\end{DoxyCode}
+ При этом надо обязательно всегда вызывать старую оконную функцию с помощью Call\+Window\+Proc, (см. MSDN), иначе последствия будут такими же плачевными, как описаны выше.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{tx\+Create\+Window()}}, \mbox{\hyperlink{structtx_dialog}{tx\+Dialog}}, \mbox{\hyperlink{group___dialogs_gaf1f2c033b7edc26174a28771a708ee7c}{tx\+Input\+Box()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LRESULT CALLBACK MyWndProc (HWND window, UINT message, WPARAM wParam, LPARAM lParam);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SetColors  (COLORREF lineColor, COLORREF fillColor, \textcolor{keywordtype}{int} op);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawCursor (POINT pos, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawShoot  (POINT pos, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___technical_ga4ddb32d7a8a676537014da7aea7bf273}{\_txWindowStyle}} |= WS\_THICKFRAME;}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gafce21ce98474d5559f316b3d47cdbfab}{txCreateWindow}} (GetSystemMetrics (SM\_CXSCREEN) / 4, GetSystemMetrics (SM\_CYSCREEN) / 4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_ga30fb1a6913174dfcea5079391f655be2}{txSetWindowsHook}} (MyWndProc);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    POINT sz = \mbox{\hyperlink{group___drawing_ga11074386e81c0c8677f36c0a16ac0aa1}{txGetExtent}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6689b9a89add9c5eb5cf54a8c86539a4}{txSelectFont}} (\textcolor{stringliteral}{"{}Lucida Console"{}}, 30, 15);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaf6a9b31e58b6a0523ce1636a97053606}{txDrawText}} (0, 0,      sz.x, sz.y, \textcolor{stringliteral}{"{}MOV txWindow, eax [please]"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga6689b9a89add9c5eb5cf54a8c86539a4}{txSelectFont}} (\textcolor{stringliteral}{"{}Lucida Console"{}}, 15, 7.5);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaf6a9b31e58b6a0523ce1636a97053606}{txDrawText}} (0, sz.y/2, sz.x, sz.y, \textcolor{stringliteral}{"{}(Info for the cats: NO MOUSE HERE)"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{LRESULT CALLBACK MyWndProc (HWND window, UINT message, WPARAM wParam, LPARAM lParam)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keywordtype}{bool}  wheelMsg = \textcolor{keyword}{false};}
+\DoxyCodeLine{    \textcolor{keyword}{static} POINT pos      = \{-\/10, -\/10\};}
+\DoxyCodeLine{    \textcolor{keyword}{const}  \textcolor{keywordtype}{int}   size     = 20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (message == WM\_MOUSEMOVE)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        DrawCursor (pos,                                      size);}
+\DoxyCodeLine{        DrawCursor (pos = \{LOWORD (lParam), HIWORD (lParam)\}, size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaff3d9c60900531f438a19216485bdd41}{txUpdateWindow}}();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (message == WM\_LBUTTONDOWN)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        DrawCursor (pos, size);}
+\DoxyCodeLine{        DrawShoot  (pos, size);}
+\DoxyCodeLine{        DrawCursor (pos, size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaff3d9c60900531f438a19216485bdd41}{txUpdateWindow}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}{txPlaySound}} (\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Windows\(\backslash\)\(\backslash\)Media\(\backslash\)\(\backslash\)ir\_begin.wav"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (message == WM\_MOUSEWHEEL)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} wheel = (short) HIWORD (wParam) / WHEEL\_DELTA;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        RECT rect = \{\}; GetWindowRect (window, \&rect);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        POINT sz = \{ rect.right -\/ rect.left, rect.bottom -\/ rect.top \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        wheelMsg = \textcolor{keyword}{true};}
+\DoxyCodeLine{        MoveWindow (window, rect.left -\/ wheel, rect.top -\/ wheel, sz.x + wheel*2, sz.y + wheel*2, \textcolor{keyword}{true});}
+\DoxyCodeLine{        wheelMsg = \textcolor{keyword}{false};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (message == WM\_MOVE \&\& !wheelMsg)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (\textcolor{stringliteral}{"{}  I like to MOVe it, MOVe it"{}}, \textcolor{stringliteral}{"{}TXLib 2 Real"{}}, MB\_ICONINFORMATION);}
+\DoxyCodeLine{        wheelMsg = \textcolor{keyword}{false};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (message == WM\_SETCURSOR \&\& LOWORD (lParam) == HTCLIENT)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        SetCursor (NULL);                    \textcolor{comment}{// Hide the mouse cursor}}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \textcolor{keyword}{true};                         \textcolor{comment}{// Не продолжать обработку сообщения средствами TXLib}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (i++ \% 15 == 0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{char} str[2] = \{\textcolor{stringliteral}{"{}-\/\(\backslash\)\(\backslash\)|/"{}} [i/15 \% 4]\};  \textcolor{comment}{// Прропппеллллерррр}}
+\DoxyCodeLine{        SetWindowText (\mbox{\hyperlink{group___drawing_gafa31ebd8ed957c41713900a407497cf8}{txWindow}}(), str);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} \textcolor{keyword}{false};                            \textcolor{comment}{// Продолжить обработку сообщения средствами TXLib}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawCursor (POINT pos, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    SetColors (\mbox{\hyperlink{group___drawing_ga6388bef316887789b735b7fbbc04ec4d}{TX\_YELLOW}}, \mbox{\hyperlink{group___drawing_ga5d70fde53b10abdb4e9511268b9e1ee9}{TX\_TRANSPARENT}}, R2\_XORPEN);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (pos.x, pos.y, size/2);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (pos.x-\/size, pos.y,      pos.x+size, pos.y);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gaaee38df6f38b6f1729b9db1c4ac23e65}{txLine}} (pos.x,      pos.y-\/size, pos.x,      pos.y+size);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    Win32::SetROP2 (\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{txDC}}(), R2\_COPYPEN);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} DrawShoot (POINT pos, \textcolor{keywordtype}{int} size)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    SetColors (RGB (255, 64, 0), RGB (255, 64, 0), R2\_COPYPEN);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)}
+\DoxyCodeLine{        \mbox{\hyperlink{group___drawing_gaa14e9c2a46cf713efaa1f850074d8adc}{txCircle}} (pos.x + rand() \% (size*2) -\/ size,}
+\DoxyCodeLine{                  pos.y + rand() \% (size*2) -\/ size, rand() \% (size/2) + size/2);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SetColors (COLORREF lineColor, COLORREF fillColor, \textcolor{keywordtype}{int} op)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_ga66facc5848748507d3ea48c75b33ba23}{txSetColor}}     (lineColor);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___drawing_gad21ad5660a5423f31c2c8e77329758b2}{txSetFillColor}} (fillColor);}
+\DoxyCodeLine{    Win32::SetROP2 (\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{txDC}}(), op);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}\label{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}} 
+\index{Разное@{Разное}!txSpeak@{txSpeak}}
+\index{txSpeak@{txSpeak}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txSpeak()}{txSpeak()}}
+{\footnotesize\ttfamily int tx\+Speak (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Читает @strike мысли @endstrike текст вслух. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Текст для @strike внеклассного @endstrike чтения, как для функции {\ttfamily printf()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Время чтения текста в миллисекундах (если не указана опция {\ttfamily \textbackslash{}a}). Если -\/1, то текст не прочитался. \+:( \begin{DoxyVerb}     Для использования этой функции укажите перед включением файла @c TXLib.h определите имя @c TX_USE_SPEAK
+     командой <tt>\#define TX_USE_SPEAK</tt> @b до строки с \#include "TXLib.h" для того, чтобы TXLib задействовал
+     библиотеку Microsoft Speech API (SAPI.h). См. пример использования ниже.
+
+     Текст читается голосом, установленным по умолчанию в Панели управления Windows. Если голос поддерживает русский
+     язык (начиная с Windows 8.1), то можно использовать русские фразы. До Windows 8.1 они не проговариваются. Если
+     голос читает плохо, или с акцентом, то смените его в Панели Управления Windows.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Если текст начинается с символа {\ttfamily \textbackslash{}v}, то он еще и печатается на экране (сам символ {\ttfamily \textbackslash{}v} не печатается). @nn
+
+Если текст начинается с символа {\ttfamily \textbackslash{}a}, то он проговаривается асинхронно\+: \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}} возвращается сразу после вызова, и чтение идет параллельно с работой программы. Без этой опции \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}} делает паузу в программе, ожидая конца чтения, и только потом возвращается. @nn
+
+Если текст начинается с символа {\ttfamily $<$}, то он трактуется как формат SSML (см. ниже). @nn
+
+Если строка с текстом пустая (не считая {\ttfamily \textbackslash{}v} и {\ttfamily \textbackslash{}a}), то \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{tx\+Speak()}} лучше скажет что-\/то более важное, чем просто молчание. \+:)
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Для работы этой функции TXLib требует наличия файла {\ttfamily SAPI.\+h} из стандартной библиотеки Windows. Не на всех платформах он есть. Если этот файл не найден, то будет ошибка компиляции. @nn Этот файл точно есть в Visual Studio или в этой сборке платформы Min\+GW\+: \href{https://nuwen.net/mingw.html}{\texttt{ https\+://nuwen.\+net/mingw.\+html}}.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Вы можете настраивать синтез речи, используя язык разметки {\bfseries{SSML}} (Speech Synthesis Markup Language). Его описание см. здесь\+: \href{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup}{\texttt{ https\+://docs.\+microsoft.\+com/en-\/us/azure/cognitive-\/services/speech-\/service/speech-\/synthesis-\/markup}}. Признаком наличия разметки SSML является наличие открывающей угловой скобки {\ttfamily $<$} в начале сообщения (после опций {\ttfamily \textbackslash{}v} и {\ttfamily \textbackslash{}a}). В этом случае будьте осторожны с амперсандами {\ttfamily \&}, кавычками и знаками \char`\"{}меньше\char`\"{} {\ttfamily $<$} и \char`\"{}больше\char`\"{} {\ttfamily $>$}, а также другими спецсимволами XML. Если вы не знаете, как задавать их в XML, то не используйте. Формату SSML нужно строго соответствовать, иначе программа упадет, @strike как это принято у Microsoft. @endstrike @nn Если вам не нравится, что надо каждый раз указывать заголовок SSML, то вам это правильно не нравится. Сделайте функцию-\/обертку над tx\+Speak, заодно познакомитесь, как делать функции с переменным числом параметров. Не забудьте о {\ttfamily vsnprintf} @ (vsprintf), эти функции сэкономят вам немало сил.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___misc_ga177f8bcb7544821ea4b5bd0571fe7196}{tx\+Play\+Sound()}}, \mbox{\hyperlink{group___misc_ga3d4731dd56b60635c80bc662c295c821}{tx\+Play\+Video()}}, \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{tx\+Message\+Box()}}, \mbox{\hyperlink{group___misc_ga372c7e43cc383da3f8e8e00fc60be91f}{tx\+Output\+Debug\+Printf()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define  TX\_USE\_SPEAK}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_t_x_lib_8h}{TXLib.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{txSpeak}} (\textcolor{stringliteral}{"{}TX Library is cool!"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{txSpeak}} (\textcolor{stringliteral}{"{}\(\backslash\)vДобрый вечер, котики. Вы все мыши. Goog evening, kittens. You are all mices."{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___misc_gad6db0ee1b36288c7eb3f2196077971f9}{txSpeak}} (\textcolor{stringliteral}{"{}<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='EN'>"{}}  \textcolor{comment}{// SSML format}}
+\DoxyCodeLine{             \textcolor{stringliteral}{"{}Goog evening, kittens. You are all mices."{}}}
+\DoxyCodeLine{             \textcolor{stringliteral}{"{}</speak>"{}});}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}\label{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}} 
+\index{Разное@{Разное}!txSqr@{txSqr}}
+\index{txSqr@{txSqr}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txSqr()}{txSqr()}}
+{\footnotesize\ttfamily double tx\+Sqr (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+{\itshape Очень удобное} возведение числа в квадрат. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Число для возведения в него. (Кого? (Who?))\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Квадрат, полученный путем возведения в него числа, заданного для возведения в квадрат.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Это пример, как {\bfseries{ не надо }} писать код\+: \mbox{\hyperlink{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}{tx\+Sqr()}} -- функция с \char`\"{}медвежьей услугой\char`\"{}. Иногда встречаются те, кто любит печатать в функции результат ее вычислений 
+\footnotesize  (не данные для отладки, а именно результат), 
+\normalsize  вместо того, чтобы просто возвращать его туда, где эту функцию вызывали. Пусть эти люди воспользуются приведенной \mbox{\hyperlink{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}{tx\+Sqr()}} для какого-\/нибудь нужного дела, особенно в цикле. Пример, конечно, несколько преувеличен. См. в исходном тексте код этой навязчивой радости.
+\end{DoxyNote}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}} \textcolor{stringliteral}{"{}Радиус\(\backslash\)t\(\backslash\)t"{}} \textcolor{stringliteral}{"{}Площадь круга\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} r = 100; r > 0; r-\/-\/)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{    printf (\textcolor{stringliteral}{"{}\%6.2lf..."{}}, r);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} square = M\_PI * \mbox{\hyperlink{group___misc_ga74ff1048e0d6bc458c9904fbbe0a6026}{txSqr}} (r);  \textcolor{comment}{// Надолго запомним эту площадь!}}
+\DoxyCodeLine{    printf (\textcolor{stringliteral}{"{}\(\backslash\)b\(\backslash\)b\(\backslash\)b   \(\backslash\)t"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf (\textcolor{stringliteral}{"{}\%-\/.2lf\(\backslash\)n"{}}, square);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}\label{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}} 
+\index{Разное@{Разное}!txUnlock@{txUnlock}}
+\index{txUnlock@{txUnlock}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txUnlock()}{txUnlock()}}
+{\footnotesize\ttfamily bool tx\+Unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Разблокировка холста 
+
+\begin{DoxyReturn}{Returns}
+Состояние блокировки (всегда false). \begin{DoxyVerb}     Более подробно см. в описании txLock().
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC()}}, \mbox{\hyperlink{group___drawing_ga3a8ec79acc0dcbcc04bff3aecc235b4e}{tx\+Video\+Memory()}}, \mbox{\hyperlink{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}{tx\+Lock()}}, \mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{tx\+GDI()}}
+\end{DoxySeeAlso}
+@usage См. исходный текст функций \+\_\+tx\+Canvas\+\_\+\+On\+PAINT() и \+\_\+tx\+Console\+\_\+\+Draw() в \mbox{\hyperlink{_t_x_lib_8h}{TXLib.\+h}}. \mbox{\Hypertarget{group___drawing_gaff3d9c60900531f438a19216485bdd41}\label{group___drawing_gaff3d9c60900531f438a19216485bdd41}} 
+\index{Разное@{Разное}!txUpdateWindow@{txUpdateWindow}}
+\index{txUpdateWindow@{txUpdateWindow}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txUpdateWindow()}{txUpdateWindow()}}
+{\footnotesize\ttfamily int tx\+Update\+Window (\begin{DoxyParamCaption}\item[{int}]{update = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Разрешает или запрещает автоматическое обновление изображения в окне. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em update} & {\itshape Режим обновления (true -- разрешить, false -- запретить). Необязателен. Если не указан, то \char`\"{}разрешить\char`\"{}.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Предыдущее состояние режима обновления. \begin{DoxyVerb}     В отличие от txBegin() и txEnd(), которые поддерживают вложенные вызовы и работают как "скобки для
+     замерзания картинки", txUpdateWindow() позволяет явно установить или снять блокировку автоматического
+     обновления экрана.
+
+     Более полную информацию об автоматическом обновлении см. в функции txBegin(). См. также txEnd(),
+     txRedrawWindow(), txSleep().
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_gae92e621aaed81f90e4d142356e38762a}{tx\+Begin()}}, \mbox{\hyperlink{group___drawing_ga809dc04afd5348247846ee01ce9a06e6}{tx\+End()}}, \mbox{\hyperlink{group___drawing_ga6c293f0b0f71efebdeeb0b56a97ba50c}{tx\+Sleep()}}, \mbox{\hyperlink{group___drawing_gaff3d9c60900531f438a19216485bdd41}{tx\+Update\+Window()}}, \mbox{\hyperlink{group___drawing_ga6e641bf88bafb9bc5297354adb3aeb56}{tx\+DC()}}, \mbox{\hyperlink{group___drawing_ga3a8ec79acc0dcbcc04bff3aecc235b4e}{tx\+Video\+Memory()}}, \mbox{\hyperlink{group___drawing_gaa148d2040d20ed74cf46ab186c35f9ed}{tx\+Text\+Cursor()}}, \mbox{\hyperlink{group___misc_ga532fa8a55c4f3d4f94ff0fdceae732b2}{tx\+Lock()}}, \mbox{\hyperlink{group___misc_ga8fe4ec4c66cb69ce337747fe65dd0cc6}{tx\+Unlock()}}, \mbox{\hyperlink{group___misc_gafdd807831b131ba38d5856b6ee4e8287}{tx\+GDI()}}
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group___drawing_gaff3d9c60900531f438a19216485bdd41}{txUpdateWindow}} (\textcolor{keyword}{false});}
+\DoxyCodeLine{...}
+\DoxyCodeLine{txUpdateWindow();}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group___misc_gaf40cd03b465387a736443214b7b44c32}\label{group___misc_gaf40cd03b465387a736443214b7b44c32}} 
+\index{Разное@{Разное}!\_TX\_CODEPAGE@{\_TX\_CODEPAGE}}
+\index{\_TX\_CODEPAGE@{\_TX\_CODEPAGE}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{\_TX\_CODEPAGE}{\_TX\_CODEPAGE}}
+{\footnotesize\ttfamily const int \+\_\+\+TX\+\_\+\+CODEPAGE = 1251}
+
+
+
+Смена кодовой страницы консоли и локали стандартной библиотеки С++. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codepage} & {\itshape Номер новой кодовой страницы консоли. Если не указано, то 1251.} \\
+\hline
+{\em locale} & {\itshape Новая локаль (информация о языке) стандартной библиотеки С++. Если не указано, то \char`\"{}\+Russian\char`\"{} или \char`\"{}ru\+\_\+\+RU.\+CP1251\char`\"{}.} \\
+\hline
+{\em w\+Locale} & {\itshape Новая локаль стандартной библиотеки С++ для wide character funstions. Если не указано, то L\char`\"{}\+Russian\+\_\+\+Russia.\+ACP\char`\"{}.}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Номер старой кодовой страницы консоли. \begin{DoxyVerb}   - <a href=http://www.google.com/search?q=windows+console+code+page+identifiers>Список кодовых страниц консоли</a>
+   - <a href=http://www.google.com/search?q=C%2B%2B+locale+name+list>             Список имен локалей C++</a>
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Если устанавливается кодовая страница не 1251, возможны нарушения в работе строковых функций C++ и вывода текста в консоль.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group___drawing_ga2cb63c12d9206e9ed2b2c83c9a08f68e}{tx\+Clear\+Console()}}, \mbox{\hyperlink{group___drawing_ga791155510da5fc336b3dbe4deab37974}{tx\+Set\+Console\+Attr()}} и другие консольные функции, tx\+Reopen\+Stdio()
+\end{DoxySeeAlso}
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{txSetLocale (866, \textcolor{stringliteral}{"{}Russian\_Russia.866"{}}, L\textcolor{stringliteral}{"{}Russian\_Russia.866"{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___misc_gaf59817ad656dcbb3f9baebeb4d7f82f7}\label{group___misc_gaf59817ad656dcbb3f9baebeb4d7f82f7}} 
+\index{Разное@{Разное}!txPI@{txPI}}
+\index{txPI@{txPI}!Разное@{Разное}}
+\doxysubsubsection{\texorpdfstring{txPI}{txPI}}
+{\footnotesize\ttfamily const double tx\+PI}
+
+
+
+Число Пи 
+
+@usage 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{group___misc_gaf59817ad656dcbb3f9baebeb4d7f82f7}{txPI}} == 1) \mbox{\hyperlink{group___misc_gaf9be7d98f32c0737a2d7f30039a60c0a}{txMessageBox}} (\textcolor{stringliteral}{"{}Вы попали в другую Вселенную."{}}, \textcolor{stringliteral}{"{}Поздравляем"{}}, MB\_ICONSTOP);}
+
+\end{DoxyCode}
+ 
