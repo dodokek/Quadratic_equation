@@ -15,9 +15,9 @@ The program is separated on files, that's why make file is included.
 ## Installation
 First and foremost you need to clone the repo and build the project with makefile. <br/>
 
-`git clone https://github.com/dodokek/Quadratic_equation.git                               
-cd Quadratic_equation/src                                                                     
-make`                                                                                      
+`git clone https://github.com/dodokek/Quadratic_equation.git <br />                               
+cd Quadratic_equation/src                                    <br />                                 
+make`                                                        <br />                              
 
 
 
