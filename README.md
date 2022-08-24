@@ -64,16 +64,4 @@ doxygen
 
 ## Conclusion
 You can use different libraries from my project separately they work perfectly one without another.
-**Bye DodoKek all rights reversed**                           
-
-
-
-
-
-              
-
-
-
-This project solves quadratic equation. .exe file supports console arguments <br>
-/h, -h, --help - Stands for getting some help by redirecting you to documentation<br>
-/t, -t, --test - Stands for running Unit tests which you can modify in specified file. 
+**Bye, DodoKek all rights reversed**                           
