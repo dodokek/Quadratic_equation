@@ -10,6 +10,7 @@
 #include "include/unit_test.h"
 #include "include/input.h"
 #include "include/log.h"
+#include "include/graphics.h"
 
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
@@ -34,17 +35,21 @@ extern bool Debug;
 
 const OptionDef Options[] =
 {
-    {"--test", unit_test},
-    {"-t",     unit_test},
-    {"/t",     unit_test},
+    {"--test",     unit_test},
+    {"-t",         unit_test},
+    {"/t",         unit_test},
 
-    {"--help", print_help},
-    {"-h",     print_help},
-    {"/h",     print_help},
+    {"--help",     print_help},
+    {"-h",         print_help},
+    {"/h",         print_help},
 
-    {"--log",  open_log},
-    {"-l",     open_log},
-    {"/l",     open_log}
+    {"--log",      open_log},
+    {"-l",         open_log},
+    {"/l",         open_log},
+
+    {"--graphics", start_progress_bar},
+    {"-g",         start_progress_bar},
+    {"/g",         start_progress_bar}
 };
 
 // Command line arguments

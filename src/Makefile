@@ -7,10 +7,10 @@ TEST = unit_test
 
 all : $(TARGET)
 
-$(TARGET) : $(TARGET).o $(ARG).o $(TEST).o log.o input.o
-	$(CC) $(CFLAGS) $(TARGET).o $(ARG).o $(TEST).o log.o input.o -o $(TARGET)   
+$(TARGET) : $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o
+	$(CC) $(CFLAGS) $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o -o $(TARGET)   
 	  
-$(TARGET).o : $(TARGET).cpp include/$(TARGET).h include/$(ARG).h include/$(TEST).h include/input.h include/log.h
+$(TARGET).o : $(TARGET).cpp include/$(TARGET).h include/$(ARG).h include/$(TEST).h include/input.h include/log.h include/graphics.h
 	$(CC) $(CFLAGS) -c $(TARGET).cpp
 
 $(ARG).o : $(ARG).cpp include/$(ARG).h
@@ -24,6 +24,9 @@ input.o : input.cpp include/input.h
 
 log.o : log.cpp include/log.h
 	$(CC) $(CFLAGS) log.cpp -c
+
+graphics.o : graphics.cpp include/graphics.h
+	$(CC) $(CFLAGS) graphics.cpp -c
 
 clean:
 	rm -rf *.o *.save $(TARGET)
