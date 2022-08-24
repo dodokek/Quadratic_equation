@@ -64,7 +64,7 @@ doxygen
 
 ## Conclusion
 You can use different libraries from my project separately they work perfectly one without another.
-**Bye**                           
+**Bye DodoKek all rights reversed**                           
 
 
 
