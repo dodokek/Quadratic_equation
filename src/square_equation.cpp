@@ -5,12 +5,6 @@
 
 // “Œ Õ≈ ﬁ«¿≈“ ¿——≈–“, “Œ“ ≈—“‹ ¡¿√» Õ¿ ƒ≈—≈–“
 
-//-----------------------------------------------------------------------------
-
-const bool Debug = true;
-
-//-----------------------------------------------------------------------------
-
 #include "include/square_equation.h"
 #include "include/argument_proccessing.h"
 #include "include/unit_test.h"
@@ -19,7 +13,7 @@ const bool Debug = true;
 
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
-//Constants
+//-----------------------------------------------------------------------------
 
 const double Accuracy = 0.000001;
 
@@ -31,9 +25,12 @@ const int MAX_DATA_SIZE = 100;
 
 const double INF = 1000000000;
 
-//---------
+extern bool Debug;
 
-// Comand line arguments
+//-----------------------------------------------------------------------------
+
+
+// Command line arguments
 
 const OptionDef Options[] =
 {
@@ -54,17 +51,16 @@ const OptionDef Options[] =
 
 int main (int argc, const char* argv[])
 {
-    printf("#Quadratic equation by DodoKek\n");
-    printf("#Why don't you just solve it yourself?\n");
+    printf ("#Quadratic equation by DodoKek\n");
+    printf ("#Why don't you just solve it yourself?\n");
 
     assert (argc != 0 && argv != NULL);
 
     process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
 
-
     __TRACKBEGIN__
 
-    if (Debug)
+    if (!Debug)
     {
         double data_array[MAX_DATA_SIZE] = {};
 
@@ -96,7 +92,7 @@ bool get_input (double data_arr[], int option)
         {
             printf ("Enter coefficents for equation similar to ax^2 + bx + c = 0\n");
 
-            int scanf_amount = scanf("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
+            int scanf_amount = scanf ("%lg %lg %lg", data_arr, data_arr+1, data_arr+2);
 
             is_input_correct = (scanf_amount == 3);
 
@@ -113,7 +109,7 @@ bool get_input (double data_arr[], int option)
                                      is_input_correct);
             }
 
-            if (check_on_exit('q'))
+            if (check_on_exit ('q'))
             {
                 return 0;
             }
@@ -122,7 +118,7 @@ bool get_input (double data_arr[], int option)
             {
                 printf ("Incorrect data \n");
 
-                clear_buffer('\n');
+                clear_buffer ('\n');
             }
         }
 
@@ -134,6 +130,7 @@ bool get_input (double data_arr[], int option)
     else
     {
         printf ("So far program does not support any other operations :( ");
+
         return false;
     }
 }
@@ -176,18 +173,18 @@ int solve_linear_equation (double roots_array[], double koef_a, double koef_b, d
 
     else
     {
-        if (is_zero(koef_a))
+        if (is_zero (koef_a))
         {
             return INFINITE_ROOTS;
         }
-        else{
+        else
+        {
             roots_array[x1_indx] = 0;
             roots_array[x2_indx] = -koef_b/koef_a;
 
             return TWO_ROOTS;
         }
     }
-
 }
 
 
@@ -262,7 +259,7 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
         return TWO_ROOTS;
     }
 
-    if (is_zero(diskr))
+    if (is_zero (diskr))
     {
         roots_array[x1_indx] =
         roots_array[x2_indx] = (-koef_b) / (2 * koef_a);
@@ -310,7 +307,6 @@ void quadratic_equation::print_answer (int roots_amount, double roots_array[])
 
 void quadratic_equation::solve_quadratic_equation (double data_array[])
 {
-    //__TRACK__
     assert (data_array != NULL);
 
     double roots_array[2] = {POISON_NUM, POISON_NUM};

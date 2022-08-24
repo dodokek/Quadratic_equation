@@ -1,25 +1,30 @@
 
 #include "include/unit_test.h"
 
-//Constants
+//-----------------------------------------------------------------------------
 
-const double Accuracy = 0.000001;
+const double Accuracy          = 0.000001;
 
-const int SolveSqrOpt = 1;
+const int SolveSqrOpt          = 1;
 
-const double POISON_NUM = 12345.6;
+const double POISON_NUM        = 12345.6;
 
-const int MAX_DATA_SIZE = 100;
+const int MAX_DATA_SIZE        = 100;
 
-const double INF = 1000000000;
+const double INF               = 1000000000;
 
 const char default_file_name[] = "tests.txt";
 
-//---------
+bool Debug = false;
+
+//-----------------------------------------------------------------------------
+
 
 int unit_test (int argc, const char* argv[], int pos)
 {
     assert(argc > 0 && argv != NULL && pos >= 0);
+
+    Debug = true;
 
     __TRACKBEGIN__
 
@@ -38,11 +43,11 @@ int unit_test (int argc, const char* argv[], int pos)
                     break;
 
                 case 1:
-                    tests_amount = atoi(argv[argc_pos]);
+                    tests_amount = atoi (argv[argc_pos]);
                     break;
 
                 default:
-                    printf("Too much additional arguments\n");
+                    printf ("Too much additional arguments\n");
             }
         }
         else
@@ -116,7 +121,7 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 
     double roots_array[2] = { POISON_NUM, POISON_NUM };
 
-    DO(quadratic_equation::calculate_roots (roots_array, test_data);)
+    DO(quadratic_equation::calculate_roots (roots_array, test_data));
 
     if (roots_array[0] < roots_array[1])
     {

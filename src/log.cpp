@@ -42,7 +42,7 @@ void add_tree_level (const char* func_name)
     fputc      ('|', LOG_FILE);
     put_spaces (SPACING++ * 4);
 
-    LOG_FUNC("%s >>>\n", func_name);
+    LOG_FUNC   ("%s >>>\n", func_name);
 }
 
 
@@ -52,14 +52,13 @@ void substract_tree_level (const char* func_name)
     fputc      ('|', LOG_FILE);
     put_spaces (--SPACING * 4);
 
-    LOG_FUNC("%s <<<\n", func_name);
+    LOG_FUNC   ("%s <<<\n", func_name);
 }
 
 
-bool get_log_file(char file_name[])
+bool get_log_file (char file_name[])
 {
-
-    atexit(&finish_log);
+    atexit (&finish_log);
 
     if (file_name[0] != '\0')
     {
@@ -67,7 +66,7 @@ bool get_log_file(char file_name[])
 
         LOG_FILE = fopen (file_name, "w");
 
-        strcpy(ACTIVE_LOGFILE_NAME, file_name);
+        strcpy (ACTIVE_LOGFILE_NAME, file_name);
 
         return true;
     }
@@ -87,8 +86,6 @@ bool get_log_file(char file_name[])
 
 int open_log (int argc, const char* argv[], int pos)
 {
-
-    //Debug = true;
     char file_name[] = "";
     int argument_indx = 0;
 
@@ -103,11 +100,11 @@ int open_log (int argc, const char* argv[], int pos)
                     break;
 
                 case 1:
-                    LOG_LEVEL = atoi(argv[argc_pos]);
+                    LOG_LEVEL = atoi (argv[argc_pos]);
                     break;
 
                 default:
-                    printf("Too much additional arguments\n");
+                    printf ("Too much additional arguments\n");
             }
 
             continue;
@@ -115,9 +112,9 @@ int open_log (int argc, const char* argv[], int pos)
         break;
     }
 
-    printf("Started to write logs...\n");
+    printf ("Started to write logs...\n");
 
-    get_log_file(file_name);
+    get_log_file (file_name);
 
     if (!LOG_FILE)
     {
@@ -137,13 +134,13 @@ void finish_log ()
     fprintf (LOG_FILE, "Finishing logging... Goodluck in debugging :)\n");
     fputc   ('\n', LOG_FILE);
 
-    fclose (LOG_FILE);
+    fclose  (LOG_FILE);
 }
 
 
 void put_spaces(int spaces_amount)
 {
-    fprintf(LOG_FILE, "%*s", spaces_amount, " ");
+    fprintf (LOG_FILE, "%*s", spaces_amount, " ");
 
     return;
 }

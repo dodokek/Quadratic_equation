@@ -44,4 +44,3 @@ namespace quadratic_equation
 {
     extern int calculate_roots    (double roots_array[], double data_arr[]);
 }
-

@@ -8,8 +8,6 @@
 //! \section  Guess you were so interested in my project, that you wanted to read more about it! I am veeeeery happy...
 //-----------------------------------------------------------------------------
 
-
-
 #include <TXLib.h>
 #include <stdio.h>
 #include <string.h>
