@@ -53,7 +53,18 @@ square_equation.exe -h
 ~~~
 By writing this you are being redirected to documentation, that is store in **html/index.html** 
 
-                           
+## Documentation
+
+Documentation is provided by doxygen. 
+Configuration file **doxyfile** is not recommended to be changed
+To generate documentation you need to run doxygen by writing the following command:
+~~~
+doxygen
+~~~
+
+## Conclusion
+You can use different libraries from my project separately they work perfectly one without another.
+**Bye**                           
 
 
 
