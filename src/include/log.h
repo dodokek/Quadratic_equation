@@ -48,7 +48,7 @@ static FILE* LOG_FILE = nullptr;
 
 static int LOG_LEVEL = 9;
 
-const  char DEFAULT_LOG_NAME[] = "log.txt";
+const  char DEFAULT_LOG_NAME[] = "data//log.txt";
 
 static char ACTIVE_LOGFILE_NAME[] = "log.txt";
 

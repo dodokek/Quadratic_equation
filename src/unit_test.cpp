@@ -140,7 +140,7 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
                      num_of_test,
                      test_data[a_indx],   test_data[b_indx ], test_data[c_indx],
                      test_data[x1_indx],  test_data[x2_indx],
-                     roots_array[a_indx], roots_array[c_indx]);
+                     roots_array[a_indx], roots_array[b_indx]);
     }
 
     txSleep (100);
@@ -162,6 +162,6 @@ FILE* get_tests_file(char file_name[])
     {
         printf ("File name %s\n", default_file_name);
 
-        return fopen (default_file_name, "r");
+        return fopen ("data//tests.txt", "r");
     }
 }

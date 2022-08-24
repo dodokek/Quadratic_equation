@@ -128,9 +128,8 @@ int open_log (int argc, const char* argv[], int pos)
 }
 
 
-void finish_log ()
+void finish_log()
 {
-
     fprintf (LOG_FILE, "Finishing logging... Goodluck in debugging :)\n");
     fputc   ('\n', LOG_FILE);
 
@@ -138,7 +137,7 @@ void finish_log ()
 }
 
 
-void put_spaces(int spaces_amount)
+void put_spaces (int spaces_amount)
 {
     fprintf (LOG_FILE, "%*s", spaces_amount, " ");
 
