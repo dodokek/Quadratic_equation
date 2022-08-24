@@ -36,6 +36,7 @@ There are now three available command line flags:
 
 ### Unit tests
 Unit tests get the data from the specified file, named tests.txt. You can have the tests execute from your own file by writing the filename right after the call of this argument.
+The execution of the main programm is supressed while running unit tests.
 ~~~
 square_equation.exe -t filename.txt
 ~~~
@@ -64,4 +65,5 @@ doxygen
 
 ## Conclusion
 You can use different libraries from my project separately they work perfectly one without another.
-**Bye, DodoKek all rights reversed**                           
+Bye. 
+**DodoKek all rights reversed**                           
