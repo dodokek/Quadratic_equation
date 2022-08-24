@@ -13,15 +13,13 @@ const int MAX_DATA_SIZE = 100;
 
 const double INF = 1000000000;
 
-const char *default_file_name = "tests.txt";
-
-const char *file_path = "..//files//";
+const char default_file_name[] = "tests.txt";
 
 //---------
 
-int start_unit_test (int argc, const char* argv[], int pos)
+int unit_test (int argc, const char* argv[], int pos)
 {
-    assert(argc > 0 && argv != NULL & pos >= 0);
+    assert(argc > 0 && argv != NULL && pos >= 0);
 
     __TRACKBEGIN__
 
@@ -53,12 +51,23 @@ int start_unit_test (int argc, const char* argv[], int pos)
         }
     }
 
+    __TRACKEND__
 
-    FILE *tests_file = get_tests_file(file_name);
+    return start_tests_cycle (file_name, argument_indx, tests_amount);
+}
+
+
+int start_tests_cycle (char file_name_tmp[], int argument_indx, int tests_amount)
+{
+    __TRACKBEGIN__
+
+    FILE *tests_file = get_tests_file(file_name_tmp);
 
     if (!tests_file)
     {
-        printf ("Failed to open the file %s\n", default_file_name);
+        printf ("Failed to open the file\n");
+
+        __TRACKEND__
 
         return argument_indx;
     }
@@ -82,7 +91,6 @@ int start_unit_test (int argc, const char* argv[], int pos)
         assert (num_of_test > 0);
 
         num_of_test++;
-
     }
 
     fclose (tests_file);
@@ -108,7 +116,7 @@ void unit_test_quadratic_equation (double test_data[], int    num_of_test)
 
     double roots_array[2] = { POISON_NUM, POISON_NUM };
 
-    quadratic_equation::calculate_roots (roots_array, test_data);
+    DO(quadratic_equation::calculate_roots (roots_array, test_data);)
 
     if (roots_array[0] < roots_array[1])
     {
@@ -147,7 +155,7 @@ FILE* get_tests_file(char file_name[])
 
     else
     {
-        printf ("File name %s\n", file_name);
+        printf ("File name %s\n", default_file_name);
 
         return fopen (default_file_name, "r");
     }

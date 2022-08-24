@@ -76,71 +76,68 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">   11</a></span>&#160;<span class="preprocessor">#define $(X)            printf  (&quot;%s:%03d&gt;&gt;&gt; &quot;</span> #X &quot;\n&quot;, __FILE__, __LINE__); X</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="log_8h.html#a47427412fe7f986c3de124cfd7ac3a2d">   17</a></span>&#160;<span class="preprocessor">#define DO(X)           fprintf    (LOG_FILE, &quot;%25s:%03d &quot;</span>, __FILE__, __LINE__);              \</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        fputc      (&#39;|&#39;, LOG_FILE);                                           \</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        put_spaces (SPACING*4),                                               \</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        fprintf    (LOG_FILE, &quot;%25s:%03d&gt;&gt;&gt; &quot; #X &quot;\n&quot;, __FILE__, __LINE__), X</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="log_8h.html#abe783c84945b95f4fe9c2db7820e0c46">   25</a></span>&#160;<span class="preprocessor">#define LOG_ARGV(...)   fprintf    (LOG_FILE, &quot;%25s:%03d &quot;</span>, __FILE__, __LINE__);              \</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        fputc      (&#39;|&#39;, LOG_FILE);                                           \</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        put_spaces (SPACING*4),                                               \</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        fprintf    (LOG_FILE, __VA_ARGS__),                                   \</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        fputc      (&#39;\n&#39;, LOG_FILE)</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="log_8h.html#a47427412fe7f986c3de124cfd7ac3a2d">   13</a></span>&#160;<span class="preprocessor">#define DO(X)           fprintf    (LOG_FILE, &quot;%25s:%03d &quot;</span>, __FILE__, __LINE__);              \</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                        fputc      (&#39;|&#39;, LOG_FILE);                                           \</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                        put_spaces (SPACING*4),                                               \</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        fprintf    (LOG_FILE, &quot;%25s:%03d&gt;&gt;&gt; &quot; #X &quot;\n&quot;, __FILE__, __LINE__), X</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="log_8h.html#abe783c84945b95f4fe9c2db7820e0c46">   21</a></span>&#160;<span class="preprocessor">#define LOG_ARGV(...)   fprintf    (LOG_FILE, &quot;%25s:%03d &quot;</span>, __FILE__, __LINE__);              \</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        fputc      (&#39;|&#39;, LOG_FILE);                                           \</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        put_spaces (SPACING*4),                                               \</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        fprintf    (LOG_FILE, __VA_ARGS__),                                   \</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        fputc      (&#39;\n&#39;, LOG_FILE)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="log_8h.html#a7b0e30484ec4dae3996be253f5b90bdb">   29</a></span>&#160;<span class="preprocessor">#define LOG_FUNC(...)   fprintf (LOG_FILE, __VA_ARGS__)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="log_8h.html#a7b0e30484ec4dae3996be253f5b90bdb">   33</a></span>&#160;<span class="preprocessor">#define LOG_FUNC(...)   fprintf (LOG_FILE, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="log_8h.html#ace3502250c0a0436ee00741e366bb69e">   38</a></span>&#160;<span class="preprocessor">#define __TRACKBEGIN__       add_tree_level       (__func__);</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="log_8h.html#ace3502250c0a0436ee00741e366bb69e">   34</a></span>&#160;<span class="preprocessor">#define __TRACKBEGIN__       add_tree_level       (__func__);</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="log_8h.html#ae9556df3cfeb32c9c4ef867bdb3518ee">   39</a></span>&#160;<span class="preprocessor">#define __TRACKEND__         substract_tree_level (__func__);</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="log_8h.html#ae9556df3cfeb32c9c4ef867bdb3518ee">   43</a></span>&#160;<span class="preprocessor">#define __TRACKEND__         substract_tree_level (__func__);</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="log_8h.html#a24a31f60b063af0e662125ea2427b140">   43</a></span>&#160;<span class="preprocessor">#define LOGGING _LOGGING</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//Global/Const-----------------------------------------------------------------</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="log_8h.html#a24a31f60b063af0e662125ea2427b140">   47</a></span>&#160;<span class="preprocessor">#define LOGGING _LOGGING</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">static</span> FILE* LOG_FILE = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//Global/Const-----------------------------------------------------------------</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> LOG_LEVEL = 9;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">static</span> FILE* LOG_FILE = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> DEFAULT_LOG_NAME[] = <span class="stringliteral">&quot;log.txt&quot;</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> LOG_LEVEL = 9;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> ACTIVE_LOGFILE_NAME[] = <span class="stringliteral">&quot;log.txt&quot;</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> DEFAULT_LOG_NAME[] = <span class="stringliteral">&quot;log.txt&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> SPACING = 0;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> ACTIVE_LOGFILE_NAME[] = <span class="stringliteral">&quot;log.txt&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//Global/Const-----------------------------------------------------------------</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> SPACING = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//Global/Const-----------------------------------------------------------------</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">   69</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">get_log_file</a>         (<span class="keywordtype">char</span> file_name[]);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">   65</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">get_log_file</a>         (<span class="keywordtype">char</span> file_name[]);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">   72</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">open_log</a>              (<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>* argv[], <span class="keywordtype">int</span> pos);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">   76</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">open_log</a>              (<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>* argv[], <span class="keywordtype">int</span> pos);</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="log_8h.html#af83a39f9a4e889f26704eecd068e9ab4">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#af83a39f9a4e889f26704eecd068e9ab4">finish_log</a>           ();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="log_8h.html#af83a39f9a4e889f26704eecd068e9ab4">   80</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#af83a39f9a4e889f26704eecd068e9ab4">finish_log</a>           ();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">put_spaces</a>           (<span class="keywordtype">int</span> spaces_amount);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad48eac3a8e92a3679c1f7dd076c6f044">put_spaces</a>           (<span class="keywordtype">int</span> spaces_amount);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">add_tree_level</a>       (<span class="keyword">const</span> <span class="keywordtype">char</span>* func_name);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">add_tree_level</a>       (<span class="keyword">const</span> <span class="keywordtype">char</span>* func_name);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">substract_tree_level</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* func_name);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="log_8h.html#a8eb00e57f43a88073f65edeffc138406">substract_tree_level</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* func_name);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="alog_8h_html_a0f172893e66ed085edcf6d9e3c777877"><div class="ttname"><a href="log_8h.html#a0f172893e66ed085edcf6d9e3c777877">open_log</a></div><div class="ttdeci">int open_log(int argc, const char *argv[], int pos)</div><div class="ttdoc">Функция для считывания аргументов командной строки для работы с логами</div></div>
 <div class="ttc" id="alog_8h_html_a13ef626e231fcb8d598e5c9b6b47b0ba"><div class="ttname"><a href="log_8h.html#a13ef626e231fcb8d598e5c9b6b47b0ba">get_log_file</a></div><div class="ttdeci">bool get_log_file(char file_name[])</div><div class="ttdoc">Функция для считывания файла, куда будут писаться логи</div></div>
 <div class="ttc" id="alog_8h_html_a4ef79a63a8c8c39c2575b6e8e8afb970"><div class="ttname"><a href="log_8h.html#a4ef79a63a8c8c39c2575b6e8e8afb970">add_tree_level</a></div><div class="ttdeci">void add_tree_level(const char *func_name)</div><div class="ttdoc">Функция для углубления на один уровень в дереве функций</div></div>

@@ -78,11 +78,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a207fd5507206d307cd63f95374fcd00d"><td class="memItemLeft" align="right" valign="top"><a id="a207fd5507206d307cd63f95374fcd00d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a>&#160;&#160;&#160;)            printf  (&quot;%s:%03d&gt;&gt;&gt; &quot; #X &quot;\n&quot;, __FILE__, __LINE__); X</td></tr>
-<tr class="memdesc:a207fd5507206d307cd63f95374fcd00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод в консоль выполняемой строки и информации о ней <br /></td></tr>
-<tr class="separator:a207fd5507206d307cd63f95374fcd00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47427412fe7f986c3de124cfd7ac3a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a47427412fe7f986c3de124cfd7ac3a2d">DO</a>(<a class="el" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a>)</td></tr>
+<tr class="memitem:a47427412fe7f986c3de124cfd7ac3a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a47427412fe7f986c3de124cfd7ac3a2d">DO</a>(X)</td></tr>
 <tr class="memdesc:a47427412fe7f986c3de124cfd7ac3a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись в лог-файл исполняемой строки и информации о ней  <a href="log_8h.html#a47427412fe7f986c3de124cfd7ac3a2d">More...</a><br /></td></tr>
 <tr class="separator:a47427412fe7f986c3de124cfd7ac3a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe783c84945b95f4fe9c2db7820e0c46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#abe783c84945b95f4fe9c2db7820e0c46">LOG_ARGV</a>(...)</td></tr>
@@ -176,7 +172,7 @@ const char&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_LOG_NAM
           <td class="memname">#define DO</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a></td><td>)</td>
+          <td class="paramname">X</td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -184,8 +180,7 @@ const char&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_LOG_NAM
 <b>Value:</b><div class="fragment"><div class="line">                        fprintf    (LOG_FILE, <span class="stringliteral">&quot;%25s:%03d &quot;</span>, __FILE__, __LINE__);              \</div>
 <div class="line">                        fputc      (<span class="charliteral">&#39;|&#39;</span>, LOG_FILE);                                           \</div>
 <div class="line">                        put_spaces (SPACING*4),                                               \</div>
-<div class="line">                        fprintf    (LOG_FILE, <span class="stringliteral">&quot;%25s:%03d&gt;&gt;&gt; &quot;</span> #<a class="code" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a> <span class="stringliteral">&quot;\n&quot;</span>, __FILE__, __LINE__), <a class="code" href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a></div>
-<div class="ttc" id="alog_8h_html_a207fd5507206d307cd63f95374fcd00d"><div class="ttname"><a href="log_8h.html#a207fd5507206d307cd63f95374fcd00d">X</a></div><div class="ttdeci">#define X</div><div class="ttdoc">Вывод в консоль выполняемой строки и информации о ней</div><div class="ttdef"><b>Definition:</b> log.h:11</div></div>
+<div class="line">                        fprintf    (LOG_FILE, <span class="stringliteral">&quot;%25s:%03d&gt;&gt;&gt; &quot;</span> #X <span class="stringliteral">&quot;\n&quot;</span>, __FILE__, __LINE__), X</div>
 </div><!-- fragment -->
 <p>Запись в лог-файл исполняемой строки и информации о ней </p>
 <dl class="section note"><dt>Note</dt><dd>Необходимо перейти в режим логирования через командную строку (-l, /l, &ndash;log) </dd>

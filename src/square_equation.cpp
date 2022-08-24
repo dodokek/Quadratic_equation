@@ -37,9 +37,9 @@ const double INF = 1000000000;
 
 const OptionDef Options[] =
 {
-    {"--test", start_unit_test},
-    {"-t",     start_unit_test},
-    {"/t",     start_unit_test},
+    {"--test", unit_test},
+    {"-t",     unit_test},
+    {"/t",     unit_test},
 
     {"--help", print_help},
     {"-h",     print_help},
@@ -54,8 +54,8 @@ const OptionDef Options[] =
 
 int main (int argc, const char* argv[])
 {
-    printf("#Quadratic equation by DodoKek");
-    printf("#Why don't you just solve it yourself?");
+    printf("#Quadratic equation by DodoKek\n");
+    printf("#Why don't you just solve it yourself?\n");
 
     assert (argc != 0 && argv != NULL);
 
@@ -193,7 +193,11 @@ int solve_linear_equation (double roots_array[], double koef_a, double koef_b, d
 
 bool is_zero (double number)
 {
+    __TRACKBEGIN__
+
     assert (number < INF);
+
+    __TRACKEND__
 
     return fabs(number) < Accuracy;
 }
@@ -224,6 +228,8 @@ bool is_equal (double num_1, double num_2)
 
 int quadratic_equation::calculate_roots (double roots_array[], double data_arr[])
 {
+    __TRACKBEGIN__
+
     assert (roots_array != NULL && data_arr != NULL);
 
     double koef_a = data_arr[0];
@@ -233,10 +239,11 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
     int x1_indx = 0;
     int x2_indx = 1;
 
-    //LOG_ARGV("x1: %d, x2: %d", x1_indx, x2_indx);
+    LOG_ARGV("x1: %d, x2: %d", x1_indx, x2_indx);
 
     if (is_zero (koef_a) || is_zero(koef_c))
     {
+        __TRACKEND__
         return solve_linear_equation (roots_array, koef_a, koef_b, koef_c);
     }
 
@@ -250,6 +257,8 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
 
         roots_array[x2_indx] = ( -koef_b - diskr_sqrt ) / (2 * koef_a);
 
+        __TRACKEND__
+
         return TWO_ROOTS;
     }
 
@@ -258,8 +267,12 @@ int quadratic_equation::calculate_roots (double roots_array[], double data_arr[]
         roots_array[x1_indx] =
         roots_array[x2_indx] = (-koef_b) / (2 * koef_a);
 
+        __TRACKEND__
+
         return ONE_ROOT;
     }
+
+    __TRACKEND__
 
     return NO_ROOTS;
 }

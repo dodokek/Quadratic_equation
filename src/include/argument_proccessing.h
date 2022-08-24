@@ -31,7 +31,6 @@ void process_arguments (int                    argc,      const char* argv[],
 /// \brief Функция для обработки аргумента командной строки -h, /h, --help
 /// \arg     argc - Количество аргументов командной строки при запуске .exe файла
 /// \arg     argv - Массив значений аргументов
-/// \
 
 int print_help(int argc, const char* argv[], int pos);
 

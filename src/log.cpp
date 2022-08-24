@@ -42,7 +42,7 @@ void add_tree_level (const char* func_name)
     fputc      ('|', LOG_FILE);
     put_spaces (SPACING++ * 4);
 
-    LOG_FUNC("%s\n", func_name);
+    LOG_FUNC("%s >>>\n", func_name);
 }
 
 
@@ -52,7 +52,7 @@ void substract_tree_level (const char* func_name)
     fputc      ('|', LOG_FILE);
     put_spaces (--SPACING * 4);
 
-    LOG_FUNC("%s\n", func_name);
+    LOG_FUNC("%s <<<\n", func_name);
 }
 
 
@@ -76,7 +76,7 @@ bool get_log_file(char file_name[])
     {
         printf ("File name %s\n", DEFAULT_LOG_NAME);
 
-        LOG_FILE = fopen (DEFAULT_LOG_NAME, "a");
+        LOG_FILE = fopen (DEFAULT_LOG_NAME, "w");
 
         return true;
     }

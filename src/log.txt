@@ -1,9 +1,5 @@
 Started logging...
-                  log.cpp:041 | main
-                  log.cpp:041 |    fill_array
-                  log.cpp:051 |    fill_array
-                  log.cpp:041 |    print_answer
-                  log.cpp:051 |    print_answer
-                  log.cpp:051 | main
-Finishing logging... Goodluck in debugging :)
-
+                  log.cpp:041 | unit_test >>>
+                  log.cpp:051 | unit_test <<<
+                  log.cpp:041 | start_tests_cycle >>>
+                  log.cpp:051 | start_tests_cycle <<<

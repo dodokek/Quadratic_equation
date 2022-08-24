@@ -89,12 +89,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae3b5a4b2f01e30e84aec47a8122867a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#ae3b5a4b2f01e30e84aec47a8122867a5">start_unit_test</a> (int argc, const char *argv[], int pos)</td></tr>
-<tr class="memdesc:ae3b5a4b2f01e30e84aec47a8122867a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция отвечает за вызов Unit тестов квадратного уравнения  <a href="unit__test_8h.html#ae3b5a4b2f01e30e84aec47a8122867a5">More...</a><br /></td></tr>
-<tr class="separator:ae3b5a4b2f01e30e84aec47a8122867a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab331b052f893f8dba098691624c5504e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#ab331b052f893f8dba098691624c5504e">unit_test</a> (int argc, const char *argv[], int pos)</td></tr>
+<tr class="memdesc:ab331b052f893f8dba098691624c5504e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция отвечает за вызов Unit тестов квадратного уравнения  <a href="unit__test_8h.html#ab331b052f893f8dba098691624c5504e">More...</a><br /></td></tr>
+<tr class="separator:ab331b052f893f8dba098691624c5504e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bf19942d0397c4cfafb75992a1e2118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a6bf19942d0397c4cfafb75992a1e2118">unit_test_quadratic_equation</a> (double test_data[], int num_of_test)</td></tr>
 <tr class="memdesc:a6bf19942d0397c4cfafb75992a1e2118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция, отвечающая за отдельный тест  <a href="unit__test_8h.html#a6bf19942d0397c4cfafb75992a1e2118">More...</a><br /></td></tr>
 <tr class="separator:a6bf19942d0397c4cfafb75992a1e2118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182d37ecc068fd8a45b30baceb09c7ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a182d37ecc068fd8a45b30baceb09c7ee">start_tests_cycle</a> (char file_name_tmp[], int argument_indx, int tests_amount)</td></tr>
+<tr class="memdesc:a182d37ecc068fd8a45b30baceb09c7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция открывает открывает файл с помощью get_tests_file и в цикле прогоняет все тесты  <a href="unit__test_8h.html#a182d37ecc068fd8a45b30baceb09c7ee">More...</a><br /></td></tr>
+<tr class="separator:a182d37ecc068fd8a45b30baceb09c7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a32493a3cb3354636fb8718a08373d"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a37a32493a3cb3354636fb8718a08373d">get_tests_file</a> (char file_name[])</td></tr>
 <tr class="memdesc:a37a32493a3cb3354636fb8718a08373d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для считывание файлы  <a href="unit__test_8h.html#a37a32493a3cb3354636fb8718a08373d">More...</a><br /></td></tr>
 <tr class="separator:a37a32493a3cb3354636fb8718a08373d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,14 +136,59 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_equal</b> (double 
 
 </div>
 </div>
-<a id="ae3b5a4b2f01e30e84aec47a8122867a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3b5a4b2f01e30e84aec47a8122867a5">&#9670;&nbsp;</a></span>start_unit_test()</h2>
+<a id="a182d37ecc068fd8a45b30baceb09c7ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182d37ecc068fd8a45b30baceb09c7ee">&#9670;&nbsp;</a></span>start_tests_cycle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int start_unit_test </td>
+          <td class="memname">int start_tests_cycle </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>file_name_tmp</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argument_indx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tests_amount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция открывает открывает файл с помощью get_tests_file и в цикле прогоняет все тесты </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td>Имя файла с тестами </td></tr>
+    <tr><td class="paramname">argument_indx</td><td>Номер аргумента командной строки, на котором остановилось считывание </td></tr>
+    <tr><td class="paramname">tests_amount</td><td>Количество тестов для прогона, отсчет идет с первого </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>На вход может приниматься пустое имя файла, так как в функции get_tests_file написани обработчик этого случая </dd></dl>
+
+</div>
+</div>
+<a id="ab331b052f893f8dba098691624c5504e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab331b052f893f8dba098691624c5504e">&#9670;&nbsp;</a></span>unit_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int unit_test </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -170,7 +218,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_equal</b> (double 
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>Количество аргументов командной строки </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">argv</td><td>Массив аргументов командной строки </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Позиция</td><td>аргумента командной строки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>Позиция аргумента командной строки </td></tr>
   </table>
   </dd>
 </dl>
