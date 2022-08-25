@@ -1,6 +1,10 @@
+
 //{---------------------------
 //! @file unit_test.h
 //{---------------------------
+
+#ifndef UNIT_TEST
+#define UNIT_TEST
 
 #include <stdio.h>
 #include <string.h>
@@ -44,3 +48,5 @@ namespace quadratic_equation
 {
     extern int calculate_roots    (double roots_array[], double data_arr[]);
 }
+
+#endif

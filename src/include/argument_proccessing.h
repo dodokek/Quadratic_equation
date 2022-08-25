@@ -35,5 +35,3 @@ void process_arguments (int                    argc,      const char* argv[],
 int print_help(int argc, const char* argv[], int pos);
 
 //-----------------------------------------------------------------------------
-
-

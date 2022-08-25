@@ -46,9 +46,9 @@ void display_progress_bar ()
             txSelectFont   ("Comic Sans MS", 70);
             txTextOut      (20, 200, "Warming up our quantum reactor.");
 
-            txSleep     (0.5);
+            txSleep     (0.05);
 
-            if (x > 100 && y > 0)
+            if (x > 300 && y > 0)
             {
                 exit_flag = true;
                 break;
@@ -76,9 +76,9 @@ void display_progress_bar ()
             txSelectFont   ("Comic Sans MS", 70);
             txTextOut      (20, 200, "Retrying.");
 
-            txSleep     (0.5);
+            txSleep     (0.05);
 
-            if (x < 900 && y < 300)
+            if (x < 700 && y < 300)
             {
                 exit_flag = true;
                 break;

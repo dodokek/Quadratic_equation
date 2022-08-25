@@ -5,83 +5,9 @@
 
 // “Œ Õ≈ ﬁ«¿≈“ ¿——≈–“, “Œ“ ≈—“‹ ¡¿√» Õ¿ ƒ≈—≈–“
 
-#include "include/square_equation.h"
-#include "include/argument_proccessing.h"
-#include "include/unit_test.h"
-#include "include/input.h"
-#include "include/log.h"
-#include "include/graphics.h"
-
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
-//-----------------------------------------------------------------------------
-
-const double Accuracy = 0.000001;
-
-const int SolveSqrOpt = 1;
-
-const double POISON_NUM = 12345.6;
-
-const int MAX_DATA_SIZE = 100;
-
-const double INF = 1000000000;
-
-extern bool Debug;
-
-//-----------------------------------------------------------------------------
-
-
-// Command line arguments
-
-const OptionDef Options[] =
-{
-    {"--test",     unit_test},
-    {"-t",         unit_test},
-    {"/t",         unit_test},
-
-    {"--help",     print_help},
-    {"-h",         print_help},
-    {"/h",         print_help},
-
-    {"--log",      open_log},
-    {"-l",         open_log},
-    {"/l",         open_log},
-
-    {"--graphics", start_progress_bar},
-    {"-g",         start_progress_bar},
-    {"/g",         start_progress_bar}
-};
-
-// Command line arguments
-
-int main (int argc, const char* argv[])
-{
-    printf ("#Quadratic equation by DodoKek\n");
-    printf ("#Why don't you just solve it yourself?\n");
-
-    assert (argc != 0 && argv != NULL);
-
-    process_arguments (argc, argv, Options, sizeof(Options) / sizeof(Options[0]));
-
-    __TRACKBEGIN__
-
-    if (!Debug)
-    {
-        double data_array[MAX_DATA_SIZE] = {};
-
-        fill_array (data_array, MAX_DATA_SIZE, NAN);
-
-        bool data_is_correct = get_input (data_array, SolveSqrOpt);
-
-        if (data_is_correct)
-        {
-            quadratic_equation::solve_quadratic_equation (data_array);
-        }
-    }
-
-    __TRACKEND__
-}
-
+#include "include/square_equation.h"
 
 bool get_input (double data_arr[], int option)
 {

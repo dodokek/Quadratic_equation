@@ -2,6 +2,8 @@
 //! @file square_equation.h
 //{---------------------------
 
+#ifndef SQUARE_EQ_H
+#define SQUARE_EQ_H
 
 //-----------------------------------------------------------------------------
 //! \mainpage Welcome to the documentation, what lead you here?
@@ -14,6 +16,28 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
+
+#include "argument_proccessing.h"
+#include "unit_test.h"
+#include "input.h"
+#include "log.h"
+#include "graphics.h"
+
+//-----------------------------------------------------------------------------
+
+const double Accuracy = 0.000001;
+
+const int SolveSqrOpt = 1;
+
+const double POISON_NUM = 12345.6;
+
+const int MAX_DATA_SIZE = 100;
+
+const double INF = 1000000000;
+
+extern bool Debug;
+
+//-----------------------------------------------------------------------------
 
 /// Нумерация количества корей уравнения.
 enum NUM_OF_ROOTS
@@ -92,3 +116,4 @@ void print_help();
 
 //-----------------------------------------------------------------------------
 
+#endif

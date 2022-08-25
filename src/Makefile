@@ -5,10 +5,13 @@ TARGET = square_equation
 ARG = argument_proccessing
 TEST = unit_test
 
-all : $(TARGET)
+all : main
 
-$(TARGET) : $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o
-	$(CC) $(CFLAGS) $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o -o $(TARGET)   
+main : main.o $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o
+	$(CC) $(CFLAGS) main.o $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o -o main   
+
+main.o : main.cpp include/main.h
+	$(CC) $(CFLAGS) main.cpp -c
 	  
 $(TARGET).o : $(TARGET).cpp include/$(TARGET).h include/$(ARG).h include/$(TEST).h include/input.h include/log.h include/graphics.h
 	$(CC) $(CFLAGS) -c $(TARGET).cpp
