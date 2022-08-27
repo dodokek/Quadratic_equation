@@ -60,7 +60,7 @@ By writing this you are being redirected to documentation, that is store in **ht
 main.exe -g
 ~~~
 With this command line argument a new window will will be opened. In this window you'll be able to look on satisfying loading screen.
-![Loading screen](https://github.com/dodokek/Quadratic_equation/blob/main/src/img/loading%20screen.png?raw=true)
+![Loading screen](https://github.com/dodokek/Quadratic_equation/blob/main/src/img/loading_screen.png?raw=true)
 
 ## Documentation
 
