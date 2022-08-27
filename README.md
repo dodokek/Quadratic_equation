@@ -24,7 +24,7 @@ make
 
 Execute the programm:
 ~~~
-square_equation.exe
+main.exe
 ~~~
 
 ## Comand line arguments
@@ -33,34 +33,34 @@ There are now three available command line flags:
 - Start unit tests (-t, /t, --test)
 - Start to write logs (-l, /l, --log)
 - Call for help (-h, /h, --help)
+- Includes loading screen (-g, /g, --graphics)
 
 ### Unit tests
 Unit tests get the data from the specified file, named tests.txt. You can have the tests execute from your own file by writing the filename right after the call of this argument.
 The execution of the main programm is supressed while running unit tests.
 ~~~
-square_equation.exe -t filename.txt
+main.exe -t filename.txt
 ~~~
 
 ### Logging
 This useful library can be copypasted in many different projects. It writes a tree of functions that are being called in real time!
-The data is being writed into file log.txt, different file name could be set by user.
+The data is being writed into file log.txt, different file name coul be set by user.
 ~~~
-square_equation.exe -l logfile.txt
+main.exe -l logfile.txt
 ~~~
 
 ### Help
 ~~~
-square_equation.exe -h
+main.exe -h
 ~~~
-By writing this you are being redirected to documentation, which is stored in **html/index.html** 
+By writing this you are being redirected to documentation, that is store in **html/index.html** 
 
 ### Graphics
 ~~~
 main.exe -g
 ~~~
-
-This addon was made for fun to add unneccessary loading screen.
-
+With this command line argument a new window will will be opened. In this window you'll be able to look on satisfying loading screen.
+![Loading screen](https://github.com/dodokek/Quadratic_equation/blob/main/src/img/loading%20screen.png?raw=true)
 
 ## Documentation
 
@@ -72,6 +72,6 @@ doxygen
 ~~~
 
 ## Conclusion
-You can use different libraries from my project separately, they work perfectly one without another.
-Bye.  
+You can use different libraries from my project separately they work perfectly one without another.
+Bye. 
 **DodoKek all rights reversed**                           
