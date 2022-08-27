@@ -43,7 +43,7 @@ square_equation.exe -t filename.txt
 
 ### Logging
 This useful library can be copypasted in many different projects. It writes a tree of functions that are being called in real time!
-The data is being writed into file log.txt, different file name coul be set by user.
+The data is being writed into file log.txt, different file name could be set by user.
 ~~~
 square_equation.exe -l logfile.txt
 ~~~
@@ -52,7 +52,15 @@ square_equation.exe -l logfile.txt
 ~~~
 square_equation.exe -h
 ~~~
-By writing this you are being redirected to documentation, that is store in **html/index.html** 
+By writing this you are being redirected to documentation, which is stored in **html/index.html** 
+
+### Graphics
+~~~
+main.exe -g
+~~~
+
+This addon was made for fun to add unneccessary loading screen.
+
 
 ## Documentation
 
@@ -64,6 +72,6 @@ doxygen
 ~~~
 
 ## Conclusion
-You can use different libraries from my project separately they work perfectly one without another.
-Bye. 
+You can use different libraries from my project separately, they work perfectly one without another.
+Bye.  
 **DodoKek all rights reversed**                           

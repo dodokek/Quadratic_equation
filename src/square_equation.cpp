@@ -3,8 +3,6 @@
 //! The main file for solving equation
 //{----------------------------------------------------------------------------
 
-//йрн ме чгюер юяяепр, рнр еярэ аюцх мю деяепр
-
 #define _$ $c;printf("[Line %d]\n", __LINE__); $y;
 
 #include "include/square_equation.h"

@@ -1,35 +1,45 @@
+#Environment settings
+
 CC = g++
 CFLAGS = -g -Wall
+
+#Variables
 
 TARGET = square_equation
 ARG = argument_proccessing
 TEST = unit_test
+LOG = log
+MAIN = main
+INPUT = input
+GRAPH = graphics
 
-all : main
+#Body
 
-main : main.o $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o
-	$(CC) $(CFLAGS) main.o $(TARGET).o $(ARG).o $(TEST).o log.o input.o graphics.o -o main   
+all : $(MAIN)
 
-main.o : main.cpp include/main.h
-	$(CC) $(CFLAGS) main.cpp -c
+$(MAIN) : $(MAIN).o $(TARGET).o $(ARG).o $(TEST).o $(LOG).o $(INPUT).o $(GRAPH).o
+	$(CC) $(CFLAGS) $^ -o $@   
+
+$(MAIN).o : $(MAIN).cpp
+	$(CC) $(CFLAGS) $< -c
 	  
-$(TARGET).o : $(TARGET).cpp include/$(TARGET).h include/$(ARG).h include/$(TEST).h include/input.h include/log.h include/graphics.h
-	$(CC) $(CFLAGS) -c $(TARGET).cpp
+$(TARGET).o : $(TARGET).cpp 
+	$(CC) $(CFLAGS) -c $<
 
-$(ARG).o : $(ARG).cpp include/$(ARG).h
-	$(CC) $(CFLAGS) $(ARG).cpp -c
+$(ARG).o : $(ARG).cpp 
+	$(CC) $(CFLAGS) $< -c
 
-$(TEST).o : $(TEST).cpp include/$(TEST).h
-	$(CC) $(CFLAGS) $(TEST).cpp -c
+$(TEST).o : $(TEST).cpp
+	$(CC) $(CFLAGS) $< -c
 
-input.o : input.cpp include/input.h
-	$(CC) $(CFLAGS) input.cpp -c
+$(INPUT).o : $(INPUT).cpp
+	$(CC) $(CFLAGS) $< -c
 
-log.o : log.cpp include/log.h
-	$(CC) $(CFLAGS) log.cpp -c
+$(LOG).o : $(LOG).cpp 
+	$(CC) $(CFLAGS) $< -c
 
-graphics.o : graphics.cpp include/graphics.h
-	$(CC) $(CFLAGS) graphics.cpp -c
+$(GRAPH).o : $(GRAPH).cpp
+	$(CC) $(CFLAGS) $(GRAPH).cpp -c
 
 clean:
 	rm -rf *.o *.save $(TARGET)

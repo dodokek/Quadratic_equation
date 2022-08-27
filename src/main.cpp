@@ -1,4 +1,6 @@
 
+//йрн ме чгюер юяяепр, рнр еярэ аюцх мю деяепр
+
 #include "include/main.h"
 
 int main (int argc, const char* argv[])

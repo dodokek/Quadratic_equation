@@ -3,16 +3,6 @@
 
 //-----------------------------------------------------------------------------
 
-const double Accuracy          = 0.000001;
-
-const int SolveSqrOpt          = 1;
-
-const double POISON_NUM        = 12345.6;
-
-const int MAX_DATA_SIZE        = 100;
-
-const double INF               = 1000000000;
-
 const char default_file_name[] = "tests.txt";
 
 bool Debug = false;

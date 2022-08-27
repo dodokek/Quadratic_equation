@@ -13,6 +13,7 @@
 #include <TXlib.h>
 
 #include "log.h"
+#include "square_equation.h"
 
 /// \brief Функция отвечает за вызов Unit тестов квадратного уравнения
 /// \param [in] argc Количество аргументов командной строки
@@ -41,12 +42,5 @@ int start_tests_cycle             (char file_name_tmp[], int argument_indx, int 
 /// \return File stream
 
 FILE* get_tests_file              (char file_name[]);
-
-extern bool is_equal              (double num_1, double num_2);
-
-namespace quadratic_equation
-{
-    extern int calculate_roots    (double roots_array[], double data_arr[]);
-}
 
 #endif

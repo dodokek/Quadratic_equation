@@ -2,6 +2,9 @@
 //! @file argument_proccessing.h
 //{---------------------------
 
+#ifndef ARGUMENT_H
+#define ARGUMENT_H
+
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
@@ -35,3 +38,5 @@ void process_arguments (int                    argc,      const char* argv[],
 int print_help(int argc, const char* argv[], int pos);
 
 //-----------------------------------------------------------------------------
+
+#endif
