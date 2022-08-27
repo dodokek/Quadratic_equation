@@ -18,7 +18,7 @@ int start_progress_bar (int argc, const char* argv[], int argc_pos)
 void display_creator_info()
 {
     txSetFillColor (TX_BLACK);
-    txSetColor     (TX_RED);
+    txSetColor     (TX_LIGHTGREEN);
     txSelectFont   ("Comic Sans MS", 70);
 
     txTextOut (50,  200, "QUANTUM SOLVER OF EQUATIONS.");
@@ -32,71 +32,23 @@ void display_creator_info()
 
 void display_progress_bar ()
 {
-    bool exit_flag = false;
+    txSetFillColor (TX_BLACK);
+    txSetColor     (TX_ORANGE);
+    txSelectFont   ("Comic Sans MS", 70);
+    txTextOut      (20, 200, "Warming up our quantum reactor.");
 
-    for (int x = 0; x < 1000; x += 16)
+    for (int x = 100; x <= 700; x += 50)
     {
-        for (int y = 0; y < 600; y += 16)
-        {
-            txSetFillColor (TX_LIGHTGREEN);
-            txRectangle (x, y, x + 8, y + 8);
 
-            txSetFillColor (TX_BLACK);
-            txSetColor     (TX_RED);
-            txSelectFont   ("Comic Sans MS", 70);
-            txTextOut      (20, 200, "Warming up our quantum reactor.");
+        txSetFillColor (TX_LIGHTGREEN);
+        txRectangle (x, 400, x + 45, 550);
 
-            txSleep     (0.05);
-
-            if (x > 300 && y > 0)
-            {
-                exit_flag = true;
-                break;
-            }
-        }
-
-        if (exit_flag) break;
+        txSleep     (500);
     }
-
-    txSleep (3000);
-
-    txClear();
-
-    exit_flag = false;
-
-    for (int x = 1000; x >= 0; x -= 16)
-    {
-        for (int y = 600; y >= 0; y -= 16)
-        {
-            txSetFillColor (TX_GREEN);
-            txRectangle (x, y, x + 8, y + 8);
-
-            txSetFillColor (TX_BLACK);
-            txSetColor     (TX_RED);
-            txSelectFont   ("Comic Sans MS", 70);
-            txTextOut      (20, 200, "Retrying.");
-
-            txSleep     (0.05);
-
-            if (x < 700 && y < 300)
-            {
-                exit_flag = true;
-                break;
-            }
-        }
-
-        if (exit_flag) break;
-    }
-
-    txSleep (2000);
-    txClear ();
 
     txSetFillColor (TX_BLACK);
-    txSetColor     (TX_RED);
-    txSelectFont   ("Comic Sans MS", 30);
-    txTextOut      (20, 200, "Fuck it.");
 
-    txSleep(500);
+    txSleep (3000);
 
     txClear();
 }
